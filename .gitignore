@@ -1,0 +1,13 @@
+*.aux
+*.bcf
+*.ent
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nlo
+*.run.xml
+*.toc
+
