@@ -1,6 +1,10 @@
 *.aux
+*.bbl
 *.bcf
+*.blg
 *.ent
+*.fdb_latexmk
+*.fls
 *.idx
 *.ilg
 *.ind

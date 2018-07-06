@@ -6,16 +6,14 @@
 \usepackage{lipsum}
 \usepackage{graphicx}
 
-\usepackage{todonotes}
-
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{newtxtext, newtxmath}
 
-\usepackage[numbers, sort&compress]{natbib}
+\usepackage{natbib}
 \usepackage{bibunits}
-\defaultbibliographystyle{plainnat}
-\usepackage{enumitem}
+\usepackage{aas_macros}
+\defaultbibliographystyle{aasjournal}
 
 \begin{document}
 
@@ -45,39 +43,21 @@
 
 \extrachapter{Published Content and Contributions}
 
-%% List your publications and contributions here.
-%% The list will be formatted according to \defaultbibliographystyle in the preamble. Use the "note" field instead of the "addendum" field to describe author's role.
-%
-%\begin{publishedcontent}%[iknowwhattodo]
-%\nocite{Cahn:etal:2015,Cahn:etal:2016}
-%\putbib[ownpubs]
-%\end{publishedcontent}
-%
-%Note that it's not possible to get an existing BibTeX style to sort in reverse chronological order without modifying the \texttt{.bst} file. If you want a reverse-ordered list, the easiest thing may be to do it manually with a \texttt{description} list; an example is given in the comments of the source code below.
-%
-%% \bigskip
-%
-%% \begin{description}[leftmargin=2em,labelindent=0pt,labelsep=0pt]
-%% \SingleSpacing
-%% \item[] Cahn, J.~K.~B., A.~Baumschlager, et al. (2016). ``Mutations in adenine-binding pockets enhance catalytic properties of NAD (P) H-dependent enzymes''. In: \emph{Protein Engineering Design and Selection} 19.1, pp.~31--38. \textsc{doi}: \texttt{10.1093/ protein/gzv057}.
-%
-%% \item[] Cahn, J.~K.~B., S. Brinkmann-Chen, et al. (2015). ``Cofactor specificity motifs and the induced fit mechanism in class I ketol-acid reductoisomerases''. In: \emph{Biochemical Journal} 468.3, pp.~475--484. \textsc{doi}: \texttt{10.1042/BJ20150183}.
-%% \\J.K.B.C participated in the conception of the project, solved and analyzed the crystal structures, prepared the data, and participated in the writing of the manuscript.
-%% \end{description}
+[Fill this out with my publications]
 
 \tableofcontents
 \listoffigures
 \listoftables
-\printnomenclature
+%\printnomenclature
 
 \mainmatter
 
-\include{chapter1/chapter1}
-\include{chapter2/chapter2}
-\include{chapter3/chapter3}
-\include{chapter4/chapter4}
-\include{chapter5/chapter5}
-\include{chapter6/chapter6}
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{chapter6}
 
 \end{document}
 
