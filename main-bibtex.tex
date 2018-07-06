@@ -1,0 +1,183 @@
+%%%%%%%%%%%% 
+%% Please rename this main-bibtex.tex file and the output PDF to
+%% [lastname_firstname_graduationyear]
+%% before submission.
+%%
+%% This .tex file is for use with BibTeX. Please use
+%% main.tex instead if you prefer BibLaTeX.
+%%%%%%%%%%%%
+
+\documentclass[12pt]{caltech_thesis}
+\usepackage[hyphens]{url}
+\usepackage{lipsum}
+\usepackage{graphicx}
+
+\usepackage{todonotes}
+
+%% Tentative: newtx for better-looking Times
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{bibunits}
+\defaultbibliographystyle{plainnat}
+\usepackage{enumitem}
+
+\begin{document}
+
+% Do remember to remove the square bracket!
+\title{[Thesis Title]}
+\author{[Your Full Name]}
+
+\degreeaward{[Name of Degree]}                 % Degree to be awarded
+\university{California Institute of Technology}    % Institution name
+\address{Pasadena, California}                     % Institution address
+\unilogo{caltech.png}                                 % Institution logo
+\copyyear{[Year Degree Conferred]}  % Year (of graduation) on diploma
+\defenddate{[Exact Date]}          % Date of defense
+
+\orcid{[Author ORCID]}
+
+%% IMPORTANT: Select ONE of the rights statement below.
+\rightsstatement{All rights reserved\todo[size=\footnotesize]{Choose one from the choices in the source code!! And delete this \texttt{todo} when you're done that. :-)}}
+% \rightsstatement{All rights reserved except where otherwise noted}
+% \rightsstatement{Some rights reserved. This thesis is distributed under a [name license, e.g., ``Creative Commons Attribution-NonCommercial-ShareAlike License'']}
+
+%%  If you'd like to remove the Caltech logo from your title page, simply remove the "[logo]" text from the maketitle command
+\maketitle[logo]
+%\maketitle
+
+\begin{acknowledgements}
+   [Add acknowledgements here. If you do not wish to add any to your thesis, you may simply add a blank titled Acknowledgements page.]
+\end{acknowledgements}
+
+\begin{abstract}
+   [This abstract must provide a succinct and informative condensation of your work. Candidates are welcome to prepare a lengthier abstract for inclusion in the dissertation, and provide a shorter one in the CaltechTHESIS record.]
+\end{abstract}
+
+\extrachapter{Published Content and Contributions}
+
+% List your publications and contributions here.
+% The list will be formatted according to \defaultbibliographystyle in the preamble. Use the "note" field instead of the "addendum" field to describe author's role.
+
+\begin{publishedcontent}%[iknowwhattodo]
+\nocite{Cahn:etal:2015,Cahn:etal:2016}
+\putbib[ownpubs-bibtex]
+\end{publishedcontent}
+
+Note that it's not possible to get an existing BibTeX style to sort in reverse chronological order without modifying the \texttt{.bst} file. If you want a reverse-ordered list, the easiest thing may be to do it manually with a \texttt{description} list; an example is given in the comments of the source code below.
+
+% \bigskip
+
+% \begin{description}[leftmargin=2em,labelindent=0pt,labelsep=0pt]
+% \SingleSpacing
+% \item[] Cahn, J.~K.~B., A.~Baumschlager, et al. (2016). ``Mutations in adenine-binding pockets enhance catalytic properties of NAD (P) H-dependent enzymes''. In: \emph{Protein Engineering Design and Selection} 19.1, pp.~31--38. \textsc{doi}: \texttt{10.1093/ protein/gzv057}.
+
+% \item[] Cahn, J.~K.~B., S. Brinkmann-Chen, et al. (2015). ``Cofactor specificity motifs and the induced fit mechanism in class I ketol-acid reductoisomerases''. In: \emph{Biochemical Journal} 468.3, pp.~475--484. \textsc{doi}: \texttt{10.1042/BJ20150183}.
+% \\J.K.B.C participated in the conception of the project, solved and analyzed the crystal structures, prepared the data, and participated in the writing of the manuscript.
+% \end{description}
+
+\tableofcontents
+\listoffigures
+\listoftables
+\printnomenclature
+
+\mainmatter
+
+\chapter{Introduction}
+Start off all chapters with \verb|chapter|. \index{chapter!numbered} \verb|\extrachapter| will give you an unnumbered chapter that's added to the Table of Contents. \index{chapter!unnumbered}
+
+Here's an example of a citation \citep{GMP81}. Here's another \citep{PP98}. These will appear in the big bibliography at the end of the thesis.
+\index{bibliography}
+
+If you're new to \LaTeX{} and would like to begin by learning the basics, please see our free online course available at:\\ \url{https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-1} \index{LaTeX@\LaTeX}
+
+You can define nomenclatures \index{nomenclature} as you talk about key terms in your thesis. So what's a galaxy? \nomenclature{Galaxy}{A system of stars independent from all other systems}
+
+
+\section{This is a Section}
+\lipsum[1-2]
+
+\begin{figure}[hbt!]
+\centering
+\includegraphics[width=.3\textwidth]{caltech.png}
+\caption{This is a figure}\label{fig:logo}
+\index{figures}
+\end{figure}
+
+\subsection{This is a subsection}
+
+\begin{table}[hbt!]
+\centering
+\begin{tabular}{ll}
+\hline
+Area & Count\\
+\hline
+North & 100\\
+South & 200\\
+East & 80\\
+West & 140\\
+\hline
+\end{tabular}
+\caption{This is a table}\label{tab:sample}
+\index{tables}
+\end{table}
+
+\lipsum[3] \nomenclature{Asteroid}{A very small planet ranging from 1,000 km to less than one km in diameter. Asteroids are found commonly around other larger planets}
+
+\lipsum[4-5]
+
+Here's an endnote.\endnote{Endnotes are notes that you can use to explain text in a document.}
+
+\section{This is Another Section}
+\lipsum[6-7]
+
+\chapter{This is the Second Chapter}
+
+% Use bibunit if using bibtex/natbib
+\begin{bibunit}  
+If you'd like to have separate bibliographies at the end of each chapter, put a \verb|bibunit| around the material of each chapter, passing in the bibliography style to use, then cite as usual -- e.g.~\citep{GMP81,Ful83}. Then do a \verb|\putbib| (with the .bib file to refer to) just before the \verb|bibunit| ends. \index{bibliography!by chapter}
+
+\renewcommand{\bibsection}{\section*{\refname}}
+\putbib[example]  % the .bib file for this chapter
+\end{bibunit}
+
+\chapter{This is the Third Chapter}
+
+%% If using bibtex (as opposed to biblatex), \publishedas takes TWO arguments
+\publishedas{ownpubs}{Cahn:etal:2016}
+
+% OR you can format this paragraph manually if you have too much trouble with the above command.
+% \begin{description}[leftmargin=2em,labelindent=0pt,labelsep=0pt]
+% \SingleSpacing
+% \item[] Cahn, J.~K.~B., S. Brinkmann-Chen, et al. (2015). ``Cofactor specificity motifs and the induced fit mechanism in class I ketol-acid reductoisomerases''. In: \emph{Biochemical Journal} 468.3, pp.~475--484. \textsc{doi}: \texttt{10.1042/BJ20150183}.
+% \end{description}
+
+
+[You can have chapters that were published as part of your thesis. The text style of the body should be single column, as it was submitted to the publisher, not formatted as the publisher did.]
+
+\chapter{This is the Fourth Chapter}
+\chapter{This is the Fifth Chapter}
+\chapter{This is the Sixth Chapter}
+\chapter{This is the Seventh Chapter}
+\chapter{This is the Eighth Chapter}
+
+\bibliographystyle{plainnat}
+\bibliography{example}
+
+\appendix
+
+\chapter{Questionnaire}
+\chapter{Consent Form}
+
+\printindex
+
+\theendnotes
+
+%% Pocket materials at the VERY END of thesis
+\pocketmaterial
+\extrachapter{Pocket Material: Map of Case Study Solar Systems}
+
+
+\end{document}
