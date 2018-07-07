@@ -4,6 +4,9 @@ FILENAME=eastwood_michael_2019
 
 all: $(FILENAME).pdf
 
+format:
+	biber --tool --configfile=biber.conf --collate --output-align --output-indent=4 --fixinits -O thesis.bib thesis.bib
+
 $(FILENAME).pdf: $(FILENAME).tex
 	latexmk -pdf $(FILENAME).tex
 
