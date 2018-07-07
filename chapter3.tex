@@ -585,7 +585,7 @@ adopted to deconvolve the PSF and produce the final sky maps.
     \label{fig:antenna-layout}
 \end{figure}
 
-\begin{figure*}[t]
+\begin{figure}[t]
     \begin{tabular}{c}
         \includegraphics[width=\textwidth]{figures/chapter3/psf+75} \\
         \includegraphics[width=\textwidth]{figures/chapter3/psf+45} \\
@@ -601,7 +601,7 @@ adopted to deconvolve the PSF and produce the final sky maps.
         Table~\ref{tab:summary}.
     }
     \label{fig:psf}
-\end{figure*}
+\end{figure}
 
 The OVRO-LWA is a 288-element interferometer located at OVRO near Big Pine, California
 \citep{hallinan_2017}.  The OVRO-LWA is a low-frequency instrument with instantaneous bandwidth
@@ -669,7 +669,7 @@ made for these diurnal gain fluctuations.
 
 \subsection{Primary Beam Measurements}\label{sec:beam}
 
-\begin{figure*}[t]
+\begin{figure}[t]
     \includegraphics[width=\textwidth]{figures/chapter3/beam}
     \caption{
         Empirical fits to the OVRO-LWA Stokes $I$ primary beam (the response of the $x$ and
@@ -680,7 +680,7 @@ made for these diurnal gain fluctuations.
         \S\ref{sec:beam}, and residuals for Cyg~A and Cas~A are in Figure~\ref{fig:scintillation}.
     }
     \label{fig:beam}
-\end{figure*}
+\end{figure}
 
 In order to generate wide-field images of the sky, the response of the antenna to the sky must be
 known. Drift-scanning interferometers like the OVRO-LWA can empirically measure their primary beam
@@ -702,7 +702,7 @@ Cyg~A and Cas~A can be seen in Figure~\ref{fig:scintillation}.
 
 \subsection{Ionospheric Conditions}\label{sec:ionosphere-conditions}
 
-\begin{figure*}[t]
+\begin{figure}[t]
     \includegraphics[width=\textwidth]{figures/chapter3/scintillation-refraction}
     \caption{
         Panels (a) and (b) show the measured apparent flux of Cyg~A and Cas~A at 36.528 MHz (red
@@ -714,7 +714,7 @@ Cyg~A and Cas~A can be seen in Figure~\ref{fig:scintillation}.
         true astronomical positions at 36.528 MHz (red line) and 73.152 MHz (blue line).
     }
     \label{fig:scintillation}
-\end{figure*}
+\end{figure}
 
 \begin{figure}[t]
     \includegraphics[width=\columnwidth]{figures/chapter3/vtec}
@@ -841,7 +841,7 @@ Cyg~A and Cas~A). The Sun is then peeled from each integration using direction-d
 
 \subsection{Flux Scale}
 
-\begin{figure*}[t]
+\begin{figure}[t]
     \includegraphics[width=\textwidth]{figures/chapter3/flux-scale}
     \caption{
         Measured fluxes (black points) of 11 sources plotted against the published spectra from
@@ -851,7 +851,7 @@ Cyg~A and Cas~A). The Sun is then peeled from each integration using direction-d
         \citep{2009AJ....138..838H}.
     }
     \label{fig:flux-scale}
-\end{figure*}
+\end{figure}
 
 The flux scale of the data was tied to the \citet{1977A&A....61...99B} spectrum of Cyg~A during gain
 calibration. However, gain calibration is also a function of the beam model and the spectrum used
@@ -872,104 +872,9 @@ the PB17 spectra cannot be extrapolated below 50 MHz.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}\label{sec:results}
 
-\begin{figure*}[ht]
-    \centering
-    \begin{tabular}{c}
-        \includegraphics[height=0.32\textheight]{figures/chapter3/spw04} \\
-        \includegraphics[height=0.32\textheight]{figures/chapter3/spw06} \\
-    \end{tabular}
-    \caption{
-        These eight panels illustrate (with a Mollweide projection and logarithmic color scale) the
-        eight full-sky maps generated with Tikhonov-regularized $m$-mode analysis imaging and the
-        OVRO-LWA.  Each map covers the sky north of $\delta=-30^\circ$ with angular resolution of
-        $\sim15\arcmin$. Eight bright sources have been removed from each map (Cyg~A, Cas~A, Vir~A,
-        Tau~A, Her~A, Hya~A, 3C~123, and 3C~353). The small blank region near $l=+45.7^\circ$,
-        $b=-47.9^\circ$ corresponds to the location of the Sun during the observation period.  A
-        detailed summary of the properties of each map is given in Table~\ref{tab:summary}.
-    }
-    \label{fig:channel-maps}
-\end{figure*}
-
-\addtocounter{figure}{-1}
-\begin{figure*}[p]
-    \centering
-    \begin{tabular}{c}
-        \includegraphics[height=0.32\textheight]{figures/chapter3/spw08} \\
-        \includegraphics[height=0.32\textheight]{figures/chapter3/spw10} \\
-        \includegraphics[height=0.32\textheight]{figures/chapter3/spw12} \\
-    \end{tabular}
-    \caption{
-        continued
-    }
-\end{figure*}
-
-\addtocounter{figure}{-1}
-\begin{figure*}[p]
-    \centering
-    \begin{tabular}{c}
-        \includegraphics[height=0.32\textheight]{figures/chapter3/spw14} \\
-        \includegraphics[height=0.32\textheight]{figures/chapter3/spw16} \\
-        \includegraphics[height=0.32\textheight]{figures/chapter3/spw18} \\
-    \end{tabular}
-    \caption{
-        continued
-    }
-\end{figure*}
-
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=\textwidth]{figures/chapter3/ovro-lwa-sky-map.pdf}
-    \caption{
-        This Mollweide-projected map is constructed from three maps of the sky at 36.528~MHz (red),
-        52.224~MHz (green), and 73.152~MHz (blue). The maps are scaled by $\nu^{2.5}$ before
-        combining, and the color scale is logarithmic (as in Figure~\ref{fig:channel-maps}).
-        Therefore, regions with a spectral index of $-2.5$ will tend to appear white, and regions
-        with a flatter spectral index will tend to appear blue.
-    }
-    \label{fig:three-color}
-\end{figure*}
-
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=\textwidth]{figures/chapter3/ovro-lwa-galactic-plane.pdf}
-    \caption{
-        Cutout of the galactic plane from Figure~\ref{fig:three-color}.
-    }
-    \label{fig:galactic-plane-cutout}
-\end{figure*}
-
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=\textwidth]{figures/chapter3/better-internal-spectral-index}
-    \caption{
-        Local spectral index measured between the 36.528~MHz map and the 73.152~MHz map estimated by
-        means of a local T--T plot. The color scale gives the spectral index, where blue is flat
-        spectrum and red is steep spectrum. The contours give the coefficient of determination
-        ($R^2$) for the linear fit to the local T--T plot. If $R^2$ is low, the quality of the fit
-        is low, and the estimated spectral index is unreliable. This can be due to either
-        insufficient dynamic range in the local T--T plot or multiple emission mechanisms operating
-        in close proximity. Consequently, $R^2$ tends to drop at higher galactic latitudes (due to
-        dynamic range) and near \ion{H}{2} regions in the galactic plane (due to multiple emission
-        mechanisms).
-    }
-    \label{fig:internal-spectral-index}
-\end{figure*}
-
-\begin{figure*}[t]
-    \centering
-    \includegraphics[height=0.32\textheight]{figures/chapter3/better-haslam-spectral-index}
-    \caption{
-        Local spectral index measured between the 73.152~MHz OVRO-LWA map and the reprocessed
-        408~MHz Haslam map \citep{2015MNRAS.451.4311R}.  The color scale gives the spectral index,
-        where blue is flat spectrum and red is steep spectrum. The contours give the coefficient of
-        determination ($R^2$) for the linear fit to the local T--T plot. See the caption of
-        Figure~\ref{fig:internal-spectral-index} for more details about the coefficient of
-        determination.
-    }
-    \label{fig:haslam-spectral-index}
-\end{figure*}
-
-\begin{table*}[t]
+\bgroup
+\def\arraystretch{1.5}
+\begin{sidewaystable}[p]
     \centering
     \begin{tabular}{cccccccccc}
         \hline
@@ -1014,7 +919,146 @@ the PB17 spectra cannot be extrapolated below 50 MHz.
     \end{tabular}
     \caption{A summary of the generated all-sky maps.}
     \label{tab:summary}
-\end{table*}
+\end{sidewaystable}
+\egroup
+
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3/spw04}
+    \caption{
+        These eight panels illustrate (with a Mollweide projection and logarithmic color scale) the
+        eight full-sky maps generated with Tikhonov-regularized $m$-mode analysis imaging and the
+        OVRO-LWA.  Each map covers the sky north of $\delta=-30^\circ$ with angular resolution of
+        $\sim15\arcmin$. Eight bright sources have been removed from each map (Cyg~A, Cas~A, Vir~A,
+        Tau~A, Her~A, Hya~A, 3C~123, and 3C~353). The small blank region near $l=+45.7^\circ$,
+        $b=-47.9^\circ$ corresponds to the location of the Sun during the observation period.  A
+        detailed summary of the properties of each map is given in Table~\ref{tab:summary}.
+    }
+    \label{fig:channel-maps}
+\end{sidewaysfigure}
+
+\addtocounter{figure}{-1}
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3/spw06}
+    \caption{
+        continued
+    }
+    \label{fig:channel-maps}
+\end{sidewaysfigure}
+
+\addtocounter{figure}{-1}
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3/spw08}
+    \caption{
+        continued
+    }
+    \label{fig:channel-maps}
+\end{sidewaysfigure}
+
+\addtocounter{figure}{-1}
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3/spw10}
+    \caption{
+        continued
+    }
+    \label{fig:channel-maps}
+\end{sidewaysfigure}
+
+\addtocounter{figure}{-1}
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3/spw12}
+    \caption{
+        continued
+    }
+    \label{fig:channel-maps}
+\end{sidewaysfigure}
+
+\addtocounter{figure}{-1}
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3/spw14}
+    \caption{
+        continued
+    }
+    \label{fig:channel-maps}
+\end{sidewaysfigure}
+
+\addtocounter{figure}{-1}
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3/spw16}
+    \caption{
+        continued
+    }
+    \label{fig:channel-maps}
+\end{sidewaysfigure}
+
+\addtocounter{figure}{-1}
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3/spw18}
+    \caption{
+        continued
+    }
+    \label{fig:channel-maps}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3/ovro-lwa-sky-map.pdf}
+    \caption{
+        This Mollweide-projected map is constructed from three maps of the sky at 36.528~MHz (red),
+        52.224~MHz (green), and 73.152~MHz (blue). The maps are scaled by $\nu^{2.5}$ before
+        combining, and the color scale is logarithmic (as in Figure~\ref{fig:channel-maps}).
+        Therefore, regions with a spectral index of $-2.5$ will tend to appear white, and regions
+        with a flatter spectral index will tend to appear blue.
+    }
+    \label{fig:three-color}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3/ovro-lwa-galactic-plane.pdf}
+    \caption{
+        Cutout of the galactic plane from Figure~\ref{fig:three-color}.
+    }
+    \label{fig:galactic-plane-cutout}
+\end{sidewaysfigure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3/better-internal-spectral-index}
+    \caption{
+        Local spectral index measured between the 36.528~MHz map and the 73.152~MHz map estimated by
+        means of a local T--T plot. The color scale gives the spectral index, where blue is flat
+        spectrum and red is steep spectrum. The contours give the coefficient of determination
+        ($R^2$) for the linear fit to the local T--T plot. If $R^2$ is low, the quality of the fit
+        is low, and the estimated spectral index is unreliable. This can be due to either
+        insufficient dynamic range in the local T--T plot or multiple emission mechanisms operating
+        in close proximity. Consequently, $R^2$ tends to drop at higher galactic latitudes (due to
+        dynamic range) and near \ion{H}{2} regions in the galactic plane (due to multiple emission
+        mechanisms).
+    }
+    \label{fig:internal-spectral-index}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter3/better-haslam-spectral-index}
+    \caption{
+        Local spectral index measured between the 73.152~MHz OVRO-LWA map and the reprocessed
+        408~MHz Haslam map \citep{2015MNRAS.451.4311R}.  The color scale gives the spectral index,
+        where blue is flat spectrum and red is steep spectrum. The contours give the coefficient of
+        determination ($R^2$) for the linear fit to the local T--T plot. See the caption of
+        Figure~\ref{fig:internal-spectral-index} for more details about the coefficient of
+        determination.
+    }
+    \label{fig:haslam-spectral-index}
+\end{figure}
 
 We constructed eight sky maps using Tikhonov-regularized $m$-mode analysis imaging and CLEANing with
 observations from the OVRO-LWA. Each map is individually shown in Figure~\ref{fig:channel-maps},
@@ -1100,7 +1144,7 @@ $R^2$ is larger, but the interpretation must still generally be restricted to th
 
 \subsubsection{LWA1 Low Frequency Sky Survey}
 
-\begin{figure*}[t]
+\begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{figures/chapter3/lwa1}
     \caption{
@@ -1111,7 +1155,7 @@ $R^2$ is larger, but the interpretation must still generally be restricted to th
         Tau A are masked due to the fact that they are subtracted from the OVRO-LWA maps.
     }
     \label{fig:lwa1-comparison}
-\end{figure*}
+\end{figure}
 
 The LWA1 Low Frequency Sky Survey \citep[LLFSS;][]{2017MNRAS.469.4537D} produced nine maps of the
 sky between 35 and 80~MHz. Six of these maps are interior to the frequency range spanned by this
@@ -1152,9 +1196,9 @@ increased robustness associated with estimating spectral indices with a larger f
 
 \subsubsection{Guzm\'{a}n 45 MHz Map}
 
-\begin{figure*}[t]
+\begin{figure}[t]
     \centering
-    \includegraphics[height=0.32\textheight]{figures/chapter3/guzman}
+    \includegraphics[width=\textwidth]{figures/chapter3/guzman}
     \caption{
         This Mollweide-projected map compares the fractional difference between the Guzm\'{a}n 45
         MHz map and the OVRO-LWA maps (Figure~\ref{fig:channel-maps}) interpolated to 45~MHz
@@ -1165,7 +1209,7 @@ increased robustness associated with estimating spectral indices with a larger f
         Guzm\'{a}n map.
     }
     \label{fig:guzman-comparison}
-\end{figure*}
+\end{figure}
 
 The Guzm\'{a}n 45 MHz map \citep{2011A&A...525A.138G} is compiled from a southern hemisphere survey
 \citep{1997A&AS..124..315A} and a northern hemisphere survey \citep{1999A&AS..140..145M}, with a
@@ -1193,13 +1237,13 @@ Figure~\ref{fig:haslam-spectral-index}.
 
 \subsection{The Ionosphere}\label{sec:ionosphere}
 
-\begin{figure*}[t]
+\begin{figure}[t]
     \centering
     \begin{tabular}{cc}
-        \includegraphics[width=\columnwidth]{figures/chapter3/scintillation-4} &
-        \includegraphics[width=\columnwidth]{figures/chapter3/scintillation-18} \\
-        \includegraphics[width=\columnwidth]{figures/chapter3/refraction-4} &
-        \includegraphics[width=\columnwidth]{figures/chapter3/refraction-18} \\
+        \includegraphics[width=0.45\textwidth]{figures/chapter3/scintillation-4} &
+        \includegraphics[width=0.45\textwidth]{figures/chapter3/scintillation-18} \\
+        \includegraphics[width=0.45\textwidth]{figures/chapter3/refraction-4} &
+        \includegraphics[width=0.45\textwidth]{figures/chapter3/refraction-18} \\
     \end{tabular}
     \caption{
         Illustration of the corrupting influence of the ionosphere at 36.528~MHz (left column)
@@ -1212,9 +1256,9 @@ Figure~\ref{fig:haslam-spectral-index}.
         Figure~\ref{fig:scintillation}.
     }
     \label{fig:ionospheric-simulations}
-\end{figure*}
+\end{figure}
 
-\begin{figure*}[t]
+\begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{figures/chapter3/3C134}
     \caption{
@@ -1226,7 +1270,7 @@ Figure~\ref{fig:haslam-spectral-index}.
         refractive offsets.
     }
     \label{fig:3C134}
-\end{figure*}
+\end{figure}
 
 One of the key assumptions made by $m$-mode analysis is that the sky is static.  We assume that the
 only time-dependent behavior is the rotation of the Earth, which slowly rotates the sky through the
@@ -1340,7 +1384,7 @@ maps is mild, amounting to a 0.5\% error in the flux of the source.
 
 \subsection{Terrestrial Interference and Pickup}\label{sec:rfi}
 
-\begin{figure*}[t]
+\begin{figure}[t]
     \includegraphics[width=\textwidth]{figures/chapter3/smeared}
     \caption{
         Terrestrial sources of correlated noise that are apparent after averaging the visibilities
@@ -1360,11 +1404,11 @@ maps is mild, amounting to a 0.5\% error in the flux of the source.
         v_\text{terrestrial}\|/(\|\b B\|\|\b v_\text{terrestrial}\|) \sim 0.035$.
     }
     \label{fig:fitrfi}
-\end{figure*}
+\end{figure}
 
-\begin{figure*}[t]
+\begin{figure}[t]
     \centering
-    \includegraphics[height=0.32\textheight]{figures/chapter3/rings}
+    \includegraphics[width=\textwidth]{figures/chapter3/rings}
     \caption{
         A Mollweide-projected image of the artifacts introduced to the $m$-mode analysis maps by the
         three terrestrial sources shown in Figure~\ref{fig:fitrfi}. Because these sources are not
@@ -1373,7 +1417,7 @@ maps is mild, amounting to a 0.5\% error in the flux of the source.
         artifact of the pixelization).
     }
     \label{fig:rings}
-\end{figure*}
+\end{figure}
 
 When writing Equation~\ref{eq:basic-imaging}, it is implicitly assumed that the correlated voltage
 fluctuations measured between pairs of antennas are exclusively generated by astronomical sources of
