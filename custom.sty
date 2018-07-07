@@ -1,3 +1,19 @@
+% Don't add extraneous bibliography entries to the table of contents!
+% They're not even indented correctly...
+\newcommand\myputbib[1]{%
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+    \putbib[#1]
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+}
+
+\newcommand{\mypublishedas}[2]{
+    \begin{bibunit}
+        \renewcommand{\bibsection}{}
+        \renewcommand{\bibnumfmt}[1]{}
+        \nocite{#2}\myputbib[#1]
+    \end{bibunit}
+}
+
 % Definitions stolen from aastex
 \newcommand\ion[2]{#1$\;${%
 \ifx\@currsize\normalsize\small \else
