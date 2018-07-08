@@ -30,17 +30,18 @@ Ia supernova explosions \citep[e.g.,][]{1998AJ....116.1009R,1999ApJ...517..565P}
 galaxy surveys \citep[e.g.,][]{2001MNRAS.328.1039C}, we have a coherent and consistent understanding
 of the expansion history of the universe. Consequently the redshift $z$ is commonly used as a proxy
 for distance. The higher the redshift, the longer the photon has been in transit, and the further
-its origin.
+its origin. However, in order to measure the redshift, the measured photon must originate from a
+known spectral feature.
 
-Despite its abundance, neutral hydrogen has few low energy transitions that allow it to be traced.
-Consequently astronomers resort to using a hyperfine structure transition arising from the magnetic
-dipole interaction between proton and electron. This interaction leads to a slight energy difference
-between the spin-symmetric state and the spin-antisymmetric state. The energy difference is $hc /
-(21\,\text{cm})$ where $h$ is Planck's constant, and $c$ is the speed of light. Consequently when a
-Hydrogen atom transitions from the spin-symmetric state (higher energy) to the spin-antisymmetric
-state (lower energy), it emits a photon with a wavelength of $21\,\text{cm}$ or a frequency of
-$1420\,\text{MHz}$. The redshift $z$ of a 21~cm photon is therefore computed from the observed
-frequency $\nu$ as
+Despite its abundance, neutral hydrogen (\ion{H}{1}) has few low energy transitions that allow it to
+be traced.  Consequently astronomers resort to using a hyperfine structure transition arising from
+the magnetic dipole interaction between proton and electron. This interaction leads to a slight
+energy difference between the spin-symmetric state and the spin-antisymmetric state. The energy
+difference is $hc / (21\,\text{cm})$ where $h$ is Planck's constant, and $c$ is the speed of light.
+Consequently when a Hydrogen atom transitions from the spin-symmetric state (higher energy) to the
+spin-antisymmetric state (lower energy), it emits a photon with a wavelength of $21\,\text{cm}$ or a
+frequency of $1420\,\text{MHz}$. The redshift $z$ of a 21~cm photon is therefore computed from the
+observed frequency $\nu$ as
 \begin{equation}
     z = \frac{1420\,\text{MHz}}{\nu} - 1\,.
 \end{equation}
@@ -55,23 +56,10 @@ frequency $\nu$ as
     \label{fig:pritchard-global-signal}
 \end{figure}
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=\textwidth]{figures/chapter1/history-of-the-universe/history-of-the-universe}
-    \caption{
-        A radial map of the universe. Known quasars are marked with circles and galaxies are marked
-        with stars. The range of comoving distances probed by the OVRO-LWA and HERA are marked with a red
-        rectangle and a blue rectangle respectively.
-    }
-    \label{fig:history-of-the-universe}
-\end{figure}
-
-For much of the universe's history, the intergalactic medium (IGM) is ionized or in radiative
-equilibrium with the CMB.
-
-
-\begin{equation}
-    T_{21} \approx 27 \left[
+Neutral hydrogen in the early universe is illuminated by the CMB. A calculation of the radiative
+transfer \citep{2012RPPh...75h6901P} yields (neglecting the contribution of peculiar velocities):
+\begin{equation}\label{eq:radiative-transfer-equation}
+    \Delta T_{21} \approx 27 \left[
         \overbrace{
             x_\text{HI} (1+\delta)
             \left(\frac{\Omega_b h}{0.0327}\right)
@@ -81,10 +69,73 @@ equilibrium with the CMB.
         \overbrace{
             \left(\frac{T_\text{spin} - T_\text{CMB}(z)}{T_\text{spin}}\right)
         }^{\text{relative temperature}}
-    \right] \, {\rm mK}
+    \right] \, {\rm mK} \,,
 \end{equation}
-\citep{2012RPPh...75h6901P}
+where $\Delta T_{21}$ is the expected 21~cm brightness temperature. If $\Delta T_{21} > 0$, it
+appears in emission against the CMB. If $\Delta T_{21} < 0$, it appears in absorption. $x_\text{HI}$
+is the neutral fraction of hydrogen, $\delta$ is the local baryon overdensity, $h$ is the Hubble
+constant, $\Omega_b$ is the density parameter for baryons, $\Omega_m$ is the density parameter for
+matter, $T_\text{spin}$ is the spin temperature (excitation temperature of the 21~cm transition),
+and $T_\text{CMB}(z) = 2.73\,(1+z)\,{\rm K}$ is the temperature of the CMB at the redshift $z$.
 
+Equation~\ref{eq:radiative-transfer-equation} is fundamental to determining what can be learned
+through detecting the 21~cm transition at high redshift. First, if the spin temperature is greater
+than the CMB temperature, the 21~cm transition appears in emission. However, the signal saturates at
+high spin temperatures. If the spin temperature is less than the CMB temperature, the 21~cm
+transition appears in absorption with no saturation point. Second, the amplitude of the signal is
+proportional to the total quantity of \ion{H}{1}. Therefore, in order for there to be a measurable
+21~cm signal, the universe must be predominantly neutral, and the transition must not be in
+radiative equilibrium with the CMB. An example prediction for $\Delta T_{21}$ can be seen in
+Figure~\ref{fig:pritchard-global-signal}.
+
+There are three relevant temperatures that affect the spin temperature: $T_\text{gas}$, the
+temperature of the gas, $T_\text{CMB}$, the temperature of the CMB, and $T_{\text{Ly}\alpha}$, the
+color temperature of the Ly$\alpha$ radiation from early star formation. More exotic theories might
+also include the temperature of the dark matter, $T_\text{DM}$. Generally,  the Ly$\alpha$ photons
+scatter through the intergalactic medium (IGM), which sets $T_{\text{Ly}\alpha} = T_\text{gas}$. In
+the absence of any heating mechanisms, the matter and radiation are both cooling adiabatically with
+the expansion of the universe.  The adiabatic indices are $\gamma = 5/3$ and $\gamma = 4/3$
+respectively, so the matter cools faster than the radiation. Consequently, the 21~cm transition
+tends to appear in absorption prior to early star formation, and in emission after the IGM has been
+heated.
+
+While there are currently few observational constraints on the 21~cm brightness temperature,
+fiducial theoretical models tell the following story\todo{add a reference here}.  During the dark
+ages ($z \gtrsim 40$) the density of the universe is high enough for collisions between hydrogen
+atoms to dominate the excitation of the 21~cm transition.  Consequently during this time
+$T_\text{spin} = T_\text{gas}$, and the 21~cm transition appears in absorption against the CMB.
+Later ($z \sim 30$), as the mean density of the universe decreases, collisions become more
+infrequent and the 21~cm transition is instead excited by CMB photons. During this time the 21~cm
+signal vanishes because $T_\text{spin} = T_\text{CMB}$.
+
+With the onset of star formation in the universe, the IGM is inundated with Ly$\alpha$ photons.
+These Ly$\alpha$ photons scatter through the IGM. With the absorption and re-emission of a
+Ly$\alpha$ photon, a hydrogen atom can transition between the spin-symmetric state and the
+spin-antisymmetric state. This process, called the Wouthuysen-Field effect, sets the relative
+abundance of \ion{H}{1} in each state such that $T_\text{spin} = T_{\text{Ly}\alpha} = T_\text{gas}$
+\citep{1952AJ.....57R..31W,1958PIRE...46..240F}. Therefore, after early star formation begins, the
+21~cm transition reappears in absorption against the CMB.
+
+However, as star formation progresses, the gas in the IGM is heated. X-rays are particularly
+effective at heating the IGM due to their large mean-free path. Consequently the heating rate is
+sensitive to, for example, the number density, luminosity and spectral hardness of X-ray binaries.
+Eventually the gas is heated above the temperature of the CMB, bringing the 21~cm transition into
+emission, and eventually the signal saturates. At this point the 21~cm
+transition begins to disappear with the onset of reionization at $z \lesssim 15$ due to the
+disappearance of neutral hydrogen. A prediction of the spectral distortion this process applies to
+the low-frequency ($\nu < 200\,\text{MHz}$) CMB spectrum can be seen in the bottom panel of
+Figure~\ref{fig:pritchard-global-signal}.
+
+
+
+
+
+
+
+
+
+For much of the universe's history, the intergalactic medium (IGM) is ionized or in radiative
+equilibrium with the CMB.
 
 
 
@@ -112,6 +163,29 @@ transition:
 Both types require exquisite calibration and roughly five orders of dynamic range against the
 blindingly bright foreground radio emission, but are subject to different (but not exclusively
 different) systematic instrumental errors.
+
+Likely the most substantial challenge faced by both classes of experiments is the existence of
+foreground radio emission. At large angular scales $\theta \gg 1\arcdeg$, the radio sky is dominated
+by galactic synchrotron emission generated by relativistic electrons spiralling around galactic
+magnetic field lines. The EDGES experiment, in the southern hemisphere, measured the brightness
+temperature of this emission to be \citep{2017MNRAS.464.4995M}
+\begin{equation}
+    T \sim 300\,{\rm K} \times \left(\frac{\nu}{150\,{\rm MHz}}\right)^{-2.6}\,.
+\end{equation}
+At smaller angular scales $\theta \lesssim 1\arcdeg$, the galactic emission
+gives way to a sea of active galactic nuclei (AGN), the brightest of which, Cyg A, has a flux
+$>15,000\,\text{Jy}$ at frequencies $<80\,\text{MHz}$ \citep{1977A&A....61...99B}.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter1/history-of-the-universe/history-of-the-universe}
+    \caption{
+        A radial map of the universe. Known quasars are marked with circles and galaxies are marked
+        with stars. The range of comoving distances probed by the OVRO-LWA and HERA are marked with a red
+        rectangle and a blue rectangle respectively.
+    }
+    \label{fig:history-of-the-universe}
+\end{figure}
 
 \begin{figure}[t]
     \centering

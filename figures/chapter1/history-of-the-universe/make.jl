@@ -59,7 +59,7 @@ function go()
     rione  = vline_and_label(   6, L"\textrm{reionization ends?}")
 
     plot_and_label( 7.085, 0.90, ".", L"\textrm{Mortlock et al. 2011}")
-    plot_and_label( 7.54,  0.75, ".", L"\textrm{Bañados et al. 2017}")
+    plot_and_label( 7.54,  0.75, ".", L"\textrm{Bañados et al. 2018}")
     plot_and_label( 8.68,  0.60, "*", L"\textrm{Zitrin et al. 2015}")
     plot_and_label(11.09,  0.45, "*", L"\textrm{Oesch et al. 2016}")
 
