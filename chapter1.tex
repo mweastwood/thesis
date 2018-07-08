@@ -22,13 +22,72 @@ universe.  For nearby stars, this expansion factor is clearly too small to be co
 However, with the discovery of the first quasar by \citet{1963Natur.197.1040S} it soon became
 apparent that the stretching factor, the redshift $z$, can be $>10\%$. Today, the most distant known
 galaxies are so far away that the wavelength has more than doubled ($z > 1$) due to the expansion of
-the universe.
+the universe. \todo{list some known galaxies and their redshifts}
 
-list some known galaxies and their redshifts
+Due largely to careful and detailed work studying the CMB \citep[e.g.,][]{2016A&A...594A..25P}, Type
+Ia supernova explosions \citep[e.g.,][]{1998AJ....116.1009R,1999ApJ...517..565P}, and cosmological
+galaxy surveys \citep[e.g.,][]{2001MNRAS.328.1039C}, we have a coherent and consistent understanding
+of the expansion history of the universe. Consequently the redshift $z$ is commonly used as a proxy
+for distance. The higher the redshift, the longer the photon has been in transit, and the further
+its origin.
 
-Due largely to careful and detailed work studying the CMB, Type Ia supernova explosions, and
-cosmological galaxy surveys, we have a very detailed understanding of the expansion history of the
-universe.
+Despite its abundance, neutral hydrogen has few low energy transitions that allow it to be traced.
+Consequently astronomers resort to using a hyperfine structure transition arising from the magnetic
+dipole interaction between proton and electron. This interaction leads to a slight energy difference
+between the spin-symmetric state and the spin-antisymmetric state. The energy difference is $hc /
+(21\,\text{cm})$ where $h$ is Planck's constant, and $c$ is the speed of light. Consequently when a
+Hydrogen atom transitions from the spin-symmetric state (higher energy) to the spin-antisymmetric
+state (lower energy), it emits a photon with a wavelength of $21\,\text{cm}$ or a frequency of
+$1420\,\text{MHz}$. The redshift $z$ of a 21~cm photon is therefore computed from the observed
+frequency $\nu$ as
+\begin{equation}
+    z = \frac{1420\,\text{MHz}}{\nu} - 1\,.
+\end{equation}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter1/pritchard-2012-global-signal}
+    \caption{
+        Reproduced from \citet{2012RPPh...75h6901P}.
+        get a license to use this figure (hit an error, but email sent (7-7-2018))
+    }
+    \label{fig:pritchard-global-signal}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter1/history-of-the-universe/history-of-the-universe}
+    \caption{
+        A radial map of the universe. Known quasars are marked with circles and galaxies are marked
+        with stars. The range of comoving distances probed by the OVRO-LWA and HERA are marked with a red
+        rectangle and a blue rectangle respectively.
+    }
+    \label{fig:history-of-the-universe}
+\end{figure}
+
+For much of the universe's history, the intergalactic medium (IGM) is ionized or in radiative
+equilibrium with the CMB.
+
+
+\begin{equation}
+    T_{21} \approx 27 \left[
+        \overbrace{
+            x_\text{HI} (1+\delta)
+            \left(\frac{\Omega_b h}{0.0327}\right)
+        }^{\text{quantity of HI}}
+        \left(\frac{\Omega_m}{0.307}\right)^{-1/2}
+        \left(\frac{1+z}{10}\right)^{1/2} \linebreak \times
+        \overbrace{
+            \left(\frac{T_\text{spin} - T_\text{CMB}(z)}{T_\text{spin}}\right)
+        }^{\text{relative temperature}}
+    \right] \, {\rm mK}
+\end{equation}
+\citep{2012RPPh...75h6901P}
+
+
+
+
+
 
 Given knowledge of the
 original wavelength of the photon, and the expansion history of the universe, we can calculate how
