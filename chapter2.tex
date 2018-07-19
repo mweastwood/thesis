@@ -1,4 +1,6 @@
-\chapter{The Owens Valley Radio Observatory Long Wavelength Array}
+\chapter{A Path Towards Calibration of the OVRO-LWA}
+
+\section{Design and Construction of the OVRO-LWA}
 
 \begin{bibunit}
 
@@ -48,20 +50,12 @@ illustrate the improvement in angular resolution associated with using these lon
 The OVRO-LWA hosts the LEDA correlator \citep{2015JAI.....450003K}, which performs full
 cross-correlation of 512 input signals.
 
+Paragraph on antenna
 
-\section{The Analog Receivers}
+Paragraph on receivers
 
+Paragraph on correlator
 
-
-
-
-
-
-\section{The Digital Correlator}
-
-
-
-\section{The All-Sky Transient Monitor}
 
 During observations, data is streamed from the LEDA correlator to the All-Sky Transient Monitor
 (ASTM), which houses the compute nodes used for post-processing, imaging, and the analysis completed
@@ -70,10 +64,17 @@ in this thesis.
 ASTM is composed of 10 identical nodes.\todo{Fill out specs once ASTM is back online....}
 
 
+There are two complementary software pipelines that service the scientific goals of the OVRO-LWA:
+\begin{enumerate}
+    \item A widefield snapshot imaging pipeline that images the entire visible hemisphere every
+        13\,s.
+    \item A novel approach specialized for drift-scanning interferometers that can image the entire
+        sky (above a limiting declination) in a single synthesis imaging step.
+\end{enumerate}
+The latter pipeline will be discussed in considerable depth in Chapters~\ref{chapter3} and
+\ref{chapter4}.
 
-
-
-\section{Gain Calibration}
+\section{Calibration of a Low-Frequency Interferometer}
 
 Gain calibration amounts to determining the optimal set of Jones matrices $G_i$ for each antenna $i$
 such that
@@ -161,7 +162,7 @@ redundant-calibration routine).\footnote{
     optimistic about this approach.
 }
 
-\section{Source Removal and Peeling}
+\section{Source Removal and Direction-Dependent Calibration}
 
 
 Because the OVRO-LWA antenna layout is optimized for sidelobe levels in snapshot imaging, the
