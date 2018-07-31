@@ -40,10 +40,10 @@ be traced.  Due to this limitation, astronomers resort to using a hyperfine stru
 arising from the magnetic dipole interaction between proton and electron. This interaction leads to
 a slight energy difference between the spin-symmetric state and the spin-antisymmetric state. The
 energy difference is $hc / (21\,\text{cm})$ where $h$ is Planck's constant, and $c$ is the speed of
-light.  When a Hydrogen atom transitions from the spin-symmetric state (higher energy) to the
-spin-antisymmetric state (lower energy), it emits a photon with a wavelength of $21\,\text{cm}$ or a
-frequency of $1420\,\text{MHz}$. The redshift $z$ of a 21~cm photon is therefore computed from the
-observed frequency $\nu$ as
+light.  When a Hydrogen atom transitions from the spin-symmetric state (higher energy; $F=1$) to the
+spin-antisymmetric state (lower energy; $F=0$), it emits a photon with a wavelength of
+$21\,\text{cm}$ or a frequency of $1420\,\text{MHz}$. The redshift $z$ of a 21~cm photon is
+therefore computed from the observed frequency $\nu$ as
 \begin{equation}
     z = \frac{1420\,\text{MHz}}{\nu} - 1\,.
 \end{equation}
@@ -61,8 +61,14 @@ observed frequency $\nu$ as
     \label{fig:pritchard-global-signal}
 \end{figure}
 
-Neutral hydrogen in the early universe is illuminated by the CMB. A calculation of the radiative
-transfer \citep{2012RPPh...75h6901P} yields (neglecting the contribution of peculiar velocities):
+The 21\,cm transition is exceptionally weak.  The half-life of a neutral hydrogen atom in the $F=1$
+state is over 10\,Myr.  However, the early universe following recombination is almost entirely
+composed of neutral hydrogen. When \ion{H}{1} is illuminated by the CMB, a portion of the incident
+photons are 21\,cm photons. These photons can be absorbed by a hydrogen atom in the $F=0$ state, or
+stimulate the emission of 21\,cm photon from a hydrogen atom in the $F=1$ state.  A careful
+calculation of the radiative transfer for a clump of atomic hydrogen gas illuminated by the CMB at
+the redshift $z$ yields \citep[neglecting the contribution of peculiar
+velocities;][]{2012RPPh...75h6901P}
 \begin{equation}\label{eq:radiative-transfer-equation}
     \Delta T_{21} \approx 27 \left[
         \overbrace{
@@ -105,7 +111,7 @@ tends to appear in absorption prior to early star formation, and in emission aft
 heated.
 
 While there are currently few observational constraints on the 21~cm brightness temperature,
-fiducial theoretical models tell the following story\todo{add a reference here}.  During the dark
+fiducial theoretical models tell the following story \citep{2012RPPh...75h6901P}.  During the dark
 ages ($z \gtrsim 40$) the density of the universe is high enough for collisions between hydrogen
 atoms to dominate the excitation of the 21~cm transition.  Consequently during this time
 $T_\text{spin} = T_\text{gas}$, and the 21~cm transition appears in absorption against the CMB.
@@ -113,13 +119,13 @@ Later ($z \sim 30$), as the mean density of the universe decreases, collisions b
 infrequent and the 21~cm transition is instead excited by CMB photons. During this time the 21~cm
 signal vanishes because $T_\text{spin} = T_\text{CMB}$.
 
-With the onset of star formation in the universe, the IGM is inundated with Ly$\alpha$ photons.
-These Ly$\alpha$ photons scatter through the IGM. With the absorption and re-emission of a
-Ly$\alpha$ photon, a hydrogen atom can transition between the spin-symmetric state and the
-spin-antisymmetric state. This process, called the Wouthuysen-Field effect, sets the relative
-abundance of \ion{H}{1} in each state such that $T_\text{spin} = T_{\text{Ly}\alpha} = T_\text{gas}$
-\citep{1952AJ.....57R..31W,1958PIRE...46..240F}. Therefore, after early star formation begins, the
-21~cm transition reappears in absorption against the CMB.
+With the onset of star formation in the universe, the Cosmic Dawn, the IGM is inundated with
+Ly$\alpha$ photons.  These Ly$\alpha$ photons scatter through the IGM. With the absorption and
+re-emission of a Ly$\alpha$ photon, a hydrogen atom can transition between the spin-symmetric state
+and the spin-antisymmetric state. This process, called the Wouthuysen-Field effect, sets the
+relative abundance of \ion{H}{1} in each state such that $T_\text{spin} = T_{\text{Ly}\alpha} =
+T_\text{gas}$ \citep{1952AJ.....57R..31W,1958PIRE...46..240F}. Therefore, after early star formation
+begins, the 21~cm transition reappears in absorption against the CMB.
 
 However, as star formation progresses, the gas in the IGM is heated. X-rays are particularly
 effective at heating the IGM due to their large mean-free path. Consequently the heating rate is
@@ -139,27 +145,13 @@ Figure~\ref{fig:pritchard-global-signal}.
 
 
 
-For much of the universe's history, the intergalactic medium (IGM) is ionized or in radiative
-equilibrium with the CMB.
-
-
-
-
-
-Given knowledge of the
-original wavelength of the photon, and the expansion history of the universe, we can calculate how
-long the photon must have been in flight.
-
-
-Today the CMB is a 2.7\,K sea of photons that permeates the universe. This radiation is constantly
-cooling due to the inexorable expansion of the universe.
 
 \todo{more context of other high-z probes of the universe}
 
-\todo{talk about Tzu-Ching's detection}
-
 
 \section{First Generation Experiments}
+
+\todo{talk about Tzu-Ching's detection}
 
 Ultimately, it may be possible to map the EoR and cosmic dawn through the 21\,cm line
 \citep{1997ApJ...475..429M}. In fact, this is called a ``main science goal'' for the future Square
@@ -225,9 +217,15 @@ instantaneous event, this initial EDGES deployment would have expected to see a 
 their sky-averaged spectrum. Therefore the authors converted the observed spectral smoothness to a
 lower bound on the duration of reionization $\Delta z > 0.06$. However, because no such feature was
 detected, the redshift of reionization was not constrained by this measurement.
+\todo{updated EDGES results from Raul}
 
-\todo{LEDA}
+The Large-aperture Experiment to Detect the Dark Age \citep[LEDA;][]{2018MNRAS.478.4193P} similarly
+equips low-frequency (30--85\,MHz) dipole antennas with radiometers. However, these antennas are
+embedded within the OVRO-LWA.  This configuration provides LEDA with additional leverage for
+self-calibration and foreground imaging, which may prove crucial for overcoming latent concerns
+about beam modeling and foreground removal in many global signal experiments.
 
+\citet{2017ApJ...845L..12S}
 \todo{SARAS}
 
 Although most global signal experiments are composed of isolated dipole antennas, there have been
@@ -294,13 +292,35 @@ Array (MWA).
 \todo{MWA}
 
 
+\todo{OVRO-LWA}
+
 \section{Observational Challenges}
 
-Likely the most substantial challenge faced by both classes of experiments is the existence of
-foreground radio emission. At large angular scales $\theta \gg 1\arcdeg$, the radio sky is dominated
-by galactic synchrotron emission generated by relativistic electrons spiralling around galactic
-magnetic field lines. The EDGES experiment, in the southern hemisphere, measured the brightness
-temperature of this emission to be \citep{2017MNRAS.464.4995M}
+The two most substantial challenges faced by all attempts to measure the cosmological 21\,cm
+emission are the blindingly bright foreground radio emission that must be subtracted, removed, or
+otherwise suppressed before the 21\,cm signal can be measured, and the instrumental calibration,
+which must be completed with a high degree of accuracy or else residual foreground emission could be
+confused with the cosmological 21\,cm signal.
+
+\subsection{Foreground Emission}
+
+Prior to the commencement of this thesis, the most commonly used model of the low-frequency sky was
+the Global Sky Model \citep[GSM;][]{2008MNRAS.388..247D}. The GSM is effectively an interpolation of
+previously published sky maps between 10\,MHz and 100\,GHz. However, the majority of the modern,
+high fidelity sky maps are located at frequencies above 1.4\,GHz. Below 1.4\,GHz, there is the
+408\,MHz Haslam map \citep{1981A&A...100..209H,1982A&AS...47....1H}, which covers the sky at
+1$\arcdeg$ resolution. At 45\,MHz, \citet{2011A&A...525A.138G} compiled a sky map from a northern
+and a southern hemisphere survey at 5$\arcdeg$ resolution
+\citep{1997A&AS..124..315A,1999A&AS..140..145M}. At 22\,MHz, \citet{1999A&AS..137....7R} mapped the
+sky from the Canadian Dominion Radio Astrophysical Observatory (DRAO) at 1$\arcdeg$--2$\arcdeg$
+resolution.
+
+
+
+At large angular scales $\theta \gg 1\arcdeg$, the low-frequency radio sky is dominated by galactic
+synchrotron emission generated by relativistic electrons spiraling around galactic magnetic field
+lines. The EDGES experiment, in the southern hemisphere, measured the brightness temperature of this
+emission at high galactic latitudes to be \citep{2017MNRAS.464.4995M}
 \begin{equation}\label{eq:edges-sky-spectrum}
     T \sim 300\,{\rm K} \times \left(\frac{\nu}{150\,{\rm MHz}}\right)^{-2.6}\,.
 \end{equation}
@@ -322,6 +342,10 @@ contamination in their measurements. This is a fine balancing routine, because i
 order is chosen to be too low, residual foreground contamination dominates the measurement. If the
 polynomial order is chosen to be too high, the 21~cm signal itself can be removed.
 
+\subsection{Instrumental Calibration}
+
+\section{Future Outlook}
+
 \begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{figures/chapter1/bowman-2018-absorption-trough}
@@ -337,18 +361,30 @@ polynomial order is chosen to be too high, the 21~cm signal itself can be remove
     \label{fig:bowman-absorption-trough}
 \end{figure}
 
-
-
-\section{Future Outlook}
-
-Recently, a significant development came from the first putative detection of the global 21~cm
+Recently, a significant development came from the first putative detection of the global 21\,cm
 signal by the EDGES experiment \citep{2018Natur.555...67B}. In this paper, the authors claimed a
 detection of an absorption feature centered at $78\,\text{MHz}$, which they attribute to early star
 formation and heating (see Figure~\ref{fig:bowman-absorption-trough}). If true, this detection is
-remarkable for its extreme $\sim500\,\text{mK}$ amplitude. In order to generate such a large
+remarkable for its extreme $\sim500\,\text{mK}$ amplitude.
+
+Currently there is skepticism in regards to how EDGES modeled and subtracted foreground emission
+\citep{2018arXiv180501421H}, but the result has nevertheless sparked a flurry of new ideas ranging
+from the absurd (i.e., $\Omega_m = \Omega_b$) to the exotic.
+
+The most plausible of these theories are new ideas for either cooling the IGM or positing a new
+source of radio emission originating from $z > 20$.
+
+In order to generate such a large
 absorption feature, either the IGM needs to be cooled below temperatures it is possible to reach
 purely through adiabatic cooling, or an additional source of radio emission must be present at $z >
 20$.
+
+
+\todo{HERA}
+
+
+
+\todo{SKA-low}
 
 
 \begin{figure}[t]
