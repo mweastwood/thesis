@@ -18,7 +18,7 @@ darkness of space within our expanding universe.
 As the universe expands, the wavelength of a photon is similarly stretched or redshifted (so-called
 because it gradually drifts to longer, redder wavelengths). Photons originating from a star 1000
 light-years away will travel through the universe for 1000 years before they are collected by our
-telescopes. Consequently we observe this star as it was 1000 years ago. However, during its travels,
+telescopes. Consequently, we observe this star as it was 1000 years ago. However, during its travels,
 the photon was also stretched by a small factor of $0.000007\%$ due to the expansion of the
 universe.  For nearby stars, this expansion factor is clearly too small to be conceivably measured.
 However, with the discovery of the first quasar by \citet{1963Natur.197.1040S} it soon became
@@ -30,17 +30,17 @@ expansion of the universe \citep{2011Natur.474..616M, 2015ApJ...810L..12Z, 2016A
 Due largely to careful and detailed work studying the CMB \citep[e.g.,][]{2016A&A...594A..25P}, Type
 Ia supernova explosions \citep[e.g.,][]{1998AJ....116.1009R,1999ApJ...517..565P}, and cosmological
 galaxy surveys \citep[e.g.,][]{2001MNRAS.328.1039C}, we have a coherent and consistent understanding
-of the expansion history of the universe. Consequently the redshift $z$ is commonly used as a proxy
+of the expansion history of the universe. The redshift $z$ is therefore commonly used as a proxy
 for distance. The higher the redshift, the longer the photon has been in transit, and the further
 its origin. However, in order to measure the redshift, the measured photon must originate from a
 known spectral feature.
 
 Despite its abundance, neutral hydrogen (\ion{H}{1}) has few low energy transitions that allow it to
-be traced.  Consequently astronomers resort to using a hyperfine structure transition arising from
-the magnetic dipole interaction between proton and electron. This interaction leads to a slight
-energy difference between the spin-symmetric state and the spin-antisymmetric state. The energy
-difference is $hc / (21\,\text{cm})$ where $h$ is Planck's constant, and $c$ is the speed of light.
-Consequently when a Hydrogen atom transitions from the spin-symmetric state (higher energy) to the
+be traced.  Due to this limitation, astronomers resort to using a hyperfine structure transition
+arising from the magnetic dipole interaction between proton and electron. This interaction leads to
+a slight energy difference between the spin-symmetric state and the spin-antisymmetric state. The
+energy difference is $hc / (21\,\text{cm})$ where $h$ is Planck's constant, and $c$ is the speed of
+light.  When a Hydrogen atom transitions from the spin-symmetric state (higher energy) to the
 spin-antisymmetric state (lower energy), it emits a photon with a wavelength of $21\,\text{cm}$ or a
 frequency of $1420\,\text{MHz}$. The redshift $z$ of a 21~cm photon is therefore computed from the
 observed frequency $\nu$ as
@@ -70,7 +70,7 @@ transfer \citep{2012RPPh...75h6901P} yields (neglecting the contribution of pecu
             \left(\frac{\Omega_b h}{0.0327}\right)
         }^{\text{quantity of HI}}
         \left(\frac{\Omega_m}{0.307}\right)^{-1/2}
-        \left(\frac{1+z}{10}\right)^{1/2} \linebreak \times
+        \left(\frac{1+z}{10}\right)^{1/2}
         \overbrace{
             \left(\frac{T_\text{spin} - T_\text{CMB}(z)}{T_\text{spin}}\right)
         }^{\text{relative temperature}}
@@ -151,27 +151,144 @@ original wavelength of the photon, and the expansion history of the universe, we
 long the photon must have been in flight.
 
 
-Today the CMB is a 2.7~K sea of photons that permeates the universe. This radiation is constantly
+Today the CMB is a 2.7\,K sea of photons that permeates the universe. This radiation is constantly
 cooling due to the inexorable expansion of the universe.
 
 \todo{more context of other high-z probes of the universe}
 
+\todo{talk about Tzu-Ching's detection}
+
 
 \section{First Generation Experiments}
 
-Introduce low frequency telescopes.
+Ultimately, it may be possible to map the EoR and cosmic dawn through the 21\,cm line
+\citep{1997ApJ...475..429M}. In fact, this is called a ``main science goal'' for the future Square
+Kilometer Array \citep[SKA;][]{2013ExA....36..235M}.  First generation experiments, however, are of
+somewhat more limited scope and therefore employ statistical averages to boost sensitivity to the
+high-redshift 21\,cm signal.
 
-Two different types of experiments are currently being designed to target the high-redshift 21~cm
-transition:
-\begin{enumerate}
-    \item single antenna experiments that are attempting to measure the sky-averaged 21~cm signal,
-        and
-    \item large interferometers that are attempting to measure the three-dimensional spatial power
-        spectrum of the 21~cm signal.
-\end{enumerate}
-Both types require exquisite calibration and roughly five orders of dynamic range against the
-blindingly bright foreground radio emission, but are subject to different (but not exclusively
-different) systematic instrumental errors.
+The two most popular statistics are the global average and the power spectrum. The global average or
+monopole averages over all lines of sight, mapping the 21\,cm brightness temperature within
+spherical shells of the universe:
+\begin{equation}
+    T^\text{global}_{21}(z) = \frac{1}{\Omega}\int \Delta T_{21}(\vec{r}) \, \d\Omega \,,
+\end{equation}
+where $T^\text{global}_{21}(z)$ is the global 21\,cm signal at the redshift $z$, $\Delta
+T_{21}(\vec{r})$ is the 21\,cm brightness temperature at the position $\vec{r}$, and the integral
+runs over solid angle $\Omega$.  The power spectrum statistic leverages the line of sight distance
+information from the observed frequency to measure the power in fluctuations on a given spatial
+scale within a volume of the universe:
+\begin{equation}
+    P_{21}(z; \vec{k}) =
+        \frac{1}{V}\left|
+        \int \Delta T_{21}(\vec{r}) \, e^{-i\vec{k}\cdot\vec{r}} \, \d^3r
+        \right|^2\,,
+\end{equation}
+where $P_{21}(z; \vec{k})$ is the three-dimensional spatial power spectrum at the redshift $z$ and
+wavevector $\vec{k})$, and the integral runs over the observed volume $V$ of the universe.
+Neglecting redshift-space distortions, the spatial power spectrum of 21\,cm fluctuations is expected
+to be isotropic. Therefore, typically the power spectrum $P(\vec{k})$ is averaged over the
+orientation of the wavevector $\vec{k}$. Instrumental considerations typically lead to different
+sources of systematic errors along the line of sight and perpendicular to the line of sight, so
+parameterizing the power spectrum in terms of the parallel and perpendicular to the line of sight
+wavenumbers ($k_\parallel$ and $k_\perp$ respectively) is common.
+
+The global signal and the power spectrum are both statistics of the same underlying 21\,cm
+brightness temperature and therefore statistics can be used to answer high-level questions such as:
+When did reionization occur? How quickly was the universe heated after initial star formation began?
+The power spectrum contains additional information about sources of heating and ionization. For
+instance, rare massive haloes generate fluctuations on larger spatial scales than the more common
+small haloes.  However, because measuring the power spectrum requires angular resolution, the global
+signal experiments and power spectrum experiments employ substantially different instrumental
+designs. They are subject to different (but not exclusively different) systematic instrumental
+errors.
+
+%Two different types of experiments are currently being designed to target the high-redshift 21~cm
+%transition:
+%\begin{enumerate}
+%    \item single antenna experiments that are attempting to measure the sky-averaged 21~cm signal,
+%        and
+%    \item large interferometers that are attempting to measure the three-dimensional spatial power
+%        spectrum of the 21~cm signal.
+%\end{enumerate}
+%Both types require exquisite calibration and roughly five orders of dynamic range against the
+%blindingly bright foreground radio emission, but are subject to different (but not exclusively
+%different) systematic instrumental errors.
+
+\subsection{Global Signal Experiments}
+
+Most global signal experiments are composed of a single dipole antenna with a total power
+radiometer. This approach was pioneered by the Experiment to Detect the Global EoR Signature
+(EDGES). After deploying to the Murchison Radio-astronomy Observatory (MRO) in a remote region of
+Western Australia, \citet{2010Natur.468..796B} observed for three months. If reionization was an
+instantaneous event, this initial EDGES deployment would have expected to see a step function in
+their sky-averaged spectrum. Therefore the authors converted the observed spectral smoothness to a
+lower bound on the duration of reionization $\Delta z > 0.06$. However, because no such feature was
+detected, the redshift of reionization was not constrained by this measurement.
+
+\todo{LEDA}
+
+\todo{SARAS}
+
+Although most global signal experiments are composed of isolated dipole antennas, there have been
+several attempts to design and use more exotic instruments. \citet{2013PhRvD..87d3002L} found that
+an instrument with a 5$\arcdeg$ beam could achieve a higher significance detection by using the
+improved angular resolution to mitigate foreground contamination. \citet{2015MNRAS.450.2291V} used
+lunar occultation to constrain the global signal between 35 and 80\,MHz using LOFAR. This technique
+uses an interferometer to measure the contrast between the moon and surrounding sky, but is
+complicated by radio frequency interference (RFI) reflecting off of the moon and potentially by the
+assumption that the moon is a thermal source at low frequencies. Drawn by the calibration advantages
+of interferometers, other groups have proposed designing interferometers that have nonzero
+sensitivity to the monopole. \citet{2015ApJ...809...18P} developed a framework for measuring the
+global signal from interferometric measurements, and \citet{2015ApJ...815...88S} designed a
+zero-spacing interferometer using a resistive screen to separate two antennas. However, ultimately
+the calibration advantages of an interferometer to measure the global signal may have been
+overstated.  \citet{2016ApJ...826..116V} demonstrated that interferometers may only have any
+sensitivity to the global signal if there is some amount of cross talk between the correlated
+elements or a source of noise that can radiate coherently into both receivers.
+
+\subsection{Power Spectrum Experiments}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter1/power-spectrum-upper-limits/power-spectrum-upper-limits}
+    \caption{
+        Power spectrum amplitude upper limits (95\% confidence) as a function of redshift. The
+        shaded region denotes roughly where current theoretical predictions fall.
+    }
+    \label{fig:power-spectrum-upper-limits}
+\end{figure}
+
+In contrast to the global signal experiments, which are typically composed of a single antenna,
+power spectrum experiments are generally interferometers composed of up to hundreds or thousands of
+antennas. A high-level overview of existing upper limits on the 21\,cm power spectrum can be seen in
+Figure~\ref{fig:power-spectrum-upper-limits}.
+
+The Donald C. Backer Precision Array for Probing the Epoch of Reionization
+\citep[PAPER;][]{2010AJ....139.1468P} began attempting to measure the 21\,cm power spectrum with a
+deployment of eight antennas in Green Bank, West Virginia. Later deployed with 32 antennas to the
+Karoo desert in South Africa, \citet{2014ApJ...788..106P} measured a $2\sigma$ upper limit of 41\,mK
+on the amplitude of the power spectrum at $z=7.7$. This measurement ruled out the possibility that
+the universe was entirely unheated by this redshift.  Later, with PAPER now composed of 64 antennas,
+\citet{2015ApJ...809...61A} improved the best $2\sigma$ upper limit to 22.4\,mK at $z=8.4$, however
+this is result is currently subject to revision (Cheng et al. in prep.). PAPER is notable for its
+decision to part with traditional interferometry. Starting with its 32-antenna deployment, PAPER
+opted for a maximally redundant antenna configuration for raw sensitivity on a particular spatial
+scale.
+
+The Low-Frequency Array (LOFAR) EoR Key Science Project (KSP) is attempting a similar measurement of
+the 21\,cm power spectrum. In contrast to PAPER, LOFAR is composed of $\sim30,000$ high-band
+antennas (120--240\,MHz) and $\sim3,000$ low-band antennas (30--80\,MHz). These antennas are grouped
+into stations and stations are correlated with each other. This trade off sacrifices field of view
+for gain. The LOFAR EoR KSP recently published its first limits on the 21\,cm power spectrum,
+finding a $2\sigma$ upper limit of 79.6\,mK at $z=10.1$ \citep{2017ApJ...838...65P}. In this
+measurement, LOFAR attempted to leverage its superior imaging and source-removal capabilities, but
+for this measurement was limited by residual systematic errors. The removal of contaminating diffuse
+radio emission has been the focus of ongoing work with some reported success \citep{koopmans_2017}.
+
+Several attempts have been made to measure the 21\,cm power spectrum with the Murchison Widefield
+Array (MWA).
+\todo{MWA}
 
 
 \section{Observational Challenges}
@@ -230,6 +347,7 @@ absorption feature, either the IGM needs to be cooled below temperatures it is p
 purely through adiabatic cooling, or an additional source of radio emission must be present at $z >
 20$.
 
+
 \begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{figures/chapter1/history-of-the-universe/history-of-the-universe}
@@ -240,17 +358,6 @@ purely through adiabatic cooling, or an additional source of radio emission must
     }
     \label{fig:history-of-the-universe}
 \end{figure}
-
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=\textwidth]{figures/chapter1/power-spectrum-upper-limits/power-spectrum-upper-limits}
-    \caption{
-        Power spectrum amplitude upper limits (95\% confidence) as a function of redshift. The
-        shaded region denotes roughly where current theoretical predictions fall.
-    }
-    \label{fig:power-spectrum-upper-limits}
-\end{figure}
-
 
 
 
