@@ -35,7 +35,7 @@ function go()
                    "v-", L"\textrm{Ewall-Wice et al. 2016}")
     plot_and_label(8.6, 248, "v", L"\textrm{Paciga et al. 2013}", text_position=330)
     plot_and_label(7.1, 164, "v", L"\textrm{Beardsley et al. 2016}")
-    plot_and_label(18.4, 3e3, "kv", L"\textrm{this thesis}")
+    plot_and_label(18.4, 1e4, "kv", L"\textrm{this thesis}")
 
     #shade_between( 7, 15.1, 1,  10, "#aaaaaa")
     #shade_between(14.9, 22, 1, 100, "#aaaaaa")
