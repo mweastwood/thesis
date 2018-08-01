@@ -142,8 +142,8 @@ bottom panel of Figure~\ref{fig:pritchard-global-signal}.
     \includegraphics[width=\textwidth]{figures/chapter1/history-of-the-universe/history-of-the-universe}
     \caption{
         A radial map of the universe. Known quasars are marked with circles and galaxies are marked
-        with stars. The range of comoving distances probed by the OVRO-LWA and HERA are marked with a red
-        rectangle and a blue rectangle respectively.
+        with stars. The range of comoving distances probed by the OVRO-LWA and HERA are marked with
+        a red rectangle and a blue rectangle respectively.
     }
     \label{fig:history-of-the-universe}
 \end{figure}
@@ -332,10 +332,9 @@ previously published sky maps between 10\,MHz and 100\,GHz. However, the majorit
 high fidelity sky maps are located at frequencies above 1.4\,GHz. Below 1.4\,GHz, there is the
 408\,MHz Haslam map \citep{1981A&A...100..209H,1982A&AS...47....1H}, which covers the sky at
 1$\arcdeg$ resolution. At 45\,MHz, \citet{2011A&A...525A.138G} compiled a sky map from a northern
-and a southern hemisphere survey at 5$\arcdeg$ resolution
-\citep{1997A&AS..124..315A,1999A&AS..140..145M}. At 22\,MHz, \citet{1999A&AS..137....7R} mapped the
-sky from the Canadian Dominion Radio Astrophysical Observatory (DRAO) at 1$\arcdeg$--2$\arcdeg$
-resolution.
+and a southern hemisphere survey at 5$\arcdeg$ resolution \citep{1997A&AS..124..315A,
+1999A&AS..140..145M}. At 22\,MHz, \citet{1999A&AS..137....7R} mapped the sky from the Canadian
+Dominion Radio Astrophysical Observatory (DRAO) at 1$\arcdeg$--2$\arcdeg$ resolution.
 
 
 
@@ -358,13 +357,76 @@ the universe. Each of these regions experiences a different star formation, heat
 history, which ultimately produces a different 21~cm brightness temperature.  However, at the same
 time there is a relative paucity of suitable modern, high-fidelity sky maps at these frequencies.
 
-Global-signal experiments have no intrinsic angular resolution of their own. To date, these
-experiments have typically relied on low-order polynomial fits to remove the foreground
-contamination in their measurements. This is a fine balancing routine, because if the polynomial
-order is chosen to be too low, residual foreground contamination dominates the measurement. If the
-polynomial order is chosen to be too high, the 21~cm signal itself can be removed.
+Compounding the problem, global signal experiments have no intrinsic angular resolution of their
+own. To date, these experiments have typically relied on low-order polynomial fits to remove the
+foreground contamination in their measurements. This is a fine balancing routine, because if the
+polynomial order is chosen to be too low, residual foreground contamination dominates the
+measurement. If the polynomial order is chosen to be too high, the 21~cm signal itself can be
+removed. Similarly, some power spectrum experiments, notably PAPER, have opted for a maximally
+redundant baseline configuration that greatly inhibits the interferometer's ability to image the sky
+with high fidelity. Consequently there is a growing demand for modern, high-fidelity sky maps at
+frequencies $<200\,\text{MHz}$.
+
+\begin{figure*}
+    \centering
+    \begin{tabular}{cc}
+        \includegraphics[width=0.49\textwidth]{figures/chapter1/morales-foreground-wedge-illustration} &
+        \includegraphics[width=0.49\textwidth]{figures/chapter1/morales-foreground-wedge-calibration-errors} \\
+        (a) & (b) \\
+    \end{tabular}
+    \caption{
+        Reproduced from \citet{2012ApJ...752..137M} (permission not yet received).
+    }
+    \label{fig:morales-foreground-wedge}
+\end{figure*}
+
+\subsection{Foreground Avoidance}
+
+In the absence of a reliable foreground model some power spectrum experiments have opted for a
+delay-spectrum technique to separate foreground emission from the cosmological 21\,cm signal
+\citep{2012ApJ...756..165P}. This technique has also been coined ``foreground avoidance,'' because
+it applies a transformation to the dataset that---under ideal circumstances---restricts the extent
+of foreground contamination to a wedge-like feature in power spectrum space (see
+Figure~\ref{fig:morales-foreground-wedge} for an illustration).
+
+In the flat-sky approximation, an interferometer measures a visibility $V^{ij}_\nu$ between the
+pair of antennas $i$ and $j$ at the frequency $\nu$. For isotropic antennas, the visibility is
+related to the sky brightness $I_\nu(l, m)$ through
+\begin{equation}\label{eq:flat-sky-visibilities}
+    V^{ij}_\nu = \int I_\nu(l, m) \exp\Big(2\pi i (ul + vm)\Big)\,\d l\,\d m\,,
+\end{equation}
+where $l$ and $m$ are direction cosines, and $u$ and $v$ are the east--west and north--south
+components of the baseline vector measured in units of wavelengths.
+Equation~\ref{eq:flat-sky-visibilities} is a Fourier transform over the plane of the sky, and so in
+order to construct a three-dimensional power spectrum, an additional Fourier transform along the
+line of sight is needed. This can be accomplished by expanding the comoving distance with the Taylor
+expansion $r \approx X + Y\nu$ with the appropriate coefficients $X$ and $Y$ for the relevant
+redshift.
+
+
+
+
+
+
+This foreground wedge arises under the assumption that all of the foreground emission is spectrally
+smooth.
+
+
+\subsection{Foreground Subtraction}
+
+
 
 \subsection{Instrumental Calibration}
+
+%\begin{figure*}
+%    \centering
+%    \includegraphics[width=\textwidth]{figures/chapter1/thyagarajan-foreground-wedge}
+%    \caption{
+%        stuff
+%    }
+%    \label{fig:thyagarajan-foreground-wedge}
+%\end{figure*}
+
 
 \section{Future Outlook}
 
