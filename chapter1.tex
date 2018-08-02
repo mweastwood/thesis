@@ -382,12 +382,13 @@ frequencies $<200\,\text{MHz}$.
 
 \subsection{Foreground Avoidance}
 
-In the absence of a reliable foreground model some power spectrum experiments have opted for a
-delay-spectrum technique to separate foreground emission from the cosmological 21\,cm signal
-\citep{2012ApJ...756..165P}. This technique has also been coined ``foreground avoidance,'' because
-it applies a transformation to the dataset that---under ideal circumstances---restricts the extent
-of foreground contamination to a wedge-like feature in power spectrum space (see
-Figure~\ref{fig:morales-foreground-wedge} for an illustration).
+In the absence of a reliable foreground model some power spectrum experiments, notably PAPER, have
+opted for a delay-spectrum technique to separate foreground emission from the cosmological 21\,cm
+signal \citep{2012ApJ...756..165P}. This technique has also been coined ``foreground avoidance,''
+because it applies a transformation to the dataset that---under ideal circumstances---restricts the
+extent of foreground contamination to a wedge-like feature in power spectrum space (see
+Figure~\ref{fig:morales-foreground-wedge} for an illustration). The existence of the foreground
+wedge can be seen with a simple argument presented below.
 
 In the flat-sky approximation, an interferometer measures a visibility $V^{ij}_\nu$ between the
 pair of antennas $i$ and $j$ at the frequency $\nu$. For isotropic antennas, the visibility is
@@ -400,20 +401,47 @@ components of the baseline vector measured in units of wavelengths.
 Equation~\ref{eq:flat-sky-visibilities} is a Fourier transform over the plane of the sky, and so in
 order to construct a three-dimensional power spectrum, an additional Fourier transform along the
 line of sight is needed. This can be accomplished by expanding the comoving distance with the Taylor
-expansion $r \approx X + Y\nu$ with the appropriate coefficients $X$ and $Y$ for the relevant
-redshift.
+expansion $r \approx r_0 + (\partial r/\partial \nu)(\nu - \nu_0)$ at the appropriate redshift.
+Under this approximation, a Fourier transform along the line of sight is a Fourier transform over
+frequency.  The Fourier dual variable to the frequency is delay. That is, by taking a Fourier
+transform along the line of sight, we are actually undoing the F stage of the correlator, and
+computing a series of correlations at a range of time delays.  Consequently, the perpendicular
+wavenumber $k_\perp \propto \text{the baseline length}$, and the parallel wavenumber $k_\parallel
+\propto \text{delay}$.
+
+For a smooth spectrum radio source, the maximum possible delay between the two antennas $i$ and $j$
+is the light-travel time between the two antennas. More generally the delay is given by the path
+difference, and sources located far from the delay center have larger delays. The pattern of
+contamination for smooth spectrum radio sources is therefore generally restricted to a wedge-like
+structure that is illustrated in the left panel of Figure~\ref{fig:morales-foreground-wedge}.
 
 
 
-
-
-
-This foreground wedge arises under the assumption that all of the foreground emission is spectrally
-smooth.
 
 
 \subsection{Foreground Subtraction}
 
+A more direct approach to suppressing foreground contamination is to model and remove as much of the
+contamination as possible. This has been the focus of the LOFAR EoR KSP, which has dedicated
+substantial resources towards subtracting all of the radio emission in their deep fields
+\citep{2017ApJ...838...65P}. In total within their 3$\arcdeg$ field of view, they have removed
+almost 21,000 sky components down to a limit of 3\,mJy using over 100 direction-dependent
+calibrations to account for beam and ionospheric errors.
+
+On top of this modeling effort, \citet{2017ApJ...838...65P} applied Generalized Morphological
+Component Analysis \citep[GMCA;][]{2013MNRAS.429..165C} to suppress the residual contamination.
+GMCA is a blind technique for decomposing the remaining emission into a number of statistically
+independent components. In fact, the implementation used here did not incorporate any prior
+astrophysical information about the nature of the foreground emission, which raises the possibility
+of subtracting the cosmological 21\,cm emission alongside the foreground emission.
+\citet{2013MNRAS.429..165C} showed that they could recover the 21\,cm signal for simulated LOFAR
+data with signal loss between 10--40\%, but real instrumental considerations could drive the signal
+loss higher. Future iterations of this technique will likely need to build in some prior
+astrophysical information.
+
+Signal loss is not a new problem to foreground subtraction efforts.
+\citep{2016MNRAS.463.4317P}
+\todo{finish this thought}
 
 
 \subsection{Instrumental Calibration}
