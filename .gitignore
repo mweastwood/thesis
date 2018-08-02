@@ -3,6 +3,7 @@
 *.bcf
 *.blg
 *.ent
+*-eps-converted-to.pdf
 *.fdb_latexmk
 *.fls
 *.idx
