@@ -173,6 +173,14 @@ constraint comes from observations of the CMB.
 
 \todo{high redshift galaxies}
 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter1/oesch-gn-z11}
+    \caption{
+        a thing \citet{2016ApJ...819..129O} permission still needed
+    }
+\end{figure}
+
 \todo{LAE clustering}
 
 \section{First Generation Experiments}
@@ -225,18 +233,6 @@ signal experiments and power spectrum experiments employ substantially different
 designs. They are subject to different (but not exclusively different) systematic instrumental
 errors.
 
-%Two different types of experiments are currently being designed to target the high-redshift 21~cm
-%transition:
-%\begin{enumerate}
-%    \item single antenna experiments that are attempting to measure the sky-averaged 21~cm signal,
-%        and
-%    \item large interferometers that are attempting to measure the three-dimensional spatial power
-%        spectrum of the 21~cm signal.
-%\end{enumerate}
-%Both types require exquisite calibration and roughly five orders of dynamic range against the
-%blindingly bright foreground radio emission, but are subject to different (but not exclusively
-%different) systematic instrumental errors.
-
 \subsection{Global Signal Experiments}
 
 Most global signal experiments are composed of a single dipole antenna with a total power
@@ -247,16 +243,30 @@ instantaneous event, this initial EDGES deployment would have expected to see a 
 their sky-averaged spectrum. Therefore the authors converted the observed spectral smoothness to a
 lower bound on the duration of reionization $\Delta z > 0.06$. However, because no such feature was
 detected, the redshift of reionization was not constrained by this measurement.
-\todo{updated EDGES results from Raul}
+
+EDGES has continued to improve on this initial constraint.  \citet{2017ApJ...847...64M} reported
+results from the updated EDGES high-band instrument (90--190\,MHz), which now rules out most
+reionization histories with $\Delta z \lesssim 0.4$ and histories $\Delta z \lesssim 1.0$ if the
+central redshift of reionization is near $z\approx 8.5$. Even more recently,
+\citet{2018Natur.555...67B} reported results from the new EDGES low-band instrument (50--100\,MHz),
+which is effectively a scaled copy of the high-band instrument. The latter results will be discussed
+in more detail in \S\ref{sec:intro-future-outlook}.
 
 The Large-aperture Experiment to Detect the Dark Age \citep[LEDA;][]{2018MNRAS.478.4193P} similarly
-equips low-frequency (30--85\,MHz) dipole antennas with radiometers. However, these antennas are
-embedded within the OVRO-LWA.  This configuration provides LEDA with additional leverage for
-self-calibration and foreground imaging, which may prove crucial for overcoming latent concerns
-about beam modeling and foreground removal in many global signal experiments.
+equips low-frequency (30--85\,MHz) dipole antennas with radiometers. Located at the Owens Valley
+Radio Observatory (OVRO) near Big Pine, California, these antennas are embedded within the OVRO-LWA.
+This configuration provides LEDA with additional leverage for self-calibration and foreground
+imaging, which may prove crucial for overcoming latent concerns about beam modeling and foreground
+removal in many global signal experiments.
 
-\citet{2017ApJ...845L..12S}
-\todo{SARAS}
+The SARAS~2 experiment, like EDGES, is a single antenna radiometer. However, SARAS~2 has chosen an
+unconventional sphere-disk monopole antenna in order to minimize the frequency structure in the
+antenna response pattern. \citet{2017ApJ...845L..12S} reported initial results from a 63~hr
+integration over the frequency range 110--200\,MHz from the Timbaktu Collective in Southern India.
+By comparing against parameterized models of the 21\,cm signal, the authors concluded that their
+initial results generally rule out models with weak X-ray heating and rapid reionization. These
+models generally produce sharp spectral features in the observing band, and so this limit arises
+from the measured spectral smoothness.
 
 Although most global signal experiments are composed of isolated dipole antennas, there have been
 several attempts to design and use more exotic instruments. \citet{2013PhRvD..87d3002L} found that
@@ -293,36 +303,44 @@ power spectrum experiments are generally interferometers composed of up to hundr
 antennas. A high-level overview of existing upper limits on the 21\,cm power spectrum can be seen in
 Figure~\ref{fig:power-spectrum-upper-limits}.
 
-\todo{GMRT}
+The Giant Metrewave Radio Telescope (GMRT) EoR experiment, located near Pune, India, first reported
+a $2\sigma$ upper limit of $(70\,\text{mK})^2$ at $z \approx 8.6$ \citep{2011MNRAS.413.1174P}.
+However, this limit was later revised to $(248\,\text{mK})^2$ after a careful study of the signal
+loss associated with foreground removal \citep{2013MNRAS.433..639P}.
 
 The Donald C. Backer Precision Array for Probing the Epoch of Reionization
 \citep[PAPER;][]{2010AJ....139.1468P} began attempting to measure the 21\,cm power spectrum with a
 deployment of eight antennas in Green Bank, West Virginia. Later deployed with 32 antennas to the
-Karoo desert in South Africa, \citet{2014ApJ...788..106P} measured a $2\sigma$ upper limit of 41\,mK
-on the amplitude of the power spectrum at $z=7.7$. This measurement ruled out the possibility that
-the universe was entirely unheated by this redshift.  Later, with PAPER now composed of 64 antennas,
-\citet{2015ApJ...809...61A} improved the best $2\sigma$ upper limit to 22.4\,mK at $z=8.4$, however
-this is result is currently subject to revision (Cheng et al. in prep.). PAPER is notable for its
-decision to part with traditional interferometry. Starting with its 32-antenna deployment, PAPER
-opted for a maximally redundant antenna configuration for raw sensitivity on a particular spatial
-scale.
+Karoo desert in South Africa, \citet{2014ApJ...788..106P} measured a $2\sigma$ upper limit of
+$(41\,\text{mK})^2$ on the amplitude of the power spectrum at $z=7.7$. This measurement ruled out
+the possibility that the universe was entirely unheated by this redshift.  Later, with PAPER now
+composed of 64 antennas, \citet{2015ApJ...809...61A} improved the best $2\sigma$ upper limit to
+$(22.4\,\text{mK})^2$ at $z=8.4$, however this is result is currently subject to revision due to a
+number of errors including unexpected signal loss and underestimated error bars (Cheng et al. in
+prep.). PAPER is notable for its decision to part with traditional interferometry. Starting with its
+32-antenna deployment, PAPER opted for a maximally redundant antenna configuration for raw
+sensitivity on a particular spatial scale.
 
 The Low-Frequency Array (LOFAR) EoR Key Science Project (KSP) is attempting a similar measurement of
 the 21\,cm power spectrum. In contrast to PAPER, LOFAR is composed of $\sim30,000$ high-band
 antennas (120--240\,MHz) and $\sim3,000$ low-band antennas (30--80\,MHz). These antennas are grouped
 into stations and stations are correlated with each other. This trade off sacrifices field of view
 for gain. The LOFAR EoR KSP recently published its first limits on the 21\,cm power spectrum,
-finding a $2\sigma$ upper limit of 79.6\,mK at $z=10.1$ \citep{2017ApJ...838...65P}. In this
-measurement, LOFAR attempted to leverage its superior imaging and source-removal capabilities, but
-for this measurement was limited by residual systematic errors. The removal of contaminating diffuse
-radio emission has been the focus of ongoing work with some reported success \citep{koopmans_2017}.
+finding a $2\sigma$ upper limit of $(79.6\,\text{mK})^2$ at $z=10.1$ \citep{2017ApJ...838...65P}. In
+this measurement, LOFAR attempted to leverage its superior imaging and source-removal capabilities,
+but for this measurement was limited by residual systematic errors. The removal of contaminating
+diffuse radio emission has been the focus of ongoing work with some reported success
+\citep{koopmans_2017}.
 
 Several attempts have been made to measure the 21\,cm power spectrum with the Murchison Widefield
-Array (MWA).
-\todo{MWA}
-
-
-\todo{OVRO-LWA}
+Array (MWA) using multiple different techniques \citep{2016ApJ...825..114J}.
+\citet{2016ApJ...833..102B} reported results from the first season of observing, and placed an upper
+limit of $(164\,\text{mK})^2$ at $z=7.1$ with a 32\,hr integration.  \citet{2016MNRAS.460.4320E}
+used the MWA to place upper limits on the 21\,cm power spectrum during the cosmic dawn. All previous
+power spectrum measurements had attempted to constrain the EoR. In their highest redshift
+measurement, the authors placed a limit of $\sim (18,000\,\text{mK})^2$ at $z\sim 17$. A simple
+comparison between these two upper limits illustrates the difficulty involved with constraining the
+cosmic dawn at higher redshifts.
 
 \section{Observational Challenges}
 
@@ -463,7 +481,7 @@ Signal loss is not a new problem to foreground subtraction efforts.
 \citep{2010MNRAS.408.1029L}
 
 
-\section{Future Outlook}
+\section{Future Outlook}\label{sec:intro-future-outlook}
 
 \begin{figure}[t]
     \centering
@@ -505,10 +523,12 @@ purely through adiabatic cooling, or an additional source of radio emission must
 \citep{2018arXiv180303091B}
 
 
+\citep{2017PASP..129d5001D}
 \todo{HERA}
 
 
 
+\citep{2013ExA....36..235M}
 \todo{SKA-low}
 
 
