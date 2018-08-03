@@ -441,10 +441,6 @@ difference, and sources located far from the delay center have larger delays. Th
 contamination for smooth spectrum radio sources is therefore generally restricted to a wedge-like
 structure that is illustrated in the left panel of Figure~\ref{fig:morales-foreground-wedge}.
 
-
-
-
-
 \subsection{Foreground Subtraction}
 
 A more direct approach to suppressing foreground contamination is to model and remove as much of the
@@ -465,20 +461,53 @@ data with signal loss between 10--40\%, but real instrumental considerations cou
 loss higher. Future iterations of this technique will likely need to build in some prior
 astrophysical information.
 
-Signal loss is not a new problem to foreground subtraction efforts.
-\citep{2016MNRAS.463.4317P}
-\todo{finish this thought}
-
+Unanticipated signal loss is not a new problem to foreground subtraction efforts.
+\citet{2013MNRAS.433..639P} used detailed simulations to compute the signal loss when removing
+foreground emission using a Singular Value Decomposition (SVD), which is another blind technique for
+subtracting foreground emission. Similarly \citet{2016MNRAS.463.4317P} realized that their process
+for removing point sources with a direction-dependent calibration was also capable of
+unintentionally removing diffuse foreground emission. Finally, Cheng et al. (in prep.) discovered
+that using a covariance matrix derived from the measured data can lead to signal loss due to the
+down-weighting of the cosmological 21\,cm signal.
 
 \subsection{Instrumental Calibration}
 
-\citep{2016MNRAS.461.3135B}
+The process of avoiding or subtracting foreground emission is compounded by the difficulty of
+calibrating low-frequency interferometers.  With a field of view typically $\gtrsim10\arcdeg$ across
+and a proclivity for the most troublesome sources to be far from the delay center (see
+Figure~\ref{fig:morales-foreground-wedge}), a detailed understanding of the---potentially
+inhomogeneous---antenna response pattern is essential. Furthermore, a standard sky-based calibration
+procedure will require a model for the entire field of view. An incomplete sky model will introduce
+ripples into the bandpass that impedes the observer's ability to separate foreground emission from
+the cosmological 21\,cm emission \citep[e.g.,
+Figure~\ref{fig:morales-foreground-wedge};][]{2016MNRAS.461.3135B, 2017MNRAS.470.1849E}.
 
-\citep{2017MNRAS.470.1849E}
+In order to address some of the difficulties associated with sky-based calibration, some power
+spectrum experiments---notably PAPER and HERA---have implemented redundant baseline calibration
+\citep{2010MNRAS.408.1029L}. While redundant calibration is useful for discovering instrumental
+errors, there are some calibration parameters that cannot be constrained with redundant calibration.
+Notably this includes the overall bandpass, which must still be measured from the spectrum of a
+known point source. Yet at this time, few flux calibrators exist at frequencies below 200\,MHz
+\citep{2012MNRAS.423L..30S, 2017ApJS..230....7P}.
+
+
+
+If the antenna response is unknown or
+erroneous, a direction-dependent calibration may be needed to accurately subtract a source.
 
 \citep{2015PhRvD..91h3514S}
 
-\citep{2010MNRAS.408.1029L}
+Propagation effects through the ionosphere additionally complicate low-frequency observations. The
+refractive index of the ionosphere $n = \sqrt{1 - \nu_\text{plasma}^2/\nu^2}$, where the plasma
+frequency $\nu_\text{plasma}$ is typically $\sim10\,\text{MHz}$. When the diffractive scale of the
+ionosphere is small, point sources can break apart into multiple images \citep{2015MNRAS.453..925V},
+but even when ionospheric conditions are mild, it can still contribute 50\% amplitude scintillation
+on 13\,s timescales and 20$\arcmin$ variable refractive offsets on 10\,minute timescales (see
+\S\ref{sec:ionosphere-conditions}).  At least while conditions are mild, ionospheric propagation
+effects may be described with a direction-dependent calibration.
+
+
+
 
 
 \section{Future Outlook}\label{sec:intro-future-outlook}
