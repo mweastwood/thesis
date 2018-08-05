@@ -571,17 +571,26 @@ this initial detection has produced more questions than answers.
 
 Power spectrum experiments can offer an independent verification and continue to advance in
 sophistication and sensitivity with upgrades to LOFAR, the MWA, and the construction of the Hydrogen
-Epoch of Reionization Array \citep[HERA;][]{2017PASP..129d5001D}. HERA will be composed of
+Epoch of Reionization Array \citep[HERA;][]{2017PASP..129d5001D}. HERA will be composed of 350
+parabolic dishes (each 14\,m in diameter) hexagonally packed within a core 300\,m across.  Each dish
+will be equipped with a feed that operates between 50 and 250\,MHz ($z\sim5-27$). HERA incorporates
+lessons learned from the preceding PAPER experiment, and so with a major increase in collecting area
+with respect to PAPER promises to deliver a compelling detection of the 21\,cm power spectrum.
+On even longer timescales, the SKA may be capable of constructing a tomographic map of the universe
+through the 21\,cm transition \citep{2013ExA....36..235M}.
 
-
-
-\citep{2013ExA....36..235M}
-\todo{SKA-low}
-
-At Caltech,
-
-TIME, COMAP
-
+At Caltech, multiple experiments are attempting to measure spectral features from the EoR and Cosmic
+Dawn. The Owens Valley Radio Observatory Long Wavelength Array (OVRO-LWA) is a 288 element
+interferometer with instantaneous bandwidth covering 30--85\,MHz. In this thesis I will present, to
+date, the highest angular-resolution maps of the sky available below 100\,MHz using the OVRO-LWA and
+a new imaging technique designed for drift-scanning interferometers. These maps have been made
+publicly available on the Legacy Archive for Microwave Background Data Analysis (LAMBDA).\footnote{
+    \url{https://lambda.gsfc.nasa.gov/}
+}
+I will also present the deepest upper limits on the amplitude of the 21\,cm power spectrum of the
+Cosmic Dawn, and the only existing limits at $z > 18$. Figure~\ref{fig:history-of-the-universe}
+presents a radial map of the universe that compares the distances probed by the OVRO-LWA and HERA to
+other probes of the high-redshift universe.
 
 \begin{figure}[t]
     \centering
@@ -594,13 +603,21 @@ TIME, COMAP
     \label{fig:history-of-the-universe}
 \end{figure}
 
+These measurements are highly complementary to other ongoing experiments at Caltech, notably the CO
+Mapping Array Pathfinder \citep[COMAP;][]{2016AAS...22742606C} and the Tomographic Ionized carbon
+Intensity Mapping Experiment Pilot \citep[TIME-Pilot;][]{2017AAS...22912501C}, which aim to
+ultimately detect transitions of CO and \ion{C}{2} from the EoR respectively. While the 21\,cm power
+spectrum of the EoR originates from the neutral gas surrounding the expanding ionized bubbles, CO
+and \ion{C}{2} emission originates from the sites of star formation, therefore helping to build a
+more complete picture of the EoR.  Furthermore, correlations with the 21\,cm signal will help to
+mitigate systematics in both measurements.
 
-
-
-
-
-
-
+In Chapter~\ref{chapter2} I will introduce the OVRO-LWA, its construction, commissioning, and the
+its calibration. In Chapter~\ref{chapter3} I will describe Tikhonov-regularized $m$-mode analysis
+imaging and cleaning, and demonstrate its application by generating maps of the full sky visible
+from OVRO with $15\arcmin$ angular resolution. In Chapter~\ref{chapter4} I will present the most
+sensitive upper limits on the 21\,cm power spectrum of the Cosmic Dawn using a new technique for
+foreground filtering, and finally in Chapter~\ref{chapter5} I will present my conclusions.
 
 \myputbib{thesis}
 \end{bibunit}
