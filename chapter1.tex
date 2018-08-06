@@ -249,13 +249,15 @@ wavenumbers ($k_\parallel$ and $k_\perp$ respectively) is common.
 The global signal and the power spectrum are both statistics of the same underlying 21\,cm
 brightness temperature and therefore both statistics can be used to answer high-level questions such
 as: When did reionization occur? How quickly was the universe heated after initial star formation
-began?  However, the power spectrum contains additional information about the sources of heating and
-ionization.  For instance, rare massive haloes generate fluctuations on larger spatial scales than
-the more common small haloes.  Both approaches are complementary because they employ substantially
-different instrumental designs and are subject to different (but not exclusively different)
-systematic errors.
-
-\todo{describe the power spectrum particularly during the cosmic dawn}
+began?  The power spectrum contains additional information about the sources of heating and
+ionization.  During the Cosmic Dawn, a detection of the 21\,cm power spectrum could constrain the
+X-ray emissivity and spectral hardness \citep{2014MNRAS.437L..36F} the strength of Lyman--Werner
+feedback \citep{2013MNRAS.432.2909F}, and the spatial scale on which this X-ray emission originates.
+During the EoR, a detection of the 21\,cm power spectrum could constrain the ionizing efficiency of
+early galaxies, the mean-free path of ionizing photons, and the minimum halo mass for star formation
+\citep{2015MNRAS.449.4246G}.  However, both approaches are complementary because they employ
+substantially different instrumental designs and are subject to different (but not exclusively
+different) systematic errors.
 
 \subsection{Global Signal Experiments}
 
@@ -474,9 +476,17 @@ For a smooth spectrum radio source, the maximum possible delay between the two a
 is the light-travel time between the two antennas. More generally the delay is given by the path
 difference, and sources located far from the delay center have larger delays. The pattern of
 contamination for smooth spectrum radio sources is therefore generally restricted to a wedge-like
-structure that is illustrated in the left panel of Figure~\ref{fig:morales-foreground-wedge}.
+structure that is illustrated in the left panel of Figure~\ref{fig:morales-foreground-wedge}.  With
+the foreground emission contained within this wedge, the power spectrum may simply be estimated from
+the set of modes outside of the wedge, and in this way avoid the contamination of the foreground
+emission.
 
-\todo{add a little bit more here}
+The technique of foreground avoidance is predicated on the assumption that the spectral structure of
+the foreground emission is smooth enough for it to be contained within the foreground wedge.
+Instrumental chromaticity and polarization leakage are of particular concern. Faraday-rotated
+linearly polarized emission, for instance, is not contained within the foreground wedge.
+Furthermore, widefield effects such as baseline foreshortening towards the horizon can introduce
+additional leakage \citep{2015ApJ...804...14T}.
 
 \subsection{Foreground Subtraction}
 
@@ -506,8 +516,6 @@ for removing point sources with a direction-dependent calibration was also capab
 unintentionally removing diffuse foreground emission. Finally, Cheng et al. (in prep.) discovered
 that using a covariance matrix derived from the measured data can lead to signal loss due to the
 down-weighting of the cosmological 21\,cm signal.
-
-\todo{add a little more here}
 
 \subsection{Instrumental Calibration}
 
@@ -580,9 +588,11 @@ As an example, \citet{2018Natur.555...71B} noted that because Compton scattering
 of residual free electrons after recombination heats the baryons until $z\sim 150$, the dark matter
 has been able to cool adiabatically for longer and therefore has a lower temperature. A potential
 interaction between baryons and dark matter could therefore allow the baryons to cool
-super-adiabatically. In a separate paper, \citet{2018arXiv180303091B} also argued that existing dark
-matter experiments make this possibility somewhat unlikely, which is a reflection of the fact that
-this initial detection has produced more questions than answers.
+super-adiabatically. In this scenario, the amplitude of the 21\,cm power spectrum at $z\sim 17$ is
+expected to be $\sim (140\,\text{mK})^2$, substantially larger than previous predictions.  In a
+separate paper, \citet{2018arXiv180303091B} also argued that existing dark matter experiments make
+this possibility somewhat unlikely, which is a reflection of the fact that this initial detection
+has produced more questions than answers.
 
 Power spectrum experiments can offer an independent verification and continue to advance in
 sophistication and sensitivity with upgrades to LOFAR, the MWA, and the construction of the Hydrogen
