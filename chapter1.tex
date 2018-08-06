@@ -12,14 +12,14 @@ George Smoot in 2006 for their work on the Cosmic Background Explorer (COBE) sat
 amongst the first experiments to demonstrate that the background radiation was anisotropic
 \citep{1992ApJ...396L...1S}. These studies of the CMB have fundamentally advanced humanity's
 understanding of the universe: its origin, evolution, and composition. We continue to study the CMB
-today because it illuminates everything in the universe. It is a flashlight for the darkness of
-space within our expanding universe.
+today in part because it illuminates everything in the universe. It is a flashlight for the darkness
+of space within our expanding universe.
 
 As the universe expands, the wavelength of a photon is similarly stretched or redshifted (so-called
 because it gradually drifts to longer, redder wavelengths). Photons originating from a star 1000
-light-years away will travel through the universe for 1000 years before they are collected by our
-telescopes. Consequently, we observe this star as it was 1000 years ago. However, during its
-travels, the photon was also stretched by a small factor of $0.000007\%$ due to the expansion of the
+light-year away will travel through the universe for 1000 years before they are collected by our
+telescopes. Consequently, we observe this star as it was 1000 years ago. However, the photon was
+also stretched by a small factor of $0.000007\%$ during its travels due to the expansion of the
 universe.  For nearby stars, this expansion is too small to be conceivably measured.  However, with
 the discovery of the first quasar by \citet{1963Natur.197.1040S} it soon became apparent that the
 stretching factor, the redshift $z$, can be $>10\%$. Today, the most distant known quasars and
@@ -33,42 +33,29 @@ Due largely to careful and detailed work studying the CMB \citep[e.g.,][]{2013Ap
 a coherent and consistent understanding of the expansion history of the universe. The redshift $z$
 is therefore commonly used as a proxy for distance. The higher the redshift, the longer the photon
 has been in transit, and the further its origin. However, in order to measure the redshift, the
-measured photon must originate from a known spectral feature.
+detected photon must originate from a known spectral feature.
 
 Despite its abundance, neutral hydrogen (\ion{H}{1}) has few low energy transitions that allow it to
 traced.  Due to this limitation, astronomers resort to using a hyperfine structure transition
 arising from the magnetic dipole interaction between proton and electron. This interaction leads to
 a slight energy difference between the spin-symmetric state and the spin-antisymmetric state. The
 energy difference is $hc / (21\,\text{cm})$ where $h$ is Planck's constant, and $c$ is the speed of
-light.  When a Hydrogen atom transitions from the spin-symmetric state (higher energy; $F=1$) to the
+light.  When a hydrogen atom transitions from the spin-symmetric state (higher energy; $F=1$) to the
 spin-antisymmetric state (lower energy; $F=0$), it emits a photon with a wavelength of
-$21\,\text{cm}$ or a frequency of $1420\,\text{MHz}$. The redshift $z$ of a 21~cm photon is
+$21\,\text{cm}$ or a frequency of $1420\,\text{MHz}$. The redshift $z$ of a 21\,cm photon is
 therefore computed from the observed frequency $\nu$ as
 \begin{equation}\label{eq:redshift-equation}
     z = \frac{1420\,\text{MHz}}{\nu} - 1\,.
 \end{equation}
-
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=\textwidth]{figures/chapter1/pritchard-2012-global-signal}
-    \caption{
-        (top) A simulated light cone of the 21~cm brightness temperature illustrating the
-        anisotropy in the expected signal.
-        (bottom) A simulation of the globally averaged brightness temperature due to the high
-        redshift 21~cm transition.
-        This figure is reproduced with permission from \citet{2012RPPh...75h6901P}.
-    }
-    \label{fig:pritchard-global-signal}
-\end{figure}
-
 The 21\,cm transition is exceptionally weak.  The half-life of a neutral hydrogen atom in the $F=1$
 state is over 10\,Myr.  However, the early universe following recombination is almost entirely
-composed of neutral hydrogen. When \ion{H}{1} is illuminated by the CMB, a portion of the incident
-photons are 21\,cm photons. These photons can be absorbed by a hydrogen atom in the $F=0$ state, or
-stimulate the emission of 21\,cm photon from a hydrogen atom in the $F=1$ state.  A careful
-calculation of the radiative transfer for a clump of atomic hydrogen gas illuminated by the CMB at
-the redshift $z$ yields \citep[][but neglecting the contribution of peculiar
-velocities]{2012RPPh...75h6901P}
+composed of neutral hydrogen.
+
+When \ion{H}{1} is illuminated by the CMB, a portion of the incident photons are 21\,cm photons.
+These photons can be absorbed by a hydrogen atom in the $F=0$ state, or stimulate the emission of
+21\,cm photon from a hydrogen atom in the $F=1$ state.  A careful calculation of the radiative
+transfer for a clump of atomic hydrogen gas illuminated by the CMB at the redshift $z$ yields
+\citep[][but neglecting the contribution of peculiar velocities]{2012RPPh...75h6901P}
 \begin{equation}\label{eq:radiative-transfer-equation}
     \Delta T_{21} \approx 27 \left[
         \overbrace{
@@ -82,27 +69,40 @@ velocities]{2012RPPh...75h6901P}
         }^{\text{relative temperature}}
     \right] \, {\rm mK} \,,
 \end{equation}
-where $\Delta T_{21}$ is the expected 21~cm brightness temperature. If $\Delta T_{21} > 0$, the
+where $\Delta T_{21}$ is the expected 21\,cm brightness temperature. If $\Delta T_{21} > 0$, the
 21\,cm transition appears in emission against the CMB. If $\Delta T_{21} < 0$, it appears in
 absorption. $x_\text{HI}$ is the neutral fraction of hydrogen, $\delta$ is the local baryon
 overdensity, $h$ is the Hubble constant, $\Omega_b$ is the density parameter for baryons, $\Omega_m$
 is the density parameter for matter, $T_\text{spin}$ is the spin temperature (the excitation
-temperature of the 21~cm transition), and $T_\text{CMB}(z) = 2.73\,(1+z)\,{\rm K}$ is the
+temperature of the 21\,cm transition), and $T_\text{CMB}(z) = 2.73\,(1+z)\,{\rm K}$ is the
 temperature of the CMB at the redshift $z$.
 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter1/pritchard-2012-global-signal}
+    \caption{
+        (top) A simulated light cone of the 21\,cm brightness temperature illustrating the
+        anisotropy in the expected signal.
+        (bottom) A simulation of the globally averaged brightness temperature due to the high
+        redshift 2\,~cm transition.
+        This figure is reproduced with permission from \citet{2012RPPh...75h6901P}.
+    }
+    \label{fig:pritchard-global-signal}
+\end{figure}
+
 Equation~\ref{eq:radiative-transfer-equation} is fundamental to determining what can be learned
-through detecting the 21~cm transition at high redshift. First, the 21\,cm transition of neutral
+through detecting the 21\,cm transition at high redshift. First, the 21\,cm transition of neutral
 hydrogen at $z\sim 10$ can perturb the 2.73\,K thermal CMB spectrum by typically 10--100\,mK.
-Second, If the spin temperature is greater than the CMB temperature, the 21~cm transition appears in
-emission. However, the signal saturates at high spin temperatures. If the spin temperature is less
-than the CMB temperature, the 21~cm transition appears in absorption with no saturation point.
+Second, If the spin temperature is greater than the CMB temperature, the 21\,cm transition appears
+in emission. However, the signal saturates at high spin temperatures. If the spin temperature is
+less than the CMB temperature, the 21\,cm transition appears in absorption with no saturation point.
+There is no measurable 21\,cm signal if the transition is in radiative equilibrium with the CMB.
 Finally, the amplitude of the signal is proportional to the total quantity of \ion{H}{1}. Therefore,
-in order for there to be a measurable 21~cm signal, the universe must be predominantly neutral, and
-the transition must not be in radiative equilibrium with the CMB. Because redshift can be computed
-from the observed frequency (Equation~\ref{eq:redshift-equation}), the highly redshifted 21\,cm
-transition can be used to map the three dimensional structure of the universe and chronicle its
-history through the Cosmic Dawn and Epoch of Reionization (EoR).  A fiducial prediction for $\Delta
-T_{21}(z)$ can be seen in Figure~\ref{fig:pritchard-global-signal}.
+the amplitude tends to be larger while the universe is predominantly neutral.  Because redshift can
+be computed from the observed frequency (Equation~\ref{eq:redshift-equation}), the highly redshifted
+21\,cm transition can be used to map the three dimensional structure of the universe and chronicle
+its history through the Cosmic Dawn and Epoch of Reionization (EoR).  A fiducial prediction for
+$\Delta T_{21}(z)$ can be seen in Figure~\ref{fig:pritchard-global-signal}.
 
 \section{A History of the Universe through the 21\,cm Transition}
 
@@ -113,18 +113,18 @@ also include the temperature of the dark matter, $T_\text{DM}$. Generally, Ly$\a
 scatter through the intergalactic medium (IGM), which sets $T_{\text{Ly}\alpha} = T_\text{gas}$. In
 the absence of any heating mechanisms, the matter and radiation are both cooling adiabatically with
 the expansion of the universe.  The adiabatic indices are $\gamma = 5/3$ and $\gamma = 4/3$
-respectively, so the matter cools faster than the radiation. Consequently, the 21~cm transition
+respectively, so the matter cools faster than the radiation. Consequently, the 21\,cm transition
 tends to appear in absorption prior to early star formation, and in emission after the IGM has been
 heated.
 
-While there are currently few observational constraints on the 21~cm brightness temperature,
+While there are currently few observational constraints on the 21\,cm brightness temperature,
 fiducial theoretical models tell the following story \citep[e.g.,][]{2006PhR...433..181F,
 2012RPPh...75h6901P}.  Prior to star formation---the dark ages ($z \gtrsim 40$)---the density of the
 universe is high enough for collisions between hydrogen atoms to dominate the excitation of the
-21~cm transition.  Consequently during this time $T_\text{spin} = T_\text{gas}$, and the 21~cm
-transition appears in absorption against the CMB.  Later ($z \sim 30$), as the mean density of the
-universe decreases, collisions become more infrequent and the 21~cm transition is instead excited by
-CMB photons. During this time the 21~cm signal vanishes because $T_\text{spin} = T_\text{CMB}$.
+21\,cm transition.  During this time $T_\text{spin} = T_\text{gas}$, and the 21\,cm transition
+appears in absorption against the CMB.  Later ($z \sim 30$), as the mean density of the universe
+decreases, collisions become more infrequent and the 21\,cm transition is instead excited by CMB
+photons. During this time the 21\,cm signal vanishes because $T_\text{spin} = T_\text{CMB}$.
 
 With the onset of star formation in the universe, the Cosmic Dawn, the IGM is inundated with
 Ly$\alpha$ photons.  These Ly$\alpha$ photons scatter through the IGM. With the absorption and
@@ -132,30 +132,31 @@ re-emission of a Ly$\alpha$ photon, a hydrogen atom can transition between the s
 and the spin-antisymmetric state. This process, called the Wouthuysen-Field effect, sets the
 relative abundance of \ion{H}{1} in each state such that $T_\text{spin} = T_{\text{Ly}\alpha} =
 T_\text{gas}$ \citep{1952AJ.....57R..31W,1958PIRE...46..240F}. Therefore, after early star formation
-begins, the 21~cm transition reappears in absorption against the CMB.
+begins, the 21\,cm transition reappears in absorption against the CMB.
 
 However, as star formation progresses, the gas in the IGM is heated. X-rays are particularly
 effective at heating the IGM due to their large mean-free path. Consequently the heating rate is
 sensitive to, for example, the number density, luminosity and spectral hardness of X-ray binaries
 \citep{2014MNRAS.437L..36F,2017MNRAS.472.2651G}.  Eventually the gas is heated above the temperature
-of the CMB, bringing the 21~cm transition into emission, and eventually the signal saturates. At
-this point the 21~cm transition begins to disappear with the onset of reionization at $z \lesssim
+of the CMB, bringing the 21\,cm transition into emission, and eventually the signal saturates. At
+this point the 21\,cm transition begins to disappear with the onset of reionization at $z \lesssim
 15$ due to the ionization of the IGM. A prediction of the spectral distortion this process applies
 to the low-frequency ($\nu < 200\,\text{MHz}$) CMB spectrum can be seen in the bottom panel of
 Figure~\ref{fig:pritchard-global-signal}.
 
-The use of the 21\,cm transition is unique in its ability to directly probe the temperature,
-density, and ionization state of the IGM over extremely large volumes. However, the EoR is also the
-focus of a number of other complementary studies that inform this prediction. Careful observations
-of the CMB constrain the mean redshift of reionization through the Thomson scattering optical depth,
-and the duration of reionization through the kinetic Sunyaev--Zel'dovich (kSZ) effect. The final
-nine-year results from the Wilkinson Microwave Anisotropy Probe (WMAP) favored a mean reionization
-redshift of $z\sim10$ \citep{2013ApJS..208...19H}. More recently, the Planck experiment measured a
-lower optical depth that prefers a reionization history with a mean at $z\sim7.8-8.8$ and a duration
-of $\Delta z < 2.8$ \citep{2016A&A...596A.108P}, which is easier to reconcile with the measured UV
+Due to the extremely wide fields of view of low-frequency radio telescopes, the use of the 21\,cm
+transition is unique in its ability to directly probe the temperature, density, and ionization state
+of the IGM over extremely large volumes. However, the EoR is also the focus of a number of other
+complementary studies that inform this prediction. Careful observations of the CMB constrain the
+mean redshift of reionization through the Thomson scattering optical depth, and the duration of
+reionization through the kinetic Sunyaev--Zel'dovich (kSZ) effect. The final nine-year results from
+the Wilkinson Microwave Anisotropy Probe (WMAP) favored a mean reionization redshift of $z\sim10$
+\citep{2013ApJS..208...19H}. More recently, the Planck experiment measured a lower optical depth
+that prefers a reionization history with a mean at $z\sim7.8-8.8$ and a duration of $\Delta z < 2.8$
+\citep{2016A&A...596A.108P}, which is easier to reconcile with the measured ultraviolet (UV)
 luminosity functions of high-redshift galaxies.
 
-The discovery of ever-distant high-redshift galaxies has begun to constrain the ultraviolet (UV)
+The discovery of ever-distant high-redshift galaxies has begun to constrain the ultraviolet
 luminosity function during the EoR. These galaxies are typically discovered by searching for the
 Lyman break in deep galaxy surveys \citep[pioneered by][]{1996ApJ...462L..17S}.  The most distant
 spectroscopically confirmed galaxy is GN-z11 at $z\approx 11.1$ \citep{2016ApJ...819..129O}. An
@@ -181,13 +182,14 @@ timescale consistent with constraints from the CMB \citep{2015ApJ...802L..19R}.
 
 The timing of reionization has also been constrained by the discovery of high-redshift quasars,
 which can be used to map the Ly$\alpha$ opacity---and hence the neutral fraction of hydrogen---along
-the line of sight.  Variations between lines of sight also provide evidence for the patchiness of
-reionization (see Figure~\ref{fig:fan-quasars}). The highest redshift quasars at $z>7$, however, are
-exceptionally rare.  \citet{2011Natur.474..616M} discovered a quasar at $z\approx7.1$, and by
-measuring the damping wing of the near-zone Ly$\alpha$ absorption determined that the neutral
-fraction is at least 0.1 in the vicinity of this quasar.  \citet{2018Natur.553..473B} found another
-quasar at $z\approx7.5$ and performed a similar analysis to determine that the neutral fraction is
-at least 0.33. The EoR therefore appears to be in progress and drawing to a close by $z\sim 6$.
+the line of sight.  Variations between lines of sight additionally provides evidence for the
+patchiness of reionization (see Figure~\ref{fig:fan-quasars}). The highest redshift quasars at
+$z>7$, however, are exceptionally rare.  \citet{2011Natur.474..616M} discovered a quasar at
+$z\approx7.1$, and by measuring the damping wing of the near-zone Ly$\alpha$ absorption determined
+that the neutral fraction is at least 0.1 in the vicinity of this quasar.
+\citet{2018Natur.553..473B} found another quasar at $z\approx7.5$ and performed a similar analysis
+to determine that the neutral fraction is at least 0.33. The EoR therefore appears to be in progress
+and drawing to a close by $z\sim 6$.
 
 \begin{figure}[p]
     \centering
@@ -204,9 +206,9 @@ at least 0.33. The EoR therefore appears to be in progress and drawing to a clos
 
 \section{First Generation 21\,cm Experiments}
 
-The first successful attempt to use of 21\,cm emission to map the three-dimensional structure of the
-universe was conducted by \citet{2010Natur.466..463C} using the Green Bank Telescope (GBT) across
-redshifts 0.53--1.12. This measurement demonstrated the feasibility of using low-resolution
+The first successful attempt make use of the 21\,cm emission to map the three-dimensional structure
+of the universe was conducted by \citet{2010Natur.466..463C} using the Green Bank Telescope (GBT)
+across redshifts 0.53--1.12. This measurement demonstrated the feasibility of using low-resolution
 spectral-line maps to study Baryon Acoustic Oscillations (BAO) at the onset of the accelerating
 expansion of the universe.
 
@@ -223,10 +225,12 @@ therefore simply the mean 21\,cm brightness temperature within a spherical shell
     T^\text{global}_{21}(z) = \frac{1}{\Omega}\int \Delta T_{21}(z; \hat{r}) \, \d\Omega \,,
 \end{equation}
 where $T^\text{global}_{21}(z)$ is the global 21\,cm signal at the redshift $z$, $\Delta
-T_{21}(\hat{r})$ is the 21\,cm brightness temperature at the redshift $z$ in the direction
-$\hat{r}$, and the integral runs over solid angle $\Omega$.  The power spectrum statistic leverages
-the line of sight distance information from the observed frequency to measure the power in
-fluctuations on a given spatial scale within a volume of the universe:
+T_{21}(z; \hat{r})$ is the 21\,cm brightness temperature at the redshift $z$ in the direction
+$\hat{r}$, and the integral runs over solid angle $\Omega$.
+
+The power spectrum statistic leverages the line of sight distance information from the observed
+frequency to measure the power in fluctuations on a given spatial scale within a volume of the
+universe:
 \begin{equation}
     P_{21}(z; \vec{k}) =
         \frac{1}{V}\left|
@@ -242,8 +246,6 @@ sources of systematic errors along the line of sight and perpendicular to the li
 parameterizing the power spectrum in terms of the parallel and perpendicular to the line of sight
 wavenumbers ($k_\parallel$ and $k_\perp$ respectively) is common.
 
-\todo{describe the power spectrum particularly during the cosmic dawn}
-
 The global signal and the power spectrum are both statistics of the same underlying 21\,cm
 brightness temperature and therefore both statistics can be used to answer high-level questions such
 as: When did reionization occur? How quickly was the universe heated after initial star formation
@@ -252,6 +254,8 @@ ionization.  For instance, rare massive haloes generate fluctuations on larger s
 the more common small haloes.  Both approaches are complementary because they employ substantially
 different instrumental designs and are subject to different (but not exclusively different)
 systematic errors.
+
+\todo{describe the power spectrum particularly during the cosmic dawn}
 
 \subsection{Global Signal Experiments}
 
@@ -293,14 +297,14 @@ several attempts to design and use more exotic instruments. \citet{2013PhRvD..87
 an instrument with a 5$\arcdeg$ beam could achieve a higher significance detection by using the
 improved angular resolution to mitigate foreground contamination. \citet{2015MNRAS.450.2291V} used
 lunar occultation to constrain the global signal between 35 and 80\,MHz using LOFAR. This technique
-uses an interferometer to measure the contrast between the moon and surrounding sky, but is
+uses an interferometer to measure the contrast between the moon and the surrounding sky, but is
 complicated by radio frequency interference (RFI) reflecting off of the moon and potentially by the
 assumption that the moon is a thermal source at low frequencies. Drawn by the calibration advantages
 of interferometers, other groups have proposed designing interferometers that have nonzero
 sensitivity to the monopole. \citet{2015ApJ...809...18P} developed a framework for measuring the
 global signal from interferometric measurements, and \citet{2015ApJ...815...88S} designed a
 zero-spacing interferometer using a resistive screen to separate two antennas. However, ultimately
-the calibration advantages of an interferometer to measure the global signal may have been
+the calibration advantages of using an interferometer to measure the global signal may have been
 overstated.  \citet{2016ApJ...826..116V} demonstrated that interferometers may only have any
 sensitivity to the global signal if there is some amount of cross talk between the correlated
 elements or a source of noise that can radiate coherently into both receivers.
@@ -339,13 +343,13 @@ the interferometer's raw sensitivity to a particular spatial scale.
 The Low-Frequency Array (LOFAR) EoR Key Science Project (KSP) is attempting a similar measurement of
 the 21\,cm power spectrum. In contrast to PAPER, LOFAR is composed of $\sim30,000$ high-band
 antennas (120--240\,MHz) and $\sim3,000$ low-band antennas (30--80\,MHz). These antennas are grouped
-into stations and stations are correlated with each other. This trade off sacrifices field of view
-for gain. The LOFAR EoR KSP recently published its first limits on the 21\,cm power spectrum,
-finding a $2\sigma$ upper limit of $(79.6\,\text{mK})^2$ at $z=10.1$ \citep{2017ApJ...838...65P}. In
-this measurement, LOFAR attempted to leverage its superior imaging and source-removal capabilities,
-but ultimately this measurement was limited by residual systematic errors. The removal of
-contaminating diffuse radio emission has been the focus of ongoing work with some reported success
-\citep{koopmans_2017}.
+into stations and stations are correlated with each other. This design is a trade off that
+sacrifices field of view for gain. The LOFAR EoR KSP recently published its first limits on the
+21\,cm power spectrum, finding a $2\sigma$ upper limit of $(79.6\,\text{mK})^2$ at $z=10.1$
+\citep{2017ApJ...838...65P}. In this measurement, LOFAR attempted to leverage its superior imaging
+and source-removal capabilities, but ultimately this measurement was limited by residual systematic
+errors. The removal of contaminating diffuse radio emission has been the focus of ongoing work with
+some reported success \citep{koopmans_2017}.
 
 Several attempts have been made to measure the 21\,cm power spectrum with the Murchison Widefield
 Array (MWA) using multiple different techniques \citep{2016ApJ...825..114J}.
@@ -366,10 +370,15 @@ careful study of the signal loss associated with foreground removal \citep{2013M
 \section{Observational Challenges}
 
 The two most substantial challenges faced by all attempts to measure the cosmological 21\,cm
-emission are the blindingly bright foreground radio emission that must be subtracted, removed, or
-otherwise suppressed, and the instrumental calibration, which must be completed with a high degree
-of accuracy or else residual foreground emission could be confused with the cosmological 21\,cm
-signal.
+emission are:
+\begin{enumerate}
+    \item
+        the blindingly bright foreground radio emission that must be subtracted, removed, or
+        otherwise suppressed, and
+    \item
+        the instrumental calibration, which must be completed with a high degree of accuracy or else
+        residual foreground emission could be confused with the cosmological 21\,cm signal.
+\end{enumerate}
 
 \subsection{Foreground Emission}
 
@@ -379,24 +388,25 @@ previously published sky maps between 10\,MHz and 100\,GHz. However, the majorit
 high fidelity sky maps are located at frequencies above 1.4\,GHz. Below 1.4\,GHz, there is the
 408\,MHz Haslam map \citep{1981A&A...100..209H,1982A&AS...47....1H}, which covers the sky at
 1$\arcdeg$ resolution. At 45\,MHz, \citet{2011A&A...525A.138G} compiled a sky map from a northern
-and a southern hemisphere survey at 5$\arcdeg$ resolution \citep{1997A&AS..124..315A,
-1999A&AS..140..145M}. At 22\,MHz, \citet{1999A&AS..137....7R} mapped the sky from the Canadian
-Dominion Radio Astrophysical Observatory (DRAO) at 1$\arcdeg$--2$\arcdeg$ resolution.
+hemisphere survey and a southern hemisphere survey each at 5$\arcdeg$ resolution
+\citep{1997A&AS..124..315A, 1999A&AS..140..145M}. At 22\,MHz, \citet{1999A&AS..137....7R} mapped the
+sky from the Canadian Dominion Radio Astrophysical Observatory (DRAO) at 1$\arcdeg$--2$\arcdeg$
+resolution.
 
 At large angular scales $\theta \gg 1\arcdeg$, the low-frequency radio sky is dominated by galactic
 synchrotron emission generated by relativistic electrons spiraling around galactic magnetic field
 lines. The EDGES experiment, in the southern hemisphere, measured the brightness temperature of this
-emission at high galactic latitudes to be \citep{2017MNRAS.464.4995M}
+emission at \emph{high} galactic latitudes to be \citep{2017MNRAS.464.4995M}
 \begin{equation}\label{eq:edges-sky-spectrum}
     T \sim 300\,\left(\frac{\nu}{150\,{\rm MHz}}\right)^{-2.6}\,\text{K}.
 \end{equation}
 At smaller angular scales $\theta \ll 1\arcdeg$, the galactic emission gives way to a sea of active
-galactic nuclei (AGN), the brightest of which, Cyg A, has a flux $>15,000\,\text{Jy}$ at frequencies
+galactic nuclei (AGN), the brightest of which---Cyg A---has a flux $>15,000\,\text{Jy}$ at frequencies
 $<80\,\text{MHz}$ \citep{1977A&A....61...99B}. A simple comparison between
 Equations~\ref{eq:radiative-transfer-equation} and \ref{eq:edges-sky-spectrum} reveals that the
 foreground radio emission must be suppressed by four to five orders of magnitude before the 21\,cm
 fluctuations can be detected.  However, this foreground emission is typically synchrotron and
-free-free, both of which generate smooth power-law spectra. The 21~cm signal, on the other hand, is
+free-free, both of which generate smooth power-law spectra. The 21\,cm signal, on the other hand, is
 not expected to be so smooth. This is due to the fact that sweeping through frequency along a line
 of sight probes different causally disconnected regions of the universe. Each of these regions
 experiences a different star formation, heating and reionization history, which ultimately produces
@@ -422,6 +432,10 @@ these frequencies.
         (a) & (b) \\
     \end{tabular}
     \caption{
+        (a) Illustration of the foreground wedge. The emission near the edge of the foreground wedge
+        typically originates from sources located far from the delay center.
+        (b) Illustration of the contamination arising after calibration errors. Emission leaks out
+        of the foreground wedge and into the otherwise clean ``EoR Window.''
         Reproduced from \citet{2012ApJ...752..137M} (permission not yet received).
     }
     \label{fig:morales-foreground-wedge}
@@ -503,18 +517,19 @@ and a proclivity for the most troublesome sources to be far from the delay cente
 Figure~\ref{fig:morales-foreground-wedge}), a detailed understanding of the---potentially
 inhomogeneous---antenna response pattern is essential.  For instance, \citet{2015PhRvD..91h3514S}
 concluded that the Canadian Hydrogen Intensity Mapping Experiment (CHIME) must measure its beam to
-better than $10^{-4}$ to avoid biasing a measurement of the power spectrum.  Furthermore, a standard
-sky-based calibration procedure will require a model for the entire field of view. An incomplete sky
-model will introduce ripples into the bandpass that impedes the observer's ability to separate
-foreground emission from the cosmological 21\,cm emission \citep[e.g.,
+better than one part in $10^{-4}$ to avoid biasing a measurement of the power spectrum.
+Furthermore, a standard sky-based calibration procedure will require a model for the entire field of
+view. An incomplete sky model will introduce ripples into the bandpass that impedes the observer's
+ability to separate foreground emission from the cosmological 21\,cm emission \citep[e.g.,
 Figure~\ref{fig:morales-foreground-wedge};][]{2016MNRAS.461.3135B, 2017MNRAS.470.1849E}.
 
 In order to address some of the difficulties associated with sky-based calibration, some power
 spectrum experiments---notably PAPER and HERA---have implemented redundant baseline calibration
 \citep{2010MNRAS.408.1029L}. While redundant calibration is useful for discovering instrumental
-errors, there are some calibration parameters that cannot be constrained with redundant calibration.
-Notably this includes the overall bandpass, which must still be measured from the spectrum of a
-known point source. Yet at this time, few flux calibrators exist at frequencies below 200\,MHz
+errors and deriving calibration parameters in a way that is robust to modeling errors, there are
+some calibration parameters that cannot be constrained with redundant calibration.  Notably this
+includes the overall bandpass, which must still be measured from the spectrum of a known point
+source. Yet at this time, few flux calibrators exist at frequencies below 200\,MHz
 \citep{2012MNRAS.423L..30S, 2017ApJS..230....7P}.
 
 Propagation effects through the ionosphere additionally complicate low-frequency observations. The
@@ -549,13 +564,13 @@ Despite the practical difficulties involved in detecting the 21\,cm transition f
 Cosmic Dawn, it promises to open up a new window towards the high-redshift universe and the first
 generation of stars and galaxies.  Recently, a significant development came from the first putative
 detection of the Cosmic Dawn through the global 21\,cm signal by the EDGES experiment
-\citep{2018Natur.555...67B}. In this paper, the authors claimed a detection of an absorption feature
-centered at $78\,\text{MHz}$ ($z\sim17$), which they attribute to early star formation and heating
-(see Figure~\ref{fig:bowman-absorption-trough}).
+\citep{2018Natur.555...67B}. In this paper, the authors claimed the detection of an absorption
+feature centered at $78\,\text{MHz}$ ($z\sim17$), which they attribute to early star formation and
+heating (see Figure~\ref{fig:bowman-absorption-trough}).
 
 The absorption feature reported by \citet{2018Natur.555...67B} is remarkable for its extreme
 amplitude ($\sim 500\,\text{mK}$), which cannot be attained through purely adiabatic cooling of the
-IGM.  Currently there is skepticism in regards to how EDGES modeled and subtracted foreground
+IGM.  Currently there is some skepticism in regards to how EDGES modeled and subtracted foreground
 emission \citep{2018arXiv180501421H}, but the result has nevertheless sparked a flurry of new ideas
 ranging from the absurd (i.e., $\Omega_m = \Omega_b$) to the exotic.  The most plausible of these
 theories are new ideas for either cooling the IGM \citep[e.g.,][]{2018Natur.555...71B} or positing a
@@ -571,11 +586,11 @@ this initial detection has produced more questions than answers.
 
 Power spectrum experiments can offer an independent verification and continue to advance in
 sophistication and sensitivity with upgrades to LOFAR, the MWA, and the construction of the Hydrogen
-Epoch of Reionization Array \citep[HERA;][]{2017PASP..129d5001D}. HERA will be composed of 350
+Epoch of Reionization Array \citep[HERA;][]{2017PASP..129d5001D}. HERA will be composed of $\sim350$
 parabolic dishes (each 14\,m in diameter) hexagonally packed within a core 300\,m across.  Each dish
 will be equipped with a feed that operates between 50 and 250\,MHz ($z\sim5-27$). HERA incorporates
 lessons learned from the preceding PAPER experiment, and so with a major increase in collecting area
-with respect to PAPER promises to deliver a compelling detection of the 21\,cm power spectrum.
+with respect to PAPER, promises to deliver a compelling detection of the 21\,cm power spectrum.
 On even longer timescales, the SKA may be capable of constructing a tomographic map of the universe
 through the 21\,cm transition \citep{2013ExA....36..235M}.
 
@@ -589,8 +604,8 @@ publicly available on the Legacy Archive for Microwave Background Data Analysis 
 }
 I will also present the deepest upper limits on the amplitude of the 21\,cm power spectrum of the
 Cosmic Dawn, and the only existing limits at $z > 18$. Figure~\ref{fig:history-of-the-universe}
-presents a radial map of the universe that compares the distances probed by the OVRO-LWA and HERA to
-other probes of the high-redshift universe.
+presents a radial map of the universe that compares the comoving radial distances probed by the
+OVRO-LWA and HERA to other probes of the high-redshift universe.
 
 \begin{figure}[t]
     \centering
