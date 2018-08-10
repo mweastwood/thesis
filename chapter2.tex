@@ -167,7 +167,38 @@ point-spread function (PSF) is pretty good.
 
 \subsection{Computing Antenna Positions}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter2/northing-easting-mistake/northing-easting-mistake}
+    \caption{
+        Illustration of the error in the WCS prior to a correction to the antenna positions. The
+        image is a difference between an image constructed with the incorrect antenna positions and
+        the corrected antenna positions. The arrow denotes the direction and approximate center of
+        the rotation.
+    }
+    \label{fig:northing-easting-mistake}
+\end{figure}
+
+Early images produced by the OVRO-LWA (prior to 2015 October 16) were afflicted by an apparent
+rotation in the World Coordinate System (WCS).
+
 \subsection{RFI Localization}
+
+\begin{figure}
+    \centering
+    \begin{tabular}{cc}
+        \includegraphics[width=0.45\textwidth]{figures/chapter2/google-maps-rfi-localization} &
+        \includegraphics[width=0.45\textwidth]{figures/chapter2/power-line-picture} \\
+        (a) & (b) \\
+    \end{tabular}
+    \caption{
+        (a) The localization region for a source of RFI south of the OVRO-LWA and near the town of
+        Big Pine. Satellite imagery \textcopyright2018 Google, map data \textcopyright2018 Google.
+        (b) Image of a high-voltage power line overlooking the observatory near the localization
+        region.
+    }
+    \label{fig:rfi-localization}
+\end{figure}
 
 \myputbib{thesis}
 \end{bibunit}

@@ -1,6 +1,8 @@
 using PyCall, PyPlot
 unshift!(PyVector(pyimport("sys")["path"]), @__DIR__)
 @pyimport matplotlib.colors as mpl_colors
+@pyimport matplotlib.patches as mpl_patches
+@pyimport matplotlib.path as mpl_path
 
 plt[:rc]("lines", linewidth=1.2)
 plt[:rc]("font", family="sans-serif")
