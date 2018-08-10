@@ -193,12 +193,45 @@ rotation in the World Coordinate System (WCS).
     \end{tabular}
     \caption{
         (a) The localization region for a source of RFI south of the OVRO-LWA and near the town of
-        Big Pine. Satellite imagery \textcopyright2018 Google, map data \textcopyright2018 Google.
-        (b) Image of a high-voltage power line overlooking the observatory near the localization
-        region.
+        Big Pine. Satellite imagery \textcopyright2018 Google. Map data \textcopyright2018 Google.
+        (b) Image of a high-voltage power line overlooking OVRO near the localization region.
     }
     \label{fig:rfi-localization}
 \end{figure}
+
+An ongoing challenge faced by the OVRO-LWA is the presence of broadband sources of RFI in the
+vicinity of the observatory. Due to the entire-hemisphere field of view of the OVRO-LWA, these
+sources appear as points on the horizon that limit the sensitivity of snapshot images through
+additional sidelobe noise. Fortunately, because these sources are typically in the near-field of the
+interferometer, the curvature of the incoming wavefront can be used to infer the distance to each
+source of RFI.
+
+The path difference from a source in the near-field of an interferometer located at the position
+$(\xi, \eta, \zeta)$ to two antennas located respectively at $(x_i, y_i, z_i)$ and $(x_j, y_j, z_j)$
+is
+\begin{equation}\label{eq:nearfield-path-difference}
+    \Delta l^\text{near-field}_{ij} =
+        \sqrt{(x_j - \xi)^2 + (y_j - \eta)^2 + (z_j - \zeta)^2}
+        - \sqrt{(x_i - \xi)^2 + (y_i - \eta)^2 + (z_i - \zeta)^2}\,.
+\end{equation}
+In the limit that the distance of the source goes to infinity, we recover the familiar expression
+\begin{equation}\label{eq:farfield-path-difference}
+    \Delta l^\text{far-field}_{ij} = \frac{1}{D}\Big(
+        (x_i - x_j)\,\xi + (y_i - y_j)\,\eta + (z_i - z_j)\,\zeta
+    \Big)\,,
+\end{equation}
+where $D$ is the distance to the source. The correlation measured between two antennas for a source
+in the near-field of the interferometer is therefore
+\begin{equation}\label{eq:nearfield-visibilities}
+    V_{ij} = F \exp\left(2\pi i \frac{\Delta l^\text{near-field}_{ij}}{\lambda}\right)\,,
+\end{equation}
+where $V_{ij}$ is the visibility measured between antennas $i$ and $j$, $F$ is the apparent
+brightness of the source, and $\lambda$ is the wavelength. Equation~\ref{eq:nearfield-visibilities}
+can then be used to fit for the position of a source including its distance.
+
+In order to improve sensitivity to these RFI sources,
+
+
 
 \myputbib{thesis}
 \end{bibunit}
