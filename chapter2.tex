@@ -15,37 +15,13 @@
     \label{fig:ovro-first-antenna}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/chapter2/lwa-antenna}
     \caption{
         Picture of an OVRO-LWA antenna.
     }
     \label{fig:ovro-lwa-pictures}
-\end{figure}
-
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=\textwidth]{figures/chapter2/before-expansion}
-    \caption{
-        Snapshot image of the sky captured with the OVRO-LWA and using only the antennas located
-        within the core of the array. The image covers the entire visible hemisphere in
-        sine-projection.  A similar image constructed using the newer long-baseline antennas can be
-        seen in Figure~\ref{fig:expansion-snapshot-image}.
-    }
-    \label{fig:core-snapshot-image}
-\end{figure}
-
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=\textwidth]{figures/chapter2/after-expansion}
-    \caption{
-        Snapshot image of the sky captured with the OVRO-LWA and using the new long-baseline
-        antennas. The image covers the entire visible hemisphere in sine-projection.  A similar
-        image constructed using only the core of the interferometer can be seen in
-        Figure~\ref{fig:core-snapshot-image}.
-    }
-    \label{fig:expansion-snapshot-image}
 \end{figure}
 
 The OVRO-LWA is a new low-frequency (27--85\,MHz instantaneous) radio interferometer constructed
@@ -107,43 +83,97 @@ OVRO-LWA into existence, to first light, and finally its first scientific result
 latter pipeline will be discussed in considerable depth in Chapters~\ref{chapter3} and
 \ref{chapter4}.
 
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter2/before-expansion}
+    \caption{
+        Snapshot image of the sky captured with the OVRO-LWA and using only the antennas located
+        within the core of the array. The image covers the entire visible hemisphere in
+        sine-projection.  A similar image constructed using the newer long-baseline antennas can be
+        seen in Figure~\ref{fig:expansion-snapshot-image}.
+    }
+    \label{fig:core-snapshot-image}
+\end{figure}
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[width=\textwidth]{figures/chapter2/after-expansion}
+    \caption{
+        Snapshot image of the sky captured with the OVRO-LWA and using the new long-baseline
+        antennas. The image covers the entire visible hemisphere in sine-projection.  A similar
+        image constructed using only the core of the interferometer can be seen in
+        Figure~\ref{fig:core-snapshot-image}.
+    }
+    \label{fig:expansion-snapshot-image}
+\end{figure}
+
 \section{Calibration of a Low-Frequency Interferometer}
 
-Gain calibration amounts to determining the optimal set of Jones matrices $G_i$ for each antenna $i$
-such that
-\begin{align}
-    \b V_{ij, \text{measured}} &= \b G_i \, \b V_{ij, \text{model}} \, \b G_j^*
-        + \b N_{ij} \\
-    \begin{pmatrix}
-        V_{ij, \text{measured}}^{xx} & V_{ij, \text{measured}}^{xy} \\
-        V_{ij, \text{measured}}^{yx} & V_{ij, \text{measured}}^{yy} \\
-    \end{pmatrix} &=
-    \begin{pmatrix}
-        g_{i}^{xx} & g_{i}^{xy} \\
-        g_{i}^{yx} & g_{i}^{yy} \\
-    \end{pmatrix}
-    \begin{pmatrix}
-        V_{ij, \text{model}}^{xx} & V_{ij, \text{model}}^{xy} \\
-        V_{ij, \text{model}}^{yx} & V_{ij, \text{model}}^{yy} \\
-    \end{pmatrix}
-    \begin{pmatrix}
-        g_{j}^{xx} & g_{j}^{xy} \\
-        g_{j}^{yx} & g_{j}^{yy} \\
-    \end{pmatrix}^* +
-    \begin{pmatrix}
-        n_{j}^{xx} & n_{j}^{xy} \\
-        n_{j}^{yx} & n_{j}^{yy} \\
-    \end{pmatrix}\,,
-\end{align}
-where $\b V_{ij,\text{measured}}$ is the Jones matrix of measured visibilities on the baseline
-$i-j$, $\b V_{ij,\text{model}}$ is the Jones matrix of model visibilities (i.e., ideally what would
-have been measured if the antenna and receiver did not impart any additional gain or phase), and $\b
-N_{ij}$ is additional noise.
+The purpose of calibration is to remove the contribution of the antenna and receivers, including any
+gain, filters, and propagation effects along the signal path. At low radio frequencies, the Earth's
+ionosphere is additionally important due to the effects of electromagnetic waves propagating through
+a magnetized plasma.
 
-A typical calibration strategy using the Very Large Array (VLA) involves periodically pointing at a
-known compact point source. For a compact point source at the phase center, the phase of all
-visibilities should be zero, and the amplitude is given by the known flux (and if necessary, the
-polarization) of the source.
+Further, we will make a distinction between a ``direction-independent'' calibration and a
+``direction-dependent'' calibration. The former can correct for the response of the receiver and
+signal path, but cannot fully account for the antenna response pattern and ionospheric effects. The
+latter allows for the calibration parameters to vary as a function of direction on the sky, which
+can account for errors due to the antenna beam and some ionospheric effects.
+
+Neglecting complexity associated with polarized imaging for now, a direction-independent calibration
+amounts to determining the complex-valued gain $g_i(\nu)$ associated with each signal path $i$ and
+frequency $\nu$. These gains effect the measured correlation between the signal paths $i$ and $j$
+such that
+\begin{equation}
+    V_{ij}^\text{measured}(\nu) = g_i(\nu)\,g_j^*(\nu)\,V_{ij}^\text{true}(\nu)
+        + \text{noise}\,,
+\end{equation}
+where $V_{ij}^\text{measured}$ is the visibility actually measured between the corresponding signal
+paths at the frequency $\nu$, and $V_{ij}^\text{true}$ is the visibility that would have been
+measured if instead we had correlated the value of the electric field at the electrical center of
+each antenna without the need for any additional electronics. The true visibility
+can be computed from the sky brightness $I(\nu, \hat{r})$ at the
+frequency $\nu$ and direction $\hat r$ such that
+\begin{equation}
+    V_{ij}^\text{true}(\nu) = \int a_i(\nu, \hat{r})\,a_j^*(\nu, \hat{r})\,I(\nu, \hat{r})\,
+        \exp\Big(2\pi i\hat{r}\cdot\vec{b_{ij}}/\lambda\Big)\,\d\Omega,
+\end{equation}
+where the integral runs over solid angle $\Omega$, $a_i(\nu, \hat{r})$ is the response of the
+corresponding antenna at the frequency $\nu$ to the direction $\hat{r}$, $\vec{b_{ij}}$ is the
+baseline separating the antennas for signal paths $i$ and $j$, and $\lambda$ is the wavelength.  If
+the sky is assumed to be composed of point sources, then
+\begin{equation}
+    V_{ij}^\text{true}(\nu) = \sum_k a_i(\nu, \hat{r}_k)\,a_j^*(\nu, \hat{r}_k)\,F_k(\nu)\,
+        \exp\Big(2\pi i\hat{r}_k\cdot\vec{b_{ij}}/\lambda\Big)\,,
+\end{equation}
+where $F_k$ is the flux of the $k$th point source in the direction $\hat{r}_k$.
+
+A typical calibration strategy using, for example, the Very Large Array (VLA) involves periodically
+pointing at a known compact point source. For a compact point source at the phase center, the phase
+of all visibilities is zero, and the amplitude is given by the known flux of the source.
+Periodically revisiting this source allows for the observer to establish the time variation of the
+calibration parameters. Each time the observer solves for the gains that minimize
+\begin{equation}
+    \chi^2 \propto \sum_{i \neq j}
+        \Big\|V_{ij}^\text{measured}(\nu) - g_i(\nu)\,g_j^*(\nu)\,F\Big\|^2\,,
+\end{equation}
+where $F$ is the flux of the isolated point source.
+
+This optimization can be performed with rapid convergence using a variant of alternating
+least-squares developed by \citet{2008ISTSP...2..707M} and \citet{2014A&A...571A..97S}. At each
+iteration this algorithm applies linear least-squares to minimize $\chi^2$ while holding one set of
+gains constant:
+\begin{equation}\label{eq:stefcal-iterations}
+    g_i \leftarrow \frac
+        {\sum_{i \neq j} g_j^* V_{ij}^{\text{model},*} V_{ij}^\text{measured}}
+        {\sum_{i \neq j} \| g_j V_{ij}^\text{model} \|^2}\,,
+\end{equation}
+where we have now allowed for a more general sky model to be used during calibration by introducing
+the model visibilities $V_{ij}^\text{model}$, which are the true visibilities for an assumed model
+of the sky.  Naively applying Equation~\ref{eq:stefcal-iterations} will result in poor convergence
+due to oscillations about the true minimum of $\chi^2$.  These oscillations can be damped by
+averaging subsequent iterations, and \citet{2014A&A...571A..97S} demonstrated that this simple
+gradient-free optimization strategy converges remarkably quickly.
 
 The OVRO-LWA is capable of imaging the entire hemisphere in a snapshot image. This brings its own
 unique calibration challenges because it is currently impossible to isolate a single compact point source
@@ -151,49 +181,41 @@ within the field of view of the interferometer.\footnote{
     Gated pulsar observations could, in principle, achieve this isolation. This capability is a key
     development area for the OVRO-LWA.
 }
-Due to the wide field of view, determining an accurate gain calibration relies on a detailed sky
-and antenna beam model. Mistakes or omissions in the sky model can, for example, generate artificial
-ripples in the bandpass calibration that will impact the interferometer's ability to cleanly
-separate foreground emission from cosmological 21~cm emission \citep{2016MNRAS.461.3135B}.
+Due to the wide field of view, determining an accurate gain calibration relies on a detailed sky and
+antenna beam model. Mistakes or omissions in the sky model can, for example, generate artificial
+ripples in the bandpass that will impact the interferometer's ability to cleanly separate foreground
+emission from cosmological 21~cm emission \citep{2016MNRAS.461.3135B, 2017MNRAS.470.1849E}.
 
 Furthermore, at frequencies $\nu < 100\,\text{MHz}$ there are few flux calibrators.
 \citet{1977A&A....61...99B} determined the absolute spectrum of Cyg~A between 20~MHz and 2~GHz.
 \citet{2012MNRAS.423L..30S} added six additional calibrators, and \citet{2017ApJS..230....7P} used
 the VLA 4-band system to bring the total number of available calibrators to 11. However, in
-\S\ref{sec:flux-scale} I will show that the latter spectra can diverge rapidly from truth below
-50~MHz.
+Chapter~\ref{chapter3} I will show that the latter spectra can diverge substantially from truth
+below 50~MHz.
 
 Detailed sky and beam models are therefore generally an important calibration requirement for
-low-frequency interferometers. In \S\ref{chapter3}, I derived an empirical beam model for the
-OVRO-LWA and developed a new imaging formalism that captures the entire visible sky in a single
-synthesis imaging step that can be used as part of a self-calibration loop.
+low-frequency interferometers.  In Chapter~\ref{chapter3}, I will also derive an empirical beam
+model for the OVRO-LWA and developed a new imaging formalism that captures the entire visible sky in
+a single synthesis imaging step that can be used as part of a self-calibration loop
+\citep{1978ApJ...223...25R}.
 
-The calibration routine itself is adapted from a variant of alternating least-squares developed by
-\citet{2008ISTSP...2..707M} and \citet{2014A&A...571A..97S}. At each step this algorithm seeks to
-minimize
-\begin{equation}\label{eq:stefcal-step}
-    \b G_i = \argmin \sum_{j \neq i}
-        \left\|
-            \b V_{ij, \text{measured}} - \b G_i \, \b V_{ij, \text{model}} \, \b G_j^*
-        \right\|^2\,
-\end{equation}
-where each of the elements of $\b G_j^*$ are considered fixed. Equation~\ref{eq:stefcal-step} is
-therefore a linear least-squares optimization and can be rapidly solved. However, by fixing $\b
-G_j^*$ these iterations tend to oscillate about a minimum of $\chi^2$. These oscillations can be
-damped by averaging subsequent iterations, and \citet{2014A&A...571A..97S} demonstrated that this
-simple gradient-free optimization strategy converges remarkably quickly.
-
-Some interferometers (e.g., HERA and the MWA), recognizing the difficulty of gain calibration at low
-frequencies, have opted for partly redundant antenna configurations. These configurations can solve
-for many of their calibration parameters internally without relying on an incomplete sky model and
-potentially inaccurate antenna beam model \citep{2010MNRAS.408.1029L}. However, these
-interferometers sacrifice imaging fidelity, which is useful for establishing the remaining
-calibration parameters (e.g., the overall bandpass cannot be solved for in an internal
-redundant-calibration routine).\footnote{
-    The HERA collaboration is currently investigating the possibility of determining the overall
-    bandpass through redundancies between frequency channels. The author of this thesis is not
-    optimistic about this approach.
+As part of this thesis I developed the \texttt{TTCal} calibration routine for the purpose of
+calibrating the OVRO-LWA. It implements the alternating least-squares algorithm described above to
+solve for the complex-valued gain of each signal path from a model sky composed of any number of
+point sources, Gaussians, and shapelet components \citep{2003MNRAS.338...35R}. If desired,
+\texttt{TTCal} may instead solve for the Jones matrix associated with each antenna for a fully
+polarized calibration solution. \texttt{TTCal} is freely available under the GPLv3 license or any
+under later version.\footnote{
+    \url{https://github.com/mweastwood/TTCal.jl}
 }
+
+%Some interferometers (e.g., HERA and the MWA), recognizing the difficulty of gain calibration at low
+%frequencies, have opted for partly redundant antenna configurations. These configurations can solve
+%for many of their calibration parameters internally without relying on an incomplete sky model and
+%potentially inaccurate antenna beam model \citep{2010MNRAS.408.1029L}. However, these
+%interferometers sacrifice imaging fidelity, which is useful for establishing the remaining
+%calibration parameters (e.g., the overall bandpass cannot be solved for in an internal
+%redundant-calibration routine).
 
 \section{Source Removal and Direction-Dependent Calibration}
 
@@ -207,7 +229,7 @@ point-spread function (PSF) is pretty good.
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{figures/chapter2/northing-easting-mistake/northing-easting-mistake}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/northing-easting-mistake/northing-easting-mistake}
     \caption{
         Illustration of the error in the WCS prior to a correction to the antenna positions. The
         image is a difference between an image constructed with the incorrect antenna positions and
