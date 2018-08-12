@@ -219,8 +219,51 @@ under later version.\footnote{
 
 \section{Source Removal and Direction-Dependent Calibration}
 
-Because the OVRO-LWA antenna layout is optimized for sidelobe levels in snapshot imaging, the
-point-spread function (PSF) is pretty good.
+The large field of view of the OVRO-LWA comes with additional challenges associated with the
+ionosphere, inhomogeneous primary beams, antenna shadowing, and multipath propagation.
+
+The dispersion relation for electromagnetic waves propagating in a plasma is
+\begin{equation}
+    \omega^2 = \omega_\text{plasma}^2 + c^2 k^2\,,
+\end{equation}
+where $\omega$ is the angular frequency of the oscillations, $k$ is the wavenumber, and
+$\omega_\text{plasma}$ is the plasma frequency---the frequency of electrostatic oscillations within
+the plasma. The plasma frequency (in SI units) is given by
+\begin{equation}
+    \omega_\text{plasma} = \sqrt{\frac{n_e e^2}{m_e \varepsilon_0}}\,,
+\end{equation}
+where $n_e$ is the number density of electrons, $e$ is the charge of the electron, $m_e$ is the mass
+of the electron, and $\varepsilon_0$ is the permittivity of free space.  For Earth's ionosphere, the
+plasma frequency is typically $\sim 2\pi \times 10\,\text{MHz}$.  The index of refraction is
+\begin{equation}
+    n = \sqrt{1 - \frac{\omega_\text{plasma}^2}{\omega^2}}
+      \approx 1 - \frac{1}{2}\frac{\omega_\text{plasma}^2}{\omega^2}\,,
+\end{equation}
+where the approximation holds if $\omega^2 \gg \omega_\text{plasma}^2$. In this regime, the arrival
+time of a burst of radio emission is $\propto \nu^{-2}$ as is commonly seen in pulsar astronomy.
+The additional phase imparted is, however, $\propto \nu^{-1}$ such that along a given line of sight
+the phase can be parameterized as
+\begin{equation}
+    \phi \approx \phi_0 + \overbrace{2\pi\tau\nu}^\text{delay}
+    + \overbrace{\frac{e^2}{4\pi m_e c \varepsilon_0}
+        \frac{1}{\nu}\int n_e\,\d l}^\text{ionospheric dispersion}\,,
+\end{equation}
+where $\phi_0$ sets the overall phase, $\tau$ is the delay, and the integral of the electron number
+density along the line of sight is called the Total Electron Content (TEC).
+
+\citep{2011ITAP...59.1855E}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Commissioning Challenges}
 \label{sec:commissioning-challenges}
