@@ -1,3 +1,11 @@
+\newcommand{\tbf}{\textbf}
+\renewcommand{\rm}{\textrm}
+\renewcommand{\b}{\pmb}
+\renewcommand{\d}{{\rm d}}
+
+\newcommand{\Ty}{{\textit{Thank you} }}
+\newcommand{\ty}{{\textit{thank you} }}
+
 % Don't add extraneous bibliography entries to the table of contents!
 % They're not even indented correctly...
 \newcommand\myputbib[1]{%
@@ -38,4 +46,10 @@
 % Math operators
 \DeclareMathOperator{\argmin}{argmin}
 \DeclareMathOperator{\tr}{tr}
+
+% Formatting for the TOC
+\renewcommand{\cftchapterfont}{\normalfont\bfseries}% titles in bold
+\renewcommand{\cftchapterpagefont}{\normalfont\bfseries}% page numbers in bold
+\renewcommand{\cftchapterleader}{\hfill}% dot leaders in bold
+\setlength{\cftbeforechapterskip}{1em}
 
