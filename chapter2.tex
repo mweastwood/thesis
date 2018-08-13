@@ -142,7 +142,7 @@ where the integral runs over solid angle $\Omega$, $a_i(\nu, \hat{r})$ is the re
 corresponding antenna at the frequency $\nu$ to the direction $\hat{r}$, $\vec{b_{ij}}$ is the
 baseline separating the antennas for signal paths $i$ and $j$, and $\lambda$ is the wavelength.  If
 the sky is assumed to be composed of point sources, then
-\begin{equation}
+\begin{equation}\label{eq:antenna-response-point-sources}
     V_{ij}^\text{true}(\nu) = \sum_k a_i(\nu, \hat{r}_k)\,a_j^*(\nu, \hat{r}_k)\,F_k(\nu)\,
         \exp\Big(2\pi i\hat{r}_k\cdot\vec{b_{ij}}/\lambda\Big)\,,
 \end{equation}
@@ -220,15 +220,15 @@ under later version.\footnote{
 \section{Source Removal and Direction-Dependent Calibration}
 
 The large field of view of the OVRO-LWA comes with additional challenges associated with the
-ionosphere, inhomogeneous primary beams, antenna shadowing, and multipath propagation.
+ionosphere, inhomogeneous primary beams, and mutual coupling between antennas.
 
 The dispersion relation for electromagnetic waves propagating in a plasma is
 \begin{equation}
     \omega^2 = \omega_\text{plasma}^2 + c^2 k^2\,,
 \end{equation}
-where $\omega$ is the angular frequency of the oscillations, $k$ is the wavenumber, and
-$\omega_\text{plasma}$ is the plasma frequency---the frequency of electrostatic oscillations within
-the plasma. The plasma frequency (in SI units) is given by
+where $\omega$ is the angular frequency of the oscillations, $k$ is the wavenumber, $c$ is the speed
+of light, and $\omega_\text{plasma}$ is the plasma frequency---the frequency of electrostatic
+oscillations within the plasma. The plasma frequency (in SI units) is given by
 \begin{equation}
     \omega_\text{plasma} = \sqrt{\frac{n_e e^2}{m_e \varepsilon_0}}\,,
 \end{equation}
@@ -251,13 +251,31 @@ the phase can be parameterized as
 where $\phi_0$ sets the overall phase, $\tau$ is the delay, and the integral of the electron number
 density along the line of sight is called the Total Electron Content (TEC).
 
-\citep{2011ITAP...59.1855E}
+The diffractive scale $r_\text{diff}$ of the ionosphere is the length scale over which the phase
+variance is $1\,\text{rad}^2$. The Fresnel scale is $r_\text{f} = \sqrt{\lambda D / 2\pi}$ where $D$
+is the height of the ionosphere (typically $\sim 300\,\text{km}$). In the weak scattering regime
+($r_\text{diff} \gg r_\text{f}$), the ionosphere can contribute amplitude and phase scintillation,
+which may be folded into the antenna gain calibration.  However, in the strong scattering regime
+($r_\text{diff} \lesssim r_\text{f}$), point sources may become multiply imaged, which cannot be
+described as a perturbation to the antenna response \citep{2015MNRAS.453..925V}.
+
+The antenna response is also generally expected to be inhomogeneous.  Within the core of the
+OVRO-LWA antennas are separated by as little as 5\,m.  \citet{2011ITAP...59.1855E} studied the
+impact of mutual coupling on the antenna primary beam within the first Long Wavelength Array station
+in New Mexico (LWA1), which uses the same antennas and same 5\,m minimum spacing as the OVRO-LWA,
+but the antennas are packed within a 100\,m diameter (as opposed to a 200\,m diameter for the
+OVRO-LWA). The authors found that, between 20--74\,MHz, when pointing more than
+10$\arcdeg$--20$\arcdeg$ from zenith, mutual coupling and correlated galactic noise led to a
+2--6\,dB increase in the system equivalent flux density (SEFD), and 1--2\,dB deviations in the
+primary beam pattern between antennas. We expect comparable effects for the OVRO-LWA.
+
+Direction-dependent calibration therefore attempts to account for ionospheric scintillation and
+refraction, and inhomogeneous antenna beams by allowing the antenna response in
+Equation~\ref{eq:antenna-response-point-sources} to be a free parameter.
 
 
 
-
-
-
+\texttt{TTCal}
 
 
 
