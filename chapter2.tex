@@ -36,7 +36,7 @@ balun/preamp, and the entire system is sky noise dominated over the range 20--80
 Figure~\ref{fig:ovro-lwa-pictures}. The primary beam of each OVRO-LWA antenna subtends a solid angle
 of $\sim 8000\,\text{deg}^2$, with sensitivity to the entire visible hemisphere of the sky.
 
-\todo{ARX boards}
+%\todo{ARX boards}
 
 The remaining five antennas are isolated from the core of the OVRO-LWA and equipped with radiometric
 front ends as part of the LEDA experiment, which is attempting to measure the globally averaged
@@ -219,6 +219,23 @@ under later version.\footnote{
 
 \section{Source Removal and Direction-Dependent Calibration}
 
+\begin{figure}
+    \centering
+    \begin{tabular}{ccc}
+        \includegraphics[width=0.3\textwidth]{figures/chapter2/cas-a-no-removal} &
+        \includegraphics[width=0.3\textwidth]{figures/chapter2/cas-a-subtraction} &
+        \includegraphics[width=0.3\textwidth]{figures/chapter2/cas-a-peeling} \\
+        (a) & (b) & (c) \\
+    \end{tabular}
+    \caption{
+        Illustration of the improvement in source removal associated with peeling using
+        \texttt{TTCal}. (a) Image of Cas~A prior to source removal. (b) Image of Cas~A after
+        subtracting a point source without the application of direction-dependent gains. (c) Image
+        of Cas~A after peeling (including the application of direction-dependent gains).
+    }
+    \label{fig:peeling-illustration}
+\end{figure}
+
 The large field of view of the OVRO-LWA comes with additional challenges associated with the
 ionosphere, inhomogeneous primary beams, and mutual coupling between antennas.
 
@@ -271,17 +288,11 @@ primary beam pattern between antennas. We expect comparable effects for the OVRO
 
 Direction-dependent calibration therefore attempts to account for ionospheric scintillation and
 refraction, and inhomogeneous antenna beams by allowing the antenna response in
-Equation~\ref{eq:antenna-response-point-sources} to be a free parameter.
-
-
-
-\texttt{TTCal}
-
-
-
-
-
-
+Equation~\ref{eq:antenna-response-point-sources} to be a free parameter.  \texttt{TTCal} implements
+direction-dependent calibration during source subtraction in an algorithm known as peeling
+\citep{2008ISTSP...2..707M}. Figure~\ref{fig:peeling-illustration} illustrates the improvement
+associated with applying direction-dependent gains during the subtraction of Cas~A---one of the two
+brightest point sources in the sky.
 
 \section{Commissioning Challenges}
 \label{sec:commissioning-challenges}
@@ -388,8 +399,9 @@ accounted for the radial offset seen in the source positions.
         (a) & (b) \\
     \end{tabular}
     \caption{
-        (a) The localization region for a source of RFI south of the OVRO-LWA and near the town of
-        Big Pine. Satellite imagery \textcopyright2018 Google. Map data \textcopyright2018 Google.
+        (a) The localization region (roughly 100\,m by 1.5\,km) for a source of RFI south of the
+        OVRO-LWA and near the town of Big Pine. Satellite imagery \textcopyright2018 Google. Map
+        data \textcopyright2018 Google.
         (b) Image of a high-voltage power line overlooking OVRO near the localization region.
     }
     \label{fig:rfi-localization}
@@ -398,9 +410,11 @@ accounted for the radial offset seen in the source positions.
 An ongoing challenge faced by the OVRO-LWA is the presence of broadband sources of RFI in the
 vicinity of the observatory. Due to the entire-hemisphere field of view of the OVRO-LWA, these
 sources appear as points on the horizon that limit the sensitivity of snapshot images through
-additional sidelobe noise. Fortunately, because these sources are typically in the near-field of the
-interferometer, the curvature of the incoming wavefront can be used to infer the distance to each
-source of RFI.
+additional sidelobe noise. Further complicating matters, because this RFI originates from the
+horizon, the antennas shadow each other leading to an unpredictable antenna responses in the
+direction of each source. This impedes traditional deconvolution techniques.  Fortunately, because
+these sources are typically in the near-field of the interferometer, the curvature of the incoming
+wavefront can be used to infer the distance to each source of RFI.
 
 The path difference from a source in the near-field of an interferometer located at the position
 $(\xi, \eta, \zeta)$ to two antennas located respectively at $(x_i, y_i, z_i)$ and $(x_j, y_j, z_j)$
@@ -419,13 +433,18 @@ In the limit that the distance of the source goes to infinity, we recover the fa
 where $D$ is the distance to the source. The correlation measured between two antennas for a source
 in the near-field of the interferometer is therefore
 \begin{equation}\label{eq:nearfield-visibilities}
-    V_{ij} = F \exp\left(2\pi i \frac{\Delta l^\text{near-field}_{ij}}{\lambda}\right)\,,
+    V_{ij} = F \exp\Big(2\pi i \Delta l^\text{near-field}_{ij}/\lambda\Big)\,,
 \end{equation}
 where $V_{ij}$ is the visibility measured between antennas $i$ and $j$, $F$ is the apparent
-brightness of the source, and $\lambda$ is the wavelength. Equation~\ref{eq:nearfield-visibilities}
-can then be used to fit for the position of a source including its distance.
+brightness of the source, and $\lambda$ is the wavelength.
 
-In order to improve sensitivity to these RFI sources,
+In 2016 May, I used Equation~\ref{eq:nearfield-visibilities} to estimate the position of the four
+sources of RFI at 67\,MHz. The brightest of these sources can be seen in the lower-right corner of
+Figure~\ref{fig:northing-easting-mistake}, and its localization can be seen in
+Figure~\ref{fig:rfi-localization}. This work was instrumental in identifying faulty insulators on
+high-voltage power lines as the source of pulsed broadband RFI. While this particular source of RFI
+has now been repaired, we are working with the Los Angeles Department of Water and Power (LADWP) to
+identify and repair the remaining RFI sources.
 
 \subsection{Polarization Swaps}
 
