@@ -154,7 +154,7 @@ of each visibility is zero, and the amplitude is given by the known flux of the 
 Periodically revisiting this source allows for the observer to establish the time variation of the
 calibration parameters. Each time the observer solves for the gains that minimize
 \begin{equation}
-    \chi^2 \propto \sum_{i \neq j}
+    \chi^2 \propto \sum_{i, j}
         \Big\|V_{ij}^\text{measured}(\nu) - g_i(\nu)\,g_j^*(\nu)\,F\Big\|^2\,,
 \end{equation}
 where $F$ is the flux of the isolated point source.
@@ -165,8 +165,8 @@ iteration this algorithm applies linear least-squares to minimize $\chi^2$ while
 gains constant:
 \begin{equation}\label{eq:stefcal-iterations}
     g_i \leftarrow \frac
-        {\sum_{i \neq j} g_j^* V_{ij}^{\text{model},*} V_{ij}^\text{measured}}
-        {\sum_{i \neq j} \| g_j V_{ij}^\text{model} \|^2}\,,
+        {\sum_{j\neq i} g_j^* V_{ij}^{\text{model},*} V_{ij}^\text{measured}}
+        {\sum_{j\neq i} \| g_j V_{ij}^\text{model} \|^2}\,,
 \end{equation}
 where we have now allowed for a more general sky model to be used during calibration by introducing
 the model visibilities $V_{ij}^\text{model}$, which are the true visibilities for an assumed model
@@ -375,7 +375,7 @@ appeared to be radially offset from the position of Cyg~A and Cas~A.
 
 The ionosphere is a natural culprit because refraction due to propagation through the ionosphere
 will tend to move sources to higher elevation \citep[e.g.,][]{2014MNRAS.437.1056V}. Confusingly, the
-sense of the observed source offsets was opposite to the expectation of the ionosphere, sources
+sense of the observed source offsets was opposite to the expectation of the ionosphere. Sources
 appeared at lower elevations than expected. It appeared as if the length of each baseline was
 somehow 0.3\% longer than expected.
 
