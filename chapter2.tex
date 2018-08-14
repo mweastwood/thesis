@@ -24,9 +24,9 @@
     \label{fig:ovro-lwa-pictures}
 \end{figure}
 
-The OVRO-LWA is a new low-frequency (27--85\,MHz instantaneous) radio interferometer constructed
-during the course of this thesis and located near Big Pine, California. Construction began in 2013
-with the first antenna completed in March of that year (see Figure~\ref{fig:ovro-first-antenna}).
+The OVRO-LWA is a new low-frequency (27--85\,MHz) radio interferometer constructed during the course
+of this thesis and located near Big Pine, California. Construction began in 2013 with the first
+antenna completed in March of that year (see Figure~\ref{fig:ovro-first-antenna}).
 
 The OVRO-LWA was initially composed of 256 antennas, with 251 of those antennas arranged within a
 dense 200\,m diameter core in a configuration that is optimized for sidelobe levels in snapshot
@@ -41,8 +41,8 @@ of $\sim 8000\,\text{deg}^2$, with sensitivity to the entire visible hemisphere 
 The remaining five antennas are isolated from the core of the OVRO-LWA and equipped with radiometric
 front ends as part of the LEDA experiment, which is attempting to measure the globally averaged
 signal of \ion{H}{1} from the Cosmic Dawn \citep{2018MNRAS.478.4193P}.  The OVRO-LWA hosts the LEDA
-correlator as its back-end, which is an FX correlator composed of 16 ROACH2 FPGAs that compose the F
-stage, and 11 servers each with dual NVIDIA K20X GPUs that compose the X stage
+correlator as its back-end, which is an FX correlator composed of 16 ROACH2 FPGAs that form the F
+stage, and 11 servers each with dual NVIDIA K20X GPUs that form the X stage
 \citep{2015JAI.....450003K}. This allows the correlator to perform full cross-correlation of 512
 input signals with 58\,MHz instantaneous bandwidth.
 
@@ -72,15 +72,16 @@ processing pipeline that cannot operate in parallel with ordinary correlation---
 complementary software pipelines that service the scientific goals of the OVRO-LWA:
 \begin{enumerate}
     \item A widefield snapshot imaging pipeline that images the entire visible hemisphere every
-        13\,s using WSCLEAN \citep{2014MNRAS.444..606O}.
-    \item A novel approach specialized for drift-scanning interferometers that can image the entire
-        sky (above a limiting declination) in a single synthesis imaging step.
+        13\,s using \texttt{WSCLEAN} \citep{2014MNRAS.444..606O}.
+    \item A novel approach, called $m$-mode analysis, that is specialized for drift-scanning
+        interferometers that can image the entire sky (above a limiting declination) in a single
+        synthesis imaging step.
 \end{enumerate}
-This chapter will describe the calibration, source removal routines purpose built for the OVRO-LWA
-and used by both pipelines. Additionally, in \S\ref{sec:commissioning-challenges} I will discuss
-some of the challenges involved with commissioning the OVRO-LWA that have been overcome to bring the
-OVRO-LWA into existence, to first light, and finally its first scientific results.  Finally, the
-latter pipeline will be discussed in considerable depth in Chapters~\ref{chapter3} and
+This chapter will describe the calibration and source removal routines purpose built for the
+OVRO-LWA and used by both pipelines. Additionally, in \S\ref{sec:commissioning-challenges} I will
+discuss some of the challenges involved with commissioning the OVRO-LWA that have been overcome to
+bring the OVRO-LWA into existence, to first light, and finally its first scientific results.
+Finally, the latter pipeline will be discussed in considerable depth in Chapters~\ref{chapter3} and
 \ref{chapter4}.
 
 \begin{figure}[p]
@@ -114,16 +115,15 @@ gain, filters, and propagation effects along the signal path. At low radio frequ
 ionosphere is additionally important due to the effects of electromagnetic waves propagating through
 a magnetized plasma.
 
-Further, we will make a distinction between a ``direction-independent'' calibration and a
+We will make a distinction between a ``direction-independent'' calibration and a
 ``direction-dependent'' calibration. The former can correct for the response of the receiver and
 signal path, but cannot fully account for the antenna response pattern and ionospheric effects. The
 latter allows for the calibration parameters to vary as a function of direction on the sky, which
 can account for errors due to the antenna beam and some ionospheric effects.
 
-Neglecting complexity associated with polarized imaging for now, a direction-independent calibration
-amounts to determining the complex-valued gain $g_i(\nu)$ associated with each signal path $i$ and
-frequency $\nu$. These gains effect the measured correlation between the signal paths $i$ and $j$
-such that
+Neglecting complexity associated with polarized imaging, a direction-independent calibration amounts
+to determining the complex-valued gain $g_i(\nu)$ associated with each signal path $i$ and frequency
+$\nu$. These gains effect the measured correlation between the signal paths $i$ and $j$ such that
 \begin{equation}
     V_{ij}^\text{measured}(\nu) = g_i(\nu)\,g_j^*(\nu)\,V_{ij}^\text{true}(\nu)
         + \text{noise}\,,
@@ -150,7 +150,7 @@ where $F_k$ is the flux of the $k$th point source in the direction $\hat{r}_k$.
 
 A typical calibration strategy using, for example, the Very Large Array (VLA) involves periodically
 pointing at a known compact point source. For a compact point source at the phase center, the phase
-of all visibilities is zero, and the amplitude is given by the known flux of the source.
+of each visibility is zero, and the amplitude is given by the known flux of the source.
 Periodically revisiting this source allows for the observer to establish the time variation of the
 calibration parameters. Each time the observer solves for the gains that minimize
 \begin{equation}
@@ -171,9 +171,9 @@ gains constant:
 where we have now allowed for a more general sky model to be used during calibration by introducing
 the model visibilities $V_{ij}^\text{model}$, which are the true visibilities for an assumed model
 of the sky.  Naively applying Equation~\ref{eq:stefcal-iterations} will result in poor convergence
-due to oscillations about the true minimum of $\chi^2$.  These oscillations can be damped by
-averaging subsequent iterations, and \citet{2014A&A...571A..97S} demonstrated that this simple
-gradient-free optimization strategy converges remarkably quickly.
+due to oscillations about a minimum of $\chi^2$.  These oscillations can be damped by averaging
+subsequent iterations, and \citet{2014A&A...571A..97S} demonstrated that this simple gradient-free
+optimization strategy converges remarkably quickly.
 
 The OVRO-LWA is capable of imaging the entire hemisphere in a snapshot image. This brings its own
 unique calibration challenges because it is currently impossible to isolate a single compact point source
@@ -194,9 +194,9 @@ Chapter~\ref{chapter3} I will show that the latter spectra can diverge substanti
 below 50~MHz.
 
 Detailed sky and beam models are therefore generally an important calibration requirement for
-low-frequency interferometers.  In Chapter~\ref{chapter3}, I will also derive an empirical beam
-model for the OVRO-LWA and developed a new imaging formalism that captures the entire visible sky in
-a single synthesis imaging step that can be used as part of a self-calibration loop
+low-frequency interferometers.  In Chapter~\ref{chapter3}, I will derive an empirical beam model for
+the OVRO-LWA and developed a new imaging formalism that captures the entire visible sky in a single
+synthesis imaging step that can be used as part of a self-calibration loop
 \citep{1978ApJ...223...25R}.
 
 As part of this thesis I developed the \texttt{TTCal} calibration routine for the purpose of
@@ -301,7 +301,82 @@ Equation~\ref{eq:antenna-response-point-sources} to be a free parameter.
 \end{figure}
 
 Early images produced by the OVRO-LWA (prior to 2015 October 16) were afflicted by an apparent
-rotation in the World Coordinate System (WCS).
+rotation in the World Coordinate System (WCS). This rotation is illustrated in
+Figure~\ref{fig:northing-easting-mistake}.
+
+When data is streamed to the ASTM, it arrives in a raw, unordered format specific to the operation
+of the correlator. The very first step in any analysis is to convert from this format into the
+standard \texttt{MeasurementSet} format, which is used by, for example, the National Radio Astronomy
+Observatory's (NRAO) Common Astronomy Software Applications (CASA) package. This data conversion
+step is performed by the \texttt{dada2ms} program written by Stephen Bourke. As part of this
+conversion process, \texttt{dada2ms} computes and attaches additional metadata such as the antenna
+positions, frequency of the observations, and the direction of the phase center. Unfortunately an
+error had been made in the calculation of the antenna positions.
+
+While many astronomers are familiar with a wide range of celestial coordinate systems, Earth
+coordinate systems are somewhat more esoteric. In particular, there are differences between geodetic
+systems that seek to describe positions across the entire Earth and those that only seek to describe
+positions on a single continental plate. The former geodetic systems are useful as they specify an
+absolute position on the surface of the Earth, while the latter geodetic systems are insensitive to
+continental drift and therefore do not naturally change with time. The OVRO-LWA antenna positions
+were surveyed in the geodetic system specified by the North American Datum of 1983 (NAD\,83), and
+reported in the Universal Transverse Mercator (UTM) coordinate system. NAD\,83 was designed to
+closely match the World Geodetic System of 1984 (WGS\,84), and the difference between the two is
+generally too small to be of concern to long wavelength radio astronomy (the error in using them
+interchangeably is of order one meter in the absolute position of the interferometer).
+
+The UTM coordinate system is described by the coordinate values northing and easting, each measured
+in units of meters.  The UTM coordinate system is designed to be a square grid on the surface of a
+sphere. This is in contrast to the more familiar latitude and longitude, where a change in longitude
+corresponds to a smaller physical distance at high latitudes. Instead, a 1\,km change in easting
+corresponds to a physical distance of approximately 1\,km regardless of the position of the
+measurement. Consequently, a line of constant easting cannot run true north. Initial calculations of
+the OVRO-LWA antenna positions had erroneously assumed that northing runs true north, and easting
+runs true east.\footnote{
+    Incidentally, the OVRO-LWA is not the first (or the last) interferometer to fall victim to this
+    pitfall. The MWA suffered from this mistake during commissioning, and the CHIME pathfinder was
+    mistakenly built with its cylindrical focusing surfaces slightly rotated from true north (as was
+    the intention).
+}
+
+All told, the impact of this mistake was an erroneous $\sim 1\arcdeg$ rotation about zenith in the
+antenna positions. Cyg~A and Cas~A, as the brightest point sources in the northern hemisphere at low
+radio frequencies, are used to derive the phase calibration of the interferometer. Because the
+antenna positions were erroneous, the phase calibration attempts to correct the position of Cyg~A
+and Cas~A by applying a phase gradient across the array such that the two sources match their
+catalog positions as closely as possible. Images produced by the interferometer therefore appeared
+to be rotated by $\sim 1\arcdeg$ about a position roughly between the location of Cyg~A and Cas~A
+during calibration. This offset of the rotation center can be seen in
+Figure~\ref{fig:northing-easting-mistake}.
+
+I fixed the erroneous calculation of antenna positions by patching \texttt{dada2ms} to stop relying
+on the assumption that northing runs true north and easting runs true east. After applying this
+patch, \texttt{dada2ms} now correctly converts from the surveyed NAD\,83 UTM coordinate values to
+WGS\,84 longitude--latitude values, and finally to the International Terrestrial Reference Frame
+(ITRF) using a conversion routine provided by the \texttt{casacore} software package.
+
+\subsection{Frequency Channel Labeling}
+
+After correcting the calculation of antenna positions, we achieved improved agreement between
+apparent source positions and their catalog positions. However, there was still a residual
+systematic error apparent in images constructed during 2015 December. In these images, sources
+appeared to be radially offset from the position of Cyg~A and Cas~A.
+
+The ionosphere is a natural culprit because refraction due to propagation through the ionosphere
+will tend to move sources to higher elevation \citep[e.g.,][]{2014MNRAS.437.1056V}. Confusingly, the
+sense of the observed source offsets was opposite to the expectation of the ionosphere, sources
+appeared at lower elevations than expected. It appeared as if the length of each baseline was
+somehow 0.3\% longer than expected.
+
+Such an error could arise due to a mistake in the survey of the antenna positions or another error
+in the calculation of their ITRF coordinates. Alternatively, because the action of an interferometer
+is dependent on the ratio of the baseline length to the wavelength, the error could be generated by
+a mislabeling of the frequency channels output by the correlator. I found that a frequency offset of
+$\sim 100\,\text{kHz}$ could be enough to explain the residual source offsets seen in Cyg~A and
+Cas~A. Ryan Monroe later confirmed that the error was in the correlator by examining the frequency
+of an FFT artifact that arises from the sampling frequency and therefore is a known spectral
+feature. This feature was offset from its true location by $\approx150\,\text{kHz}$, and therefore
+accounted for the radial offset seen in the source positions.
 
 \subsection{RFI Localization}
 
@@ -352,7 +427,23 @@ can then be used to fit for the position of a source including its distance.
 
 In order to improve sensitivity to these RFI sources,
 
+\subsection{Polarization Swaps}
 
+While performing maintenance on antennas, occasionally the signal paths corresponding to the $x$ and
+$y$ dipoles would be carelessly swapped.\footnote{
+    The author of this thesis accepts responsibility for some---but not all---of these events!
+}
+After correlation, this would lead to some $xx$ and $yy$ correlations being mislabeled as $xy$ and
+$yx$ correlations, and vice versa. This is clearly a problem for polarized imaging, because it
+allows unpolarized emission to spill into the polarized images. Similar errors are produced in
+unpolarized images, but the fractional error is less due to the fact that most of the sky emission
+is unpolarized at low frequencies.
+
+Marin Anderson identified a simple metric that allows for the rapid identification of antennas with
+polarizations swapped. That is, if the amplitude for most baselines involving a given antenna have
+the property that the cross-polarization visibilities are higher amplitude than the co-polarization
+visibilities then it can be said with high confidence that this antenna has a polarization swap. I
+built a tool that relabels the polarizations in datasets with a known set of ``swapped antennas.''
 
 \myputbib{thesis}
 \end{bibunit}
