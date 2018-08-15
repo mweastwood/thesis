@@ -4,20 +4,36 @@
 {There's never enough time to do all the nothing you want.}
 {Bill Watterson}
 
-\chapter{Conclusion}
+\chapter{Conclusion and Future Outlook}
 \label{chapter5}
 
-In this thesis I have described the construction and commissioning of the OVRO-LWA.
+\begin{bibunit}
 
-Construction of the OVRO-LWA
+The 21\,cm transition of neutral hydrogen promises to open a new window into the high redshift
+universe---the EoR and the Cosmic Dawn. This will allow astronomers to probe the first generation of
+star and galaxy formation through their influence on the IGM.
+
+Using the 21\,cm transition, future low frequency radio telescopes will be able to produce
+tomographic maps of neutral hydrogen.
+
+In this thesis I have described the construction and commissioning of the OVRO-LWA.  At times this
+involved untangling hundreds of 10\,m cables. At other times this involved untangling dozens of
+1\,km fiber optic cables before literally hauling them through the desert sand and back into the
+conduit.  Sometimes the desert wind made it impossible to make clean fiber optic connections without
+eating a face full of dirt. On occasion it involved driving around the neighborhood with an
+antenna mounted on top of the car only to be threatened by some locals.\footnote{
+    They turned out to be friendly, and we got to share with them our RFI hunting apparatus.
+}
 
 As part of the commissioning of the OVRO-LWA, I developed several tools that have allowed the
 instrument to capture high-dynamic range, high-fidelity images.
 
-I wrote \texttt{TTCal}
+Notably, I wrote the \texttt{TTCal} calibration routine that is used to calibrate the interferometer
+and remove point sources from the visibilities.
 
 In Chapter~\ref{chapter3}, I described the development and demonstration of a new widefield imaging
-technique specialized for drift-scanning interferometers like the OVRO-LWA.
+technique specialized for drift-scanning interferometers like the OVRO-LWA---Tikhonov-regularized
+$m$-mode analysis imaging.
 
 Foreground mitigation and instrumental calibration are the limiting factors in essentially all
 attempts to measure the spatial power spectrum of 21\,cm fluctuations from the EoR and Cosmic Dawn.
@@ -34,9 +50,63 @@ This measurement, however, was limited by systematic errors.
 
 Future requirements and directions
 
-Better calibration
+In order to make a successful and convincing detection of the 21\,cm power spectrum, the calibration
+requirements are strict. The overall bandpass of the interferometer must be known to better than
+0.01\%, and the gain errors on each antenna must be less than 0.1\%. The OVRO-LWA was designed with
+the goal of capturing high fidelity snapshot images, and therefore the baseline configuration is
+maximally non-redundant.
+
+Other experiments have opted for the opposite approach of a maximally redundant configuration (e.g.,
+PAPER, HERA, and the upgraded MWA). One advantage of this alternate approach is the application of
+redundant calibration \citep{2010MNRAS.408.1029L}. Redundant calibration solves for the $N$
+calibration parameters by using redundant information encoded within the $N^2$ visibilities, and
+demanding that baselines with the same length and orientation must produce the same output (to
+within thermal noise). Redundant calibration largely sidesteps problems associated with incomplete
+sky models during calibration because no sky model is required. However, ultimately there are some
+calibration parameters that cannot be obtained through redundant calibration---notably the overall
+bandpass. The overall bandpass is therefore still generally obtained from observations of the sky,
+and a maximally redundant interferometer is not optimally configured for imaging.
+
+The question of whether or not to pursue a redundant array configuration for calibration purposes is
+therefore not as clear cut as it may initially seem.  Indeed a hybrid approach may be necessary.
+\citet{2010MNRAS.408.1029L} and \citet{2017arXiv170101860S} describe how redundant calibration may
+be generalized to include some sky information.  It may also be advantageous to have, an imaging
+interferometer could construct sky models that a co-located redundant interferometer can use to
+establish its bandpass. However, ultimately the imaging interferometer may have an easier time
+proving that its bandpass is actually calibrated at the level of 0.01\%.
 
 Better peeling
 
-Beam mapping
+There is a growing need to map the response of each individual dipole.
+
+In this thesis I mapped the array-averaged beam by tracing the apparent flux of several bright point
+sources as they passed through the beam. However, without a known flux scale, I exploited symmetry
+considerations that broke the degeneracy between beam amplitude and source flux \citep[inspired
+by][]{2012AJ....143...53P}. This process can be repeated across the bandwidth of the instrument, but
+is limited by the density of suitably bright point sources, and ionospheric scintillation, which
+dominates the noise in the measurement. In principle, this work could be extended to map the
+individual dipole beams through the use of direction-dependent calibration
+\citep{2008ISTSP...2..707M}, but this will limit even further the number of suitably bright sources.
+Ultimately, any assumptions about the symmetry of the beam are unsatisfactory, because once the
+antenna is embedded in the interferometer with other antennas located in close proximity, none of
+these assumed symmetries will continue to hold.
+
+A better approach is to correlate each element of the interferometer with a large steerable antenna,
+such as the OVRO 40\,m antenna \citep[e.g.,][]{2016SPIE.9906E..0DB}. In this measurement the
+steerable tracks a set of bright point sources through the sky. The amplitude of the correlation is
+therefore a measure of the response of each antenna in the direction of the point source.
+Furthermore, the steerable antenna can be used to set the flux scale without the need to assume a
+functional form for the beam model. One drawback to this approach, however, is the presence of other
+emission in the sky that will also contribute to the measured correlation.
+
+A final possibility is to mount transmitter to the underside of a drone and make several passes over
+the array. This approach has been attempted by \citet{2017PASP..129c5002J} to map the response of a
+single dipole, but was limited by the stability of the drone. Future efforts to use drones to map
+the antenna response will likely need to focus on careful measurement of the transmitting antenna
+beam and the real time position and orientation of the drone. However, this approach is advantageous
+in that it can map the array elements in-situ including mutual coupling effects that perturb the
+antenna response.
+
+\myputbib{thesis}
+\end{bibunit}
 
