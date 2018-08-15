@@ -53,3 +53,16 @@
 \renewcommand{\cftchapterleader}{\hfill}% dot leaders in bold
 \setlength{\cftbeforechapterskip}{1em}
 
+% Witty epigraphs
+\setlength\epigraphwidth{.8\textwidth}
+\setlength\epigraphrule{0pt}
+\newcommand{\myepigraph}[2]{\epigraph{\Large\itshape``#1''}{\large ---#2}}
+
+% Add a blank page
+\newcommand{\blankpage}{
+    \newpage
+    \thispagestyle{empty}
+    \mbox{}
+    \newpage
+}
+
