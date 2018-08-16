@@ -10,11 +10,21 @@
 \begin{bibunit}
 
 The 21\,cm transition of neutral hydrogen promises to open a new window into the high redshift
-universe---the EoR and the Cosmic Dawn. This will allow astronomers to probe the first generation of
-star and galaxy formation through their influence on the IGM.
+universe---the EoR and the Cosmic Dawn. The 21\,cm brightness temperature is a probe of the spin
+temperature, density, and ionization state of the IGM.  A detection of this transition will allow
+astronomers to probe the first generation of star and galaxy formation through their influence on
+the IGM. Because of the wide field of view of low-frequency radio telescopes, and the fact that the
+observed redshift of the transition can be used to measure the radial distance, future low frequency
+radio telescopes may be able to produce tomographic maps of the high redshift universe.
 
-Using the 21\,cm transition, future low frequency radio telescopes will be able to produce
-tomographic maps of neutral hydrogen.
+The current generation of radio telescopes, however, must restrict themselves to statistical
+measurements due to sensitivity considerations: usually the global average, and the spatial power
+spectrum.
+
+During the EoR, fluctuations in the 21\,cm brightness
+temperature are primarily sourced by inhomogeneous ionization and the patchy reionization process.
+During the Cosmic Dawn, fluctuations are instead sourced by inhomogeneous heating and Ly$\alpha$
+emission.
 
 In this thesis I have described the construction and commissioning of the OVRO-LWA.  At times this
 involved untangling hundreds of 10\,m cables. At other times this involved untangling dozens of
@@ -32,8 +42,9 @@ Notably, I wrote the \texttt{TTCal} calibration routine that is used to calibrat
 and remove point sources from the visibilities.
 
 In Chapter~\ref{chapter3}, I described the development and demonstration of a new widefield imaging
-technique specialized for drift-scanning interferometers like the OVRO-LWA---Tikhonov-regularized
-$m$-mode analysis imaging.
+technique specialized for drift-scanning interferometers like the OVRO-LWA. Tikhonov-regularized
+$m$-mode analysis imaging constructs an image of the entire sky in a single synthesis imaging step
+without the need for gridding. I produced eight 
 
 Foreground mitigation and instrumental calibration are the limiting factors in essentially all
 attempts to measure the spatial power spectrum of 21\,cm fluctuations from the EoR and Cosmic Dawn.
@@ -46,9 +57,7 @@ measured dataset. I showed that while this filter can help to mitigate foregroun
 is not a replacement for careful calibration. Calibration and modeling errors can allow foreground
 emission to leak through the foreground filter.
 
-This measurement, however, was limited by systematic errors.
-
-Future requirements and directions
+This measurement, however, was limited by systematic errors. These systematic errors appear to arise
 
 In order to make a successful and convincing detection of the 21\,cm power spectrum, the calibration
 requirements are strict. The overall bandpass of the interferometer must be known to better than
@@ -106,6 +115,12 @@ the antenna response will likely need to focus on careful measurement of the tra
 beam and the real time position and orientation of the drone. However, this approach is advantageous
 in that it can map the array elements in-situ including mutual coupling effects that perturb the
 antenna response.
+
+The MWA has also been able to map their beam models using the transmission from a satellite
+\citep{2018arXiv180804516L}, finding reasonable ($\sim 1\,\text{dB}$) agreement with fully embedded
+element models \citep{2017PASA...34...62S}. While a satellite can only be used to map the antenna
+response within a narrow bandwidth, this technique has value in validating increasingly
+sophisticated models of the primary beam.
 
 \myputbib{thesis}
 \end{bibunit}
