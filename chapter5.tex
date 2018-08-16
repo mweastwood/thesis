@@ -68,36 +68,32 @@ laborious and can introduce a dangerously large number of non-linear free parame
 GMCA are blind foreground removal techniques that do not build in any knowledge of the signal or
 contaminating foreground emission.
 
-In Chapter~\ref{chapter4} I demonstrated for the first time on a
-measured dataset the application of the double KL transform foreground filter described by
-\citep{2014ApJ...781...57S, 2015PhRvD..91h3514S}.
+In Chapter~\ref{chapter4} I demonstrated for the first time on a measured dataset the application of
+the double KL transform foreground filter described by \citep{2014ApJ...781...57S,
+2015PhRvD..91h3514S}, which exploits information contained in the full covariance matrix of the
+dataset to optimally separate foreground emission from the 21\,cm signal. I measured the system
+temperature of the OVRO-LWA, and the angular covariance of the foreground emission. Then with a
+fiducial model of the 21\,cm power spectrum I computed the corresponding foreground filter and
+applied it to a dataset from the OVRO-LWA.  I showed that while this filter can help to mitigate
+foreground contamination, it is not a replacement for careful calibration. Errors in calibration and
+modeling can allow foreground emission to leak through the foreground filter.
 
-
-
-
-
-
-In Chapter~\ref{chapter4}, I placed the deepest limits to date on the amplitude of 21\,cm
-fluctuations from the Cosmic Dawn, and the first limits at $z > 18$.
-
-This measurement was the first demonstration of the double KL transform foreground filter on a real
-measured dataset. I showed that while this filter can help to mitigate foreground contamination, it
-is not a replacement for careful calibration. Calibration and modeling errors can allow foreground
-emission to leak through the foreground filter.
-
-This measurement, however, was limited by systematic errors. These systematic errors appear to arise
-
-In order to make a successful and convincing detection of the 21\,cm power spectrum, the calibration
-requirements are strict. The overall bandpass of the interferometer must be known to better than
-0.01\%, and the gain errors on each antenna must be less than 0.1\%. The OVRO-LWA was designed with
-the goal of capturing high fidelity snapshot images, and therefore the baseline configuration is
-maximally non-redundant.
+In Chapter~\ref{chapter4}, I applied the double KL transform foreground filter to place the deepest
+limits to date on the amplitude of 21\,cm fluctuations from the Cosmic Dawn, and the first limits at
+$z > 18$. While these upper limits do not currently constrain models of early star formation, they
+represent an important step towards that goal. I found that this measurement was likely limited by
+the quality of the calibration of the interferometer.  In order to make a successful and convincing
+detection of the 21\,cm power spectrum, the calibration requirements are strict. The overall
+bandpass of the interferometer must be known to better than 0.01\%, and the gain errors on each
+antenna must be less than 0.1\%. The OVRO-LWA was designed with the goal of capturing high fidelity
+snapshot images, and therefore the baseline configuration is maximally non-redundant. This design
+choice shapes the calibration strategies that are possible with the interferometer.
 
 Other experiments have opted for the opposite approach of a maximally redundant configuration (e.g.,
-PAPER, HERA, and the upgraded MWA). One advantage of this alternate approach is the application of
-redundant calibration \citep{2010MNRAS.408.1029L}. Redundant calibration solves for the $N$
-calibration parameters by using redundant information encoded within the $N^2$ visibilities, and
-demanding that baselines with the same length and orientation must produce the same output (to
+PAPER, HERA, and the recently expanded MWA). One advantage of this alternate approach is the
+application of redundant calibration \citep{2010MNRAS.408.1029L}. Redundant calibration solves for
+the $N$ calibration parameters by using redundant information encoded within the $N^2$ visibilities,
+and demanding that baselines with the same length and orientation must have the same correlation (to
 within thermal noise). Redundant calibration largely sidesteps problems associated with incomplete
 sky models during calibration because no sky model is required. However, ultimately there are some
 calibration parameters that cannot be obtained through redundant calibration---notably the overall
@@ -108,9 +104,13 @@ The question of whether or not to pursue a redundant array configuration for cal
 therefore not as clear cut as it may initially seem.  Indeed a hybrid approach may be necessary.
 \citet{2010MNRAS.408.1029L} and \citet{2017arXiv170101860S} describe how redundant calibration may
 be generalized to include some sky information.  It may also be advantageous to have, an imaging
-interferometer could construct sky models that a co-located redundant interferometer can use to
-establish its bandpass. However, ultimately the imaging interferometer may have an easier time
-proving that its bandpass is actually calibrated at the level of 0.01\%.
+interferometer construct sky models that a co-located redundant interferometer can use to establish
+its bandpass. However, ultimately the imaging interferometer may have an easier time proving that
+its bandpass is actually calibrated at the level of 0.01\% through observations of flux
+calibrators.\footnote{
+    Current low frequency flux calibrators are typically only known at the level of 5--10\%, so
+    additional work is needed there too.
+}
 
 Better peeling
 
