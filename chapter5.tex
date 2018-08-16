@@ -19,35 +19,63 @@ radio telescopes may be able to produce tomographic maps of the high redshift un
 
 The current generation of radio telescopes, however, must restrict themselves to statistical
 measurements due to sensitivity considerations: usually the global average, and the spatial power
-spectrum.
+spectrum. The first detection of the globally averaged 21\,cm transition was reported by
+\citet{2018Natur.555...67B} at 78\,MHz and has generally lead to more questions than answers. The
+power spectrum, which measures the amplitude of fluctuations in the 21\,cm brightness temperature
+could be a corroborating and complementary measurement.  During the EoR, fluctuations in the 21\,cm
+brightness temperature are primarily sourced by inhomogeneous ionization and the patchy reionization
+process.  During the Cosmic Dawn, fluctuations are instead sourced by inhomogeneous heating and
+Ly$\alpha$ emission.
 
-During the EoR, fluctuations in the 21\,cm brightness
-temperature are primarily sourced by inhomogeneous ionization and the patchy reionization process.
-During the Cosmic Dawn, fluctuations are instead sourced by inhomogeneous heating and Ly$\alpha$
-emission.
-
-In this thesis I have described the construction and commissioning of the OVRO-LWA.  At times this
-involved untangling hundreds of 10\,m cables. At other times this involved untangling dozens of
-1\,km fiber optic cables before literally hauling them through the desert sand and back into the
-conduit.  Sometimes the desert wind made it impossible to make clean fiber optic connections without
-eating a face full of dirt. On occasion it involved driving around the neighborhood with an
-antenna mounted on top of the car only to be threatened by some locals.\footnote{
-    They turned out to be friendly, and we got to share with them our RFI hunting apparatus.
+In this thesis I have described the construction and commissioning of the OVRO-LWA, a new low
+frequency radio telescope (28--85\,MHz).  At times this involved untangling hundreds of 10\,m
+cables. At other times this involved untangling dozens of 1\,km fiber optic cables before literally
+hauling them through the desert sand and back into the conduit.  Sometimes the desert wind made it
+impossible to make clean fiber optic connections without eating a face full of dirt. On occasion it
+involved driving around the neighborhood with an antenna mounted on top of the car only to be
+threatened by some locals.\footnote{
+    They turned out to be friendly, and we got to share our RFI hunting apparatus with them. In this
+    particular encounter we discovered that fluorescent lights can be a source of RFI, because these
+    residents happened to turn off their garage lights as we drove by.
 }
+However, the OVRO-LWA is now generating its first scientific results.
 
 As part of the commissioning of the OVRO-LWA, I developed several tools that have allowed the
-instrument to capture high-dynamic range, high-fidelity images.
-
-Notably, I wrote the \texttt{TTCal} calibration routine that is used to calibrate the interferometer
-and remove point sources from the visibilities.
+instrument to capture high-dynamic range, high-fidelity images.  In particular, I wrote the open
+source \texttt{TTCal} calibration routine that is used to both calibrate the interferometer and
+remove point sources from the visibilities. The use of \texttt{TTCal} for peeling and
+direction-dependent calibration was instrumental for the work presented in this thesis as well as a
+search for low-frequency radio emission associated with a gamma ray burst
+\citep{2017arXiv171106665A}.
 
 In Chapter~\ref{chapter3}, I described the development and demonstration of a new widefield imaging
 technique specialized for drift-scanning interferometers like the OVRO-LWA. Tikhonov-regularized
 $m$-mode analysis imaging constructs an image of the entire sky in a single synthesis imaging step
-without the need for gridding. I produced eight 
+without the need for gridding. I adapted the CLEAN algorithm to deconvolve the point spread function
+of the generated sky maps, produced the eight highest angular resolution maps of the entire sky
+above $\delta=-30\arcdeg$ below 100\,MHz. These sky maps are intended to be used to model and
+mitigate foreground contamination in the detection of the high redshift 21\,cm transition, and are
+therefore now freely available on LAMBDA.
 
 Foreground mitigation and instrumental calibration are the limiting factors in essentially all
 attempts to measure the spatial power spectrum of 21\,cm fluctuations from the EoR and Cosmic Dawn.
+The sensitivity of a given instrument to the 21\,cm power spectrum is therefore primarily a function
+of how well the experiment can control these systematic errors. This has led to the development of a
+plethora of strategies for dealing with foreground contamination: delay filters, modeling and
+subtraction, the SVD, and GMCA. Delay filters assume that the foreground emission (after application
+of the instrumental response) is spectrally smooth. Modeling and subtraction is exceptionally
+laborious and can introduce a dangerously large number of non-linear free parameters. The SVD and
+GMCA are blind foreground removal techniques that do not build in any knowledge of the signal or
+contaminating foreground emission.
+
+In Chapter~\ref{chapter4} I demonstrated for the first time on a
+measured dataset the application of the double KL transform foreground filter described by
+\citep{2014ApJ...781...57S, 2015PhRvD..91h3514S}.
+
+
+
+
+
 
 In Chapter~\ref{chapter4}, I placed the deepest limits to date on the amplitude of 21\,cm
 fluctuations from the Cosmic Dawn, and the first limits at $z > 18$.
