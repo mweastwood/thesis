@@ -112,9 +112,20 @@ calibrators.\footnote{
     additional work is needed there too.
 }
 
-Better peeling
+A surprising result seen in Chapter~\ref{chapter4} was that peeling and point source removal didn't
+necessarily improve the sensitivity of the measurement. This is likely a reflection of frequency
+dependent errors introduced by the stationary component removal or source removal routines.
+Development work is ongoing to replace the OVRO-LWA's analog receivers, which should obviate the
+need for stationary component removal.  A likely perpetrator is \texttt{TTCal}'s peeling routine,
+which currently operates independently on each channel and introduces a large number of free
+parameters. Although peeling leads to a substantial improvement in sidelobe levels for snapshot and
+$m$-mode analysis images, its use for 21\,cm cosmology should include additional regularization that
+forces the solution to be spectrally smooth.
 
-There is a growing need to map the response of each individual dipole.
+Peeling is necessary to account for ionospheric effects that cannot be known a priori. However, at
+the moment peeling is used to additionally account for the variance in primary beam shapes within
+the interferometer. In principle, these can be known a priori, which would reduce the number of
+necessary free parameters in a parameterization of the direction-dependent calibrations.
 
 In this thesis I mapped the array-averaged beam by tracing the apparent flux of several bright point
 sources as they passed through the beam. However, without a known flux scale, I exploited symmetry
@@ -134,7 +145,9 @@ steerable tracks a set of bright point sources through the sky. The amplitude of
 therefore a measure of the response of each antenna in the direction of the point source.
 Furthermore, the steerable antenna can be used to set the flux scale without the need to assume a
 functional form for the beam model. One drawback to this approach, however, is the presence of other
-emission in the sky that will also contribute to the measured correlation.
+emission in the sky that will also contribute to the measured correlation. This can be mitigated
+through gated observations of pulsars, but additional integration time will then be needed due to
+the reduced flux.
 
 A final possibility is to mount transmitter to the underside of a drone and make several passes over
 the array. This approach has been attempted by \citet{2017PASP..129c5002J} to map the response of a
@@ -142,13 +155,16 @@ single dipole, but was limited by the stability of the drone. Future efforts to 
 the antenna response will likely need to focus on careful measurement of the transmitting antenna
 beam and the real time position and orientation of the drone. However, this approach is advantageous
 in that it can map the array elements in-situ including mutual coupling effects that perturb the
-antenna response.
+antenna response.  The MWA has also been able to map their beam models in-situ using the
+transmission from a satellite \citep{2018arXiv180804516L}, finding reasonable ($\sim 1\,\text{dB}$)
+agreement with fully embedded element models \citep{2017PASA...34...62S}. While a satellite can only
+be used to map the antenna response within a narrow bandwidth, this technique has value in
+validating increasingly sophisticated models of the primary beam.
 
-The MWA has also been able to map their beam models using the transmission from a satellite
-\citep{2018arXiv180804516L}, finding reasonable ($\sim 1\,\text{dB}$) agreement with fully embedded
-element models \citep{2017PASA...34...62S}. While a satellite can only be used to map the antenna
-response within a narrow bandwidth, this technique has value in validating increasingly
-sophisticated models of the primary beam.
+This thesis lays the foundation for efforts to open up the 21\,cm window into the Cosmic Dawn with
+the OVRO-LWA.  Continued detailed and careful work to characterize and calibrate the interferometer
+will be needed. The gain calibration, removal of point sources, and per-antenna primary beam models
+are three areas likely to lead to substantial improvements in sensitivity.
 
 \myputbib{thesis}
 \end{bibunit}
