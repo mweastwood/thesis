@@ -22,36 +22,11 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes, arrows, positioning, calc}
 
-\tikzset{
-    base/.style = {text width=3cm, text centered,},
-    node/.style = {base, draw, minimum height=1.5cm, fill=white, semithick, scale=0.8},
-    process/.style = {node, rectangle, fill=black!15},
-    data/.style = {node, rectangle, rounded corners},
-    line/.style = {draw, semithick, color=black!90},
-    arrow/.style = {line, -to},
-    arrow-dashed/.style = {arrow, dashed},
-    % styles for drawing lines with 2 elbows
-    -|-/.style={
-        to path={
-            (\tikztostart) -| ($(\tikztostart)!#1!(\tikztotarget)$) |- (\tikztotarget)
-            \tikztonodes
-        }
-    },
-    -|-/.default=0.5,
-    |-|/.style={
-        to path={
-            (\tikztostart) |- ($(\tikztostart)!#1!(\tikztotarget)$) -| (\tikztotarget)
-            \tikztonodes
-        }
-    },
-    |-|/.default=0.5,
-}
-
 \usepackage{custom}
 
 \begin{document}
 
-\title{Searching for the Cosmic Dawn}
+\title{Searching for the Cosmic Dawn with the\\Hyperfine Structure Transition of Hydrogen}
 \author{Michael William Eastwood}
 
 \degreeaward{Doctor of Philosophy in Astrophysics} % Degree to be awarded
@@ -107,7 +82,8 @@
     Chris Bochenek, I have no doubt that you two will find success in the remainder of your graduate
     school careers.
 
-    \Ty to my friends at Caltech, especially Yi Cao, Io Kleiser, and all of my peers.
+    \Ty to all of my friends at Caltech, especially Yi Cao, Io Kleiser, Jackie Villadsen, and all of
+    my peers. \Ty for sharing classes, donuts, and time with me.
 
     \Ty to Gita Patel and Althea Keith for dealing with my occasional delinquency.
 
@@ -134,22 +110,54 @@
 \end{acknowledgements}
 
 \begin{abstract}
-    I did some things!
-    %[This abstract must provide a succinct and informative condensation of your work. Candidates are
-    %welcome to prepare a lengthier abstract for inclusion in the dissertation, and provide a shorter
-    %one in the CaltechTHESIS record.]
+    The 21\,cm hyperfine structure transition of neutral hydrogen promises to open a window into the
+    first billion years of the Universe. With the exception of rare lines of sight towards
+    exceptionally distant and luminous galaxies, this period of the universe's history remains
+    largely unexplored. Due to the large field of view of low frequency radio telescopes (typically
+    composed of dipole antennas) and the fact that the line of sight distance can be inferred from
+    the measured frequency of the transition, the ultimate goal of 21\,cm cosmology is to produce
+    three dimensional tomographic maps of the 21\,cm brightness temperature. In this way, the
+    formation of the first stars and galaxies will be revealed through their influence on the
+    neutral gas around them.
+
+    This thesis saw the construction of the Owens Valley Radio Observatory Long Wavelength Array
+    (OVRO-LWA), a new low frequency (27--85\,MHz) radio telescope located near Bishop, California.
+    Composed of 288 crossed-dipole antennas, the OVRO-LWA is capable of imaging the entire visible
+    hemisphere in a single 13\,s snapshot image with $8\arcmin$ angular resolution.
+
+    The primary challenges faced by efforts to detect the highly redshifted 21\,cm transition are:
+    seeing past the blinding glow of foreground radio emission that is five orders of magnitude
+    brighter than the cosmological emission, and calibrating the instrument to a level where it's
+    possible to make the separation between foreground emission and the 21\,cm signal. In this
+    thesis I will present foundational work using the OVRO-LWA to place upper limits on spatial
+    fluctuations of the 21\,cm transition during the Cosmic Dawn---the period of first star
+    formation.
+
+    In this thesis I present the highest angular resolution maps of the full sky below 100\,MHz, and
+    generated with a new widefield imaging technique that is specialized for drift scanning
+    interferometers. These sky maps are a 10-fold improvement in angular resolution over existing
+    maps at comparable frequencies, and are publicly available now for use in modeling and
+    subtracting the contamination of foreground emission in 21\,cm experiments.
+
+    Finally, I place to-date the most constraining upper limits on the amplitude of the 21\,cm
+    spatial power spectrum at the Cosmic Dawn, and the first limits at $z>18$. While the current
+    constraints $\Delta_{21}^2 \lesssim (10^4\,mK)^2$ do not meaningfully restrict the parameter
+    space of models of early star formation, they do inform the design and calibrations necessary
+    for future measurements to push towards a detection of the high-redshift 21\,cm transition.
 \end{abstract}
 
 \extrachapter{Published Content and Contributions}
 
-[Fill this out with my publications]
+\begin{publishedcontent}[iknowwhattodo]
+    \nocite{1538-3881-156-1-32}
+    \putbib[published-content]
+\end{publishedcontent}
 
 \tableofcontents
 \listoffigures
 \listoftables
 %\printnomenclature
 
-\blankpage
 \blankpage
 
 \mainmatter

@@ -536,15 +536,15 @@ FUNCTION {format.note}
 { note empty$
     { "" }
     { note #1 #1 substring$
-      duplicate$ "{" =
-        'skip$
-        { output.state mid.sentence =
-          { "l" }
-          { "u" }
-        if$
-        change.case$
-        }
-      if$
+      %duplicate$ "{" =
+      %  'skip$
+      %  { output.state mid.sentence =
+      %    { "l" }
+      %    { "u" }
+      %  if$
+      %  change.case$
+      %  }
+      %if$
       note #2 global.max$ substring$ *
     }
   if$
@@ -1169,8 +1169,8 @@ FUNCTION {article}
     { format.pid output }
     { format.journal.pages }
   if$
-  format.note output
   format.url output
+  format.note output
   fin.entry
 }
 

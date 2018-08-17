@@ -66,3 +66,29 @@
     \newpage
 }
 
+% Tikz definitions
+\tikzset{
+    base/.style = {text width=3cm, text centered,},
+    node/.style = {base, draw, minimum height=1.5cm, fill=white, semithick, scale=0.8},
+    process/.style = {node, rectangle, fill=black!15},
+    data/.style = {node, rectangle, rounded corners},
+    line/.style = {draw, semithick, color=black!90},
+    arrow/.style = {line, -to},
+    arrow-dashed/.style = {arrow, dashed},
+    % styles for drawing lines with 2 elbows
+    -|-/.style={
+        to path={
+            (\tikztostart) -| ($(\tikztostart)!#1!(\tikztotarget)$) |- (\tikztotarget)
+            \tikztonodes
+        }
+    },
+    -|-/.default=0.5,
+    |-|/.style={
+        to path={
+            (\tikztostart) |- ($(\tikztostart)!#1!(\tikztotarget)$) -| (\tikztotarget)
+            \tikztonodes
+        }
+    },
+    |-|/.default=0.5,
+}
+
