@@ -65,17 +65,18 @@ that extended the maximum baseline of the interferometer to 1.5\,km and improved
 resolution to 8$\arcmin$. This improved angular resolution can be seen in
 Figure~\ref{fig:expansion-snapshot-image}. In a final future stage of development, an additional 64
 antennas will be installed that extend the maximum baseline to 2.6\,km, which will see improved
-$uv$-coverage at long baselines and improved $5\arcmin$ angular resolution.
+$uv$-coverage at long baselines and improved $5\arcmin$ angular resolution, as well as an expanded
+correlator to accommodate the additional antennas.
 
 While this thesis focuses on the use of the OVRO-LWA to detect the high-redshift signature of
 neutral hydrogen from the Cosmic Dawn, the OVRO-LWA facilitates a diverse set of scientific
-motivations including the study of stellar and planetary magnetospheres, radio follow-up of gamma
-ray bursts \citep{2017arXiv171106665A} and neutron star mergers, solar dynamic imaging spectroscopy,
+motivations including the study of stellar and planetary magnetospheres, radio follow-up of neutron
+star mergers and gamma ray bursts \citep{2017arXiv171106665A}, solar dynamic imaging spectroscopy,
 and the detection of high energy cosmic rays \citep{caltechthesis11016}.
 
 With the exception of detecting high energy cosmic rays---which uses a custom firmware and
-processing pipeline that cannot operate in parallel with ordinary correlation---there are two
-complementary software pipelines that service the scientific goals of the OVRO-LWA:
+processing pipeline that currently cannot operate in parallel with ordinary correlation---there are
+two complementary software pipelines that service the scientific goals of the OVRO-LWA:
 \begin{enumerate}
     \item A widefield snapshot imaging pipeline that images the entire visible hemisphere every
         13\,s using \texttt{WSCLEAN} \citep{2014MNRAS.444..606O}.
