@@ -103,9 +103,9 @@ set of cosmological parameters measured by \citet{2016A&A...594A..13P}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Observations}\label{sec:observations}
 
-\begin{figure}
+\begin{figure}[p]
     \centering
-    \begin{tikzpicture}[node distance=1cm]
+    \begin{tikzpicture}[node distance=1cm, font=\relsize{-1}]
         % nodes
 
         \node [base] (antenna) {\includegraphics[width=2cm]{figures/chapter4/ovro-lwa-antenna}};
@@ -921,10 +921,11 @@ filter increases the area around the NCP that is down-weighted.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results and Error Analysis}\label{sec:results}
 
-\begin{figure}
+\begin{sidewaysfigure}[p]
+    \centering
     \begin{tabular}{c}
-        \includegraphics[width=\textwidth]{figures/chapter4/filtered-sky-map-colorbar}\\
-        \includegraphics[width=\textwidth]{figures/chapter4/spherical-power-spectrum-filter-strength}\\
+        \includegraphics[width=0.75\textwidth]{figures/chapter4/filtered-sky-map-colorbar}\\
+        \includegraphics[width=0.75\textwidth]{figures/chapter4/spherical-power-spectrum-filter-strength}\\
     \end{tabular}
     \caption{
         (top) Mollweide projected image of the sky after point source removal and moderate
@@ -937,7 +938,7 @@ filter increases the area around the NCP that is down-weighted.
         foreground filtering is blue.
     }
     \label{fig:spherical-power-spectra-filter-strength}
-\end{figure}
+\end{sidewaysfigure}
 
 We will use a quadratic estimator to measure the spatial power spectrum of 21\,cm fluctuations
 \citep{1997PhRvD..55.5895T}. In particular we estimate the coefficients $p_\alpha$, which are
@@ -1011,11 +1012,11 @@ removed and resolution in the wavenumber $k$.
 
 \subsection{Even--Odd Jackknife}
 
-\begin{figure}
+\begin{sidewaysfigure}[p]
     \centering
     \begin{tabular}{c}
-        \includegraphics[width=\textwidth]{figures/chapter4/even-odd-sky-map-colorbar}\\
-        \includegraphics[width=\textwidth]{figures/chapter4/spherical-power-spectrum-even-odd}\\
+        \includegraphics[width=0.75\textwidth]{figures/chapter4/even-odd-sky-map-colorbar}\\
+        \includegraphics[width=0.75\textwidth]{figures/chapter4/spherical-power-spectrum-even-odd}\\
     \end{tabular}
     \caption{
         (top) Mollweide projection of the sky in galactic coordinates after differencing even and
@@ -1030,7 +1031,7 @@ removed and resolution in the wavenumber $k$.
         computing the difference between the two halves of data.
     }
     \label{fig:spherical-power-spectra-even-odd}
-\end{figure}
+\end{sidewaysfigure}
 
 Errors arising from variations on rapid timescales---the timescale of a single correlator dump---can
 be revealed through the comparison of results obtained data using only even-numbered integrations
@@ -1065,11 +1066,11 @@ limiting factor for this estimate of the 21\,cm power spectrum.
 
 \subsection{Day--Night Jackknife}
 
-\begin{figure}[t]
+\begin{sidewaysfigure}[p]
     \centering
     \begin{tabular}{c}
-        \includegraphics[width=\textwidth]{figures/chapter4/day-night}\\
-        \includegraphics[width=\textwidth]{figures/chapter4/spherical-power-spectrum-day-night}\\
+        \includegraphics[width=0.75\textwidth]{figures/chapter4/day-night}\\
+        \includegraphics[width=0.75\textwidth]{figures/chapter4/spherical-power-spectrum-day-night}\\
     \end{tabular}
     \caption{
         (top) Orthographic projection of the sky constructed from data collected only during the day
@@ -1080,7 +1081,7 @@ limiting factor for this estimate of the 21\,cm power spectrum.
         and measurements from the night are blue.
     }
     \label{fig:spherical-power-spectra-day-night}
-\end{figure}
+\end{sidewaysfigure}
 
 The dominant subtraction residual in the preceding section is associated with the Sun, which is a
 difficult source to cleanly subtract due to its complex structure. We can therefore split the data
@@ -1112,11 +1113,11 @@ the fact that (due to the time of year) there are fewer bright point sources tha
 
 \subsection{$xx$--$yy$ Jackknife}
 
-\begin{figure}
+\begin{sidewaysfigure}[p]
     \centering
     \begin{tabular}{c}
-        \includegraphics[width=\textwidth]{figures/chapter4/xx-yy-sky-map-colorbar}\\
-        \includegraphics[width=\textwidth]{figures/chapter4/spherical-power-spectrum-xx-yy}\\
+        \includegraphics[width=0.75\textwidth]{figures/chapter4/xx-yy-sky-map-colorbar}\\
+        \includegraphics[width=0.75\textwidth]{figures/chapter4/spherical-power-spectrum-xx-yy}\\
     \end{tabular}
     \caption{
         (top) Mollweide projection of the sky in galactic coordinates after differencing the $xx$
@@ -1129,7 +1130,7 @@ the fact that (due to the time of year) there are fewer bright point sources tha
         of the $xx$ and $yy$ correlations.
     }
     \label{fig:spherical-power-spectrum-xx-yy}
-\end{figure}
+\end{sidewaysfigure}
 
 The polarization angle of linearly polarized emission rotates as it propagates through a magnetized
 plasma \citep[e.g.,][]{2014A&A...568A.101J}. The rotation angle is $\propto\lambda^2$, where
@@ -1153,11 +1154,11 @@ source of systematic error.
 
 \subsection{Calibration Errors}\label{sec:calibration-errors}
 
-\begin{figure}
+\begin{sidewaysfigure}[p]
     \centering
     \begin{tabular}{c}
-        \includegraphics[width=\textwidth]{figures/chapter4/channel-difference-sky-map-colorbar}\\
-        \includegraphics[width=\textwidth]{figures/chapter4/spherical-power-spectrum-gain-errors}\\
+        \includegraphics[width=0.75\textwidth]{figures/chapter4/channel-difference-sky-map-colorbar}\\
+        \includegraphics[width=0.75\textwidth]{figures/chapter4/spherical-power-spectrum-gain-errors}\\
     \end{tabular}
     \caption{
         (top) Mollweide projection of the sky in galactic coordinates after differencing two
@@ -1168,7 +1169,7 @@ source of systematic error.
         10\% errors in the complex gains.
     }
     \label{fig:spherical-power-spectrum-gain-errors}
-\end{figure}
+\end{sidewaysfigure}
 
 Multiple authors have investigated the impact of calibration errors on an experiment's ability to
 separate foreground emission from the cosmological 21\,cm signal \citep{2016MNRAS.461.3135B,
@@ -1328,6 +1329,8 @@ harmonics:
 where the function $j_l(kr)$ is the spherical Bessel function of the first kind.
 
 Putting this all together we can find
+
+\scalebox{0.75}{\parbox{\linewidth}{
 \begin{align*}
     C^{21}_l(\nu, \nu^\prime) &=
         \frac{1}{2l+1}\sum_{m=-l}^l
@@ -1380,6 +1383,8 @@ Putting this all together we can find
         Y_{lm}(\hat k) \,
         \frac{\d^3k}{(2\pi)^3} \\
 \end{align*}
+}}
+
 Where in the first two steps we used the plane-wave expansion, and in the final step we used the
 definition of the spatial power spectrum.
 
