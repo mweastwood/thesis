@@ -276,15 +276,23 @@ where $\phi_0$ sets the overall phase, $\tau$ is the delay, and the integral of 
 density along the line of sight is called the Total Electron Content (TEC).
 
 The diffractive scale $r_\text{diff}$ of the ionosphere is the length scale over which the phase
-variance is $1\,\text{rad}^2$. The Fresnel scale is $r_\text{f} = \sqrt{\lambda D / 2\pi}$ where $D$
-is the height of the ionosphere (typically $\sim 300\,\text{km}$). In the weak scattering regime
-($r_\text{diff} \gg r_\text{f}$), the ionosphere can contribute amplitude and phase scintillation,
-which may be folded into the antenna gain calibration.  However, in the strong scattering regime
-($r_\text{diff} \lesssim r_\text{f}$), point sources may become multiply imaged, which cannot be
-described as a perturbation to the antenna response \citep{2015MNRAS.453..925V}.
+variance is $1\,\text{rad}^2$. Approximately 90\% of the time the diffractive scale is
+$>2\,\text{km}$ at 70\,MHz and $>1\,\text{km}$ at 35\,MHz \citep{2016RaSc...51..927M}.  The Fresnel
+scale is $r_\text{f} = \sqrt{\lambda D / 2\pi}$ where $D$ is the height of the ionosphere (typically
+$\sim 300\,\text{km}$). In the weak scattering regime ($r_\text{diff} \gg r_\text{f}$), the
+ionosphere can contribute amplitude and phase scintillation, which may be folded into the antenna
+gain calibration.  However, in the strong scattering regime ($r_\text{diff} \lesssim r_\text{f}$),
+point sources may become multiply imaged, which cannot be described as a perturbation to the antenna
+response \citep{2015MNRAS.453..925V}. Typically the OVRO-LWA operates in the weak scattering regime
+with baselines shorter than the diffractive scale of the ionosphere.
 
-The antenna response is also generally expected to be inhomogeneous.  Within the core of the
-OVRO-LWA, antennas are separated by as little as 5\,m.  \citet{2011ITAP...59.1855E} studied the
+A compact interferometer is composed of antennas that are staring through the same patch of the
+ionosphere. The ionosphere therefore imparts a phase gradient across the array that refracts sources
+from their true position.  In contrast, on longer baselines, the additional phase between the two
+antennas may not be correlated \citep{2005ASPC..345..399L}.
+
+However, The antenna response is also generally expected to be inhomogeneous.  Within the core of
+the OVRO-LWA, antennas are separated by as little as 5\,m.  \citet{2011ITAP...59.1855E} studied the
 impact of mutual coupling on the antenna primary beam within the first Long Wavelength Array station
 in New Mexico (LWA1), which uses the same antennas and same 5\,m minimum spacing as the OVRO-LWA,
 but the antennas are packed within a 100\,m diameter (as opposed to a 200\,m diameter for the
