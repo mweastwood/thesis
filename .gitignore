@@ -9,6 +9,7 @@
 *.idx
 *.ilg
 *.ind
+*.jld2
 *.lof
 *.log
 *.lot
