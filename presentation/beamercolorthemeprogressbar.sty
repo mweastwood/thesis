@@ -1,0 +1,65 @@
+\ProvidesPackage{beamercolorthemeprogressbar}[2007/06/21]
+
+% Beamer theme by Sylvain Bouveret <sylvain[dot]bouveret[aT]cert[DoT]fr>
+% sep. 2010 version 0.42
+%
+% based on the LaTeX-Beamer package :
+% Copyright 2003 by Till Tantau <tantau@users.sourceforge.net>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Some color definitions...
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{eastwood@darkgray}{gray}{0.15}
+\definecolor{eastwood@gray}{gray}{0.2}
+
+\mode<presentation>
+
+%\setbeamercolor{palette primary}{fg=eastwood@gray,bg=eastwood@gray}
+%\setbeamercolor{palette secondary}{fg=white!90!progressbar@fgblue,bg=progressbar@fgblue}
+%\setbeamercolor{palette tertiary}{fg=progressbar@fgblue,bg=progressbar@bgblue}
+%\setbeamercolor{palette quaternary}{fg=progressbar@fgblue,bg=progressbar@bgblue}
+
+\setbeamercolor{structure}{fg=white}
+\setbeamercolor{normal text}{bg=eastwood@gray,fg=white}
+
+\setbeamercolor{section in head/foot}{bg=eastwood@darkgray,fg=white}
+\setbeamercolor{frametitle}{bg=eastwood@darkgray,fg=white}
+
+
+%\setbeamercolor{alerted text}{fg=black!40!red,bg=bg}
+%\setbeamercolor{example text}{fg=black!40!green,bg=bg}
+
+%\setbeamercolor{block title}{fg=black,bg=white}
+%\setbeamercolor{block title alerted}{fg=alerted text.fg,bg=alerted text.fg!10!bg}
+%\setbeamercolor{block title example}{fg=example text.fg,bg=example text.fg!10!bg}
+
+%\setbeamercolor{block body}{fg=black,bg=progressbar@bggray}
+%\setbeamercolor{block body alerted}{fg=normal text.fg,bg=alerted text.fg!10!bg}
+%\setbeamercolor{block body example}{fg=normal text.fg,bg=example text.fg!10!bg}
+
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{subtitle}{parent=title}
+
+\setbeamercolor{enumerate item}{fg=white}
+\setbeamercolor{enumerate subitem}{parent=enumerate item}
+\setbeamercolor{enumerate subsubitem}{parent=enumerate subitem}
+
+\setbeamercolor{itemize item}{fg=white}
+\setbeamercolor{itemize subitem}{parent=itemize item}
+\setbeamercolor{itemize subsubitem}{parent=itemize subitem}
+
+\mode
+<all>
+
+
+
+\makeatother
