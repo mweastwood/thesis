@@ -37,6 +37,9 @@
 }
 
 \definecolor{gray}{rgb}{.3,.3,.3}
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{green}{rgb}{0,1,0}
+\definecolor{blue}{rgb}{0,0,1}
 
 \begin{document}
 \title[Searching for the Cosmic Dawn]{
@@ -369,11 +372,11 @@
 
 \begin{frame}
     \begin{center}
-        \includegraphics[height=0.95\textheight]{movies/2017-01-12-marin-galaxy-setting}
+        \includegraphics[height=0.95\textheight]{movies/marin-sGRB-fullband}
     \end{center}
     \begin{tikzpicture}[overlay, remember picture]
         \node[anchor=center] at (current page.center) {
-            \href{run:movies/2017-01-12-marin-galaxy-setting.mp4} {
+            \href{run:movies/marin-sGRG-fullband.mp4} {
                 \includegraphics[width=30pt]{movies/play-button}
             }
         };
@@ -549,6 +552,16 @@
     \end{center}}
 \end{frame}
 
+{
+    \usebackgroundtemplate{\includegraphics[height=\paperheight]{figures/dirty.jpg}}
+    \begin{frame}{Dirty Map}
+    \end{frame}
+
+    \usebackgroundtemplate{\includegraphics[height=\paperheight]{figures/clean.jpg}}
+    \begin{frame}{Clean Map}
+    \end{frame}
+}
+
 \begin{frame}{Advantages and Disadvantages}
     \textbf{Advantages}
     \begin{itemize}[label=\textbullet]
@@ -564,16 +577,6 @@
         \item Rapid ionospheric changes break assumptions
     \end{itemize}
 \end{frame}
-
-{
-    \usebackgroundtemplate{\includegraphics[height=\paperheight]{figures/dirty.jpg}}
-    \begin{frame}{Dirty Map}
-    \end{frame}
-
-    \usebackgroundtemplate{\includegraphics[height=\paperheight]{figures/clean.jpg}}
-    \begin{frame}{Clean Map}
-    \end{frame}
-}
 
 \begin{frame}{Eight New Low-Frequency Sky Maps}
     \setlength\tabcolsep{0pt} \Wider[5em]{\begin{tabular}{cccc}
@@ -604,14 +607,14 @@
             \cline{5-6}
             \tbf{\#} & MHz & kHz & arcmin & K & mJy/beam \\
             \hline
-            \rowcolor{gray} 1 & 36.528 & 24. & 18.5 & 595. & 799. \\
+            \rowcolor{red!50!gray} 1 & 36.528 & 24. & 18.5 & 595. & 799. \\
             2 & 41.760 & 24. & 17.2 & 541. & 824. \\
             3 & 46.992 & 24. & 16.3 & 417. & 717. \\
-            \rowcolor{gray} 4 & 52.224 & 24. & 15.6 & 418. & 814. \\
+            \rowcolor{green!50!gray} 4 & 52.224 & 24. & 15.6 & 418. & 814. \\
             5 & 57.456 & 24. & 15.4 & 354. & 819. \\
             6 & 62.688 & 24. & 15.3 & 309. & 843. \\
             7 & 67.920 & 24. & 15.3 & 281. & 894. \\
-            \rowcolor{gray} 8 & 73.152 & 24. & 15.7 & 154. & 598. \\
+            \rowcolor{blue!50!gray} 8 & 73.152 & 24. & 15.7 & 154. & 598. \\
             \hline
         \end{tabular}
     \end{center}
@@ -621,23 +624,28 @@
 \end{frame}
 
 \begin{frame}{A Three Color Image}
-    \Wider[5em]{\includegraphics[width=\textwidth]{figures/ovro-lwa-sky-map-cropped}}
-    \begin{center}
-        {\tiny Eastwood et al. (2018)} \\
-    \end{center}
-\end{frame}
-
-\begin{frame}{Comparison with Haslam 408 MHz}
+    % Note that all this extra overprint stuff is needed to help make this slide line up with the
+    % next one.
     \begin{overprint}
         \onslide<1>
         \Wider[5em]{\includegraphics[width=\textwidth]{figures/ovro-lwa-sky-map-cropped}}
         \begin{center}
             {\tiny Eastwood et al. (2018)} \\
         \end{center}
-        \onslide<2>
+    \end{overprint}
+\end{frame}
+
+\begin{frame}{Comparison with Haslam 408 MHz}
+    \begin{overprint}
+        \onslide<1>
         \Wider[5em]{\includegraphics[width=\textwidth]{figures/haslam-map}}
         \begin{center}
             {\tiny Haslam et al. (1981, 1982)} \\
+        \end{center}
+        \onslide<2>
+        \Wider[5em]{\includegraphics[width=\textwidth]{figures/ovro-lwa-sky-map-cropped}}
+        \begin{center}
+            {\tiny Eastwood et al. (2018)} \\
         \end{center}
     \end{overprint}
 \end{frame}
@@ -645,14 +653,14 @@
 \begin{frame}{Comparison with LWA1 (35--80 MHz)}
     \begin{overprint}
         \onslide<1>
-        \Wider[5em]{\includegraphics[width=\textwidth]{figures/ovro-lwa-sky-map-cropped}}
-        \begin{center}
-            {\tiny Eastwood et al. (2018)} \\
-        \end{center}
-        \onslide<2>
         \Wider[5em]{\includegraphics[width=\textwidth]{figures/lwa1}}
         \begin{center}
             {\tiny Dowell et al. (2017)} \\
+        \end{center}
+        \onslide<2>
+        \Wider[5em]{\includegraphics[width=\textwidth]{figures/ovro-lwa-sky-map-cropped}}
+        \begin{center}
+            {\tiny Eastwood et al. (2018)} \\
         \end{center}
     \end{overprint}
 \end{frame}
@@ -660,14 +668,14 @@
 \begin{frame}{Comparison with Finkbeiner H$\alpha$}
     \begin{overprint}
         \onslide<1>
-        \Wider[5em]{\includegraphics[width=\textwidth]{figures/ovro-lwa-sky-map-cropped}}
-        \begin{center}
-            {\tiny Eastwood et al. (2018)} \\
-        \end{center}
-        \onslide<2>
         \Wider[5em]{\includegraphics[width=\textwidth]{figures/halpha-map}}
         \begin{center}
             {\tiny Finkbeiner et al. (2003)} \\
+        \end{center}
+        \onslide<2>
+        \Wider[5em]{\includegraphics[width=\textwidth]{figures/ovro-lwa-sky-map-cropped}}
+        \begin{center}
+            {\tiny Eastwood et al. (2018)} \\
         \end{center}
     \end{overprint}
 \end{frame}
@@ -721,25 +729,62 @@
     \end{frame}
 }
 
+\begin{frame}{The 3D Spatial Power Spectrum}
+    \begin{center}
+        \includegraphics[height=0.5\textheight]{figures/cube}
+    \end{center}
+    Fourier transform and square the brightness temperature in the cosmological cube.
+\end{frame}
+
 \begin{frame}{The Foreground Wedge}
     \only<1>{
         \begin{center}
-            \includegraphics[height=0.7\textheight]{figures/paper-fringes}
+            \includegraphics[height=0.6\textheight]{figures/window}
         \end{center}
     }
     \only<2>{
+        \begin{center}
+            \includegraphics[height=0.7\textheight]{figures/paper-fringes}
+        \end{center}
+        \[k_\perp \sim \text{``baseline length''}\]
+    }
+    \only<3>{
+        \begin{block}{XF Correlator}
+            \begin{enumerate}
+                \item[1.] Cross-correlate voltages at series of time lags (``delays'')
+                \item[2.] Fourier transform to obtain frequency spectrum
+            \end{enumerate}
+        \end{block}
+
+        The Fourier transform along the line of sight undoes the correlator F-stage:
+
+        \[k_\parallel \sim \text{``delay''}\]
+    }
+    \only<4>{
         \begin{center}
             \includegraphics[height=0.6\textheight]{figures/window}
         \end{center}
     }
 \end{frame}
 
+\begin{frame}{Problems with the Foreground Wedge}
+    \begin{itemize}[label=\textbullet]
+        \item \textbf{Assumes} foreground emission is ``smooth enough''
+        \item \textbf{Does not} use any information about the angular structure of the
+            foreground emission
+        \item \textbf{Does not} use any information about the cosmological emission
+        \item \textbf{Does not} account for wide-field effects\\
+            {\tiny Thyagarajan et al. 2015}
+    \end{itemize}
+\end{frame}
+
 \begin{frame}{Covariance Matrices}
     Key advantage of $m$-mode analysis: Full covariance matrices
     \Large
-    \begin{dmath*}
-        \b C = \b C_{\textrm{21}} + \b C_{\textrm{fg}} + \b C_{\textrm{noise}}
-    \end{dmath*}
+    \[
+        \langle \b v \b v^* \rangle =
+            \b C = \b C_{\textrm{21}} + \b C_{\textrm{fg}} + \b C_{\textrm{noise}}
+    \]
     \normalsize
     Typical size without $m$-mode analysis:
     \Large
@@ -758,21 +803,80 @@
 \end{frame}
 
 \begin{frame}{The Noise Covariance}
-    \begin{center}
-        \includegraphics[height=0.75\textheight]{figures/system-temperature/system-temperature}
-    \end{center}
+    \only<1>{
+        \Large
+        \[
+            \langle \b v \b v^* \rangle =
+                \b C = \b C_{\textrm{21}} + \b C_{\textrm{fg}} + \boxed{\b C_{\textrm{noise}}}
+        \]
+        \vskip10pt
+        \normalsize
+        \begin{itemize}[label=\textbullet]
+            \item Typically diagonal {\tiny (although see Kulkarni 1989)}
+            \item Characterized by the system temperature $T_{\textrm{sys}}$
+            \item Measured from variance of visibilities after differencing
+            \item Expect sky noise dominated with contribution from receiver
+        \end{itemize}
+    }
+    \only<2>{
+        \begin{center}
+            \includegraphics[height=0.75\textheight]{figures/system-temperature/system-temperature}
+        \end{center}
+    }
 \end{frame}
 
 \begin{frame}{The Foreground Covariance}
-    \begin{center}
-        \includegraphics[height=0.75\textheight]{figures/foreground-covariance/foreground-covariance-06}
-    \end{center}
+    \only<1>{
+        \Large
+        \[
+            \langle \b v \b v^* \rangle =
+                \b C = \b C_{\textrm{21}} + \boxed{\b C_{\textrm{fg}}} + \b C_{\textrm{noise}}
+        \]
+        \normalsize
+        \[
+            \Big\langle a_{lm}(\nu)\,a_{l^\prime m^\prime}(\nu + \Delta\nu) \Big\rangle =
+                C_l(\nu,\,\Delta\nu)\,\delta_{ll^\prime}\,\delta_{mm^\prime}
+        \]
+        \vskip10pt
+        \begin{itemize}[label=\textbullet]
+            \item Dominated by the galactic synchrotron emission
+            \item Contribution of point sources increases on small angular scales
+            \item Measured $C_l(\nu, 0)$ with an optimal quadratic estimator
+        \end{itemize}
+    }
+    \only<2>{
+        \begin{center}
+            \includegraphics[height=0.75\textheight]{figures/foreground-covariance/foreground-covariance-06}
+        \end{center}
+    }
 \end{frame}
 
 \begin{frame}{The 21\,cm Signal Covariance}
-    \begin{center}
-        \includegraphics[height=0.75\textheight]{figures/sky-covariance/sky-covariance}
-    \end{center}
+    \only<1>{
+        \Large
+        \[
+            \langle \b v \b v^* \rangle =
+                \b C = \boxed{\b C_{\textrm{21}}} + \b C_{\textrm{fg}} + \b C_{\textrm{noise}}
+        \]
+        \normalsize
+        \[
+            P_{\textrm{model}}(k) = \frac{2\pi^2}{k^3}\,\textrm{min}\left[
+                40\left(\frac{k}{0.03\,\textrm{Mpc}^{-1}}\right)^2,\,400
+            \right]\,\textrm{mK}^2
+        \]
+        \vskip10pt
+        \begin{itemize}[label=\textbullet]
+            \item Simple fiducial model {\tiny (Fialkov et al. 2014)}
+            \item If EDGES detection is true, power spectrum amplitude reasonably expected to be 50
+                times brighter\\
+                {\tiny (Bowman et al. 2018, Barkana 2018)}
+        \end{itemize}
+    }
+    \only<2>{
+        \begin{center}
+            \includegraphics[height=0.75\textheight]{figures/sky-covariance/sky-covariance}
+        \end{center}
+    }
 \end{frame}
 
 \begin{frame}{The Karhunen--Lo\`{e}ve Transform}
@@ -792,12 +896,6 @@
     \end{overprint}
 \end{frame}
 
-\begin{frame}{Filtering Illustration}
-    \begin{center}
-        \Wider[3em]{\includegraphics[width=\textwidth]{figures/foreground-filtering-schematic/foreground-filtering-schematic}}
-    \end{center}
-\end{frame}
-
 \begin{frame}{Filtered Image}
     \begin{overprint}
         \onslide<1>
@@ -815,11 +913,15 @@
     \begin{overprint}
         \onslide<1>
         \begin{center}
-            \includegraphics[height=0.75\textheight]{figures/spherical-power-spectra/spherical-power-spectrum-filter-strength-2.pdf}
+            \includegraphics[height=0.75\textheight]{figures/spherical-power-spectra/spherical-power-spectrum-filter-strength-1.pdf}
         \end{center}
         \onslide<2>
         \begin{center}
-            \includegraphics[height=0.75\textheight]{figures/spherical-power-spectra/spherical-power-spectrum-filter-strength-1.pdf}
+            \includegraphics[height=0.75\textheight]{figures/spherical-power-spectra/spherical-power-spectrum-filter-strength-2.pdf}
+        \end{center}
+        \onslide<3>
+        \begin{center}
+            \includegraphics[height=0.75\textheight]{figures/spherical-power-spectra/spherical-power-spectrum-filter-strength-3.pdf}
         \end{center}
     \end{overprint}
 \end{frame}
@@ -840,9 +942,17 @@
     \begin{overprint}
         \onslide<1>
         \begin{center}
-            \includegraphics[height=0.75\textheight]{figures/spherical-power-spectra/spherical-power-spectrum-gain-errors.pdf}
+            \includegraphics[height=0.75\textheight]{figures/spherical-power-spectra/spherical-power-spectrum-gain-errors-1.pdf}
         \end{center}
         \onslide<2>
+        \begin{center}
+            \includegraphics[height=0.75\textheight]{figures/spherical-power-spectra/spherical-power-spectrum-gain-errors-2.pdf}
+        \end{center}
+        \onslide<3>
+        \begin{center}
+            \includegraphics[height=0.75\textheight]{figures/spherical-power-spectra/spherical-power-spectrum-gain-errors-3.pdf}
+        \end{center}
+        \onslide<4>
         \begin{center}
             \includegraphics[height=0.75\textheight]{figures/spherical-power-spectra/spherical-power-spectrum-bandpass-errors.pdf}
         \end{center}
@@ -856,9 +966,10 @@
         \item
             Lowest upper limit $\Delta_{21}^2 \lesssim (10^4\,\textrm{mK})^2$
         \item
-            The double KL transform foreground filter is effective if gain errors $<0.1\%$
+            The double KL transform foreground filter is effective if gain errors $<0.1\%$ and
+            bandpass errors $<0.01\%$
         \item
-            Current calibration techniques with the OVRO-LWA may generate $\sim 1\%$ errors in the
+            Current upper limits from the OVRO-LWA are consistent with $\sim 1\%$ errors in the
             bandpass
     \end{itemize}
 \end{frame}
@@ -935,6 +1046,12 @@
 \end{frame}
 
 \begin{frame}{Day--Night Jackknife}
+\end{frame}
+
+\begin{frame}{Filtering Illustration}
+    \begin{center}
+        \Wider[3em]{\includegraphics[width=\textwidth]{figures/foreground-filtering-schematic/foreground-filtering-schematic}}
+    \end{center}
 \end{frame}
 
 \end{document}

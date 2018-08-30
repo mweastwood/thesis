@@ -81,8 +81,9 @@ const color_dict = Dict("red"    => "#d62728",
                         "black"  => "#000000",
                         "blue"   => "#1f77b4",
                         "white"  => "#ffffff",
-                        "yellow" => "#ffff00",
-                        "orange" => "#ffa100")
+                        "yellow" => "#f4d35e",
+                        "orange" => "#f49749",
+                        "red2"   => "#df465a")
 
 function plot_ps(p, Σ, W; color="black", error_color=color, do_errors=false)
     σ = sqrt.(diag(Σ))
@@ -104,32 +105,50 @@ function plot_ps_no_errors(p, W; color="black")
 end
 
 function filter_strength()
-    ppeel1,  Σpeel1,  Wpeel1  = getp("122-quadratic-estimator-peeled-all-mild-spherical.jld2")
-    ppeel2,  Σpeel2,  Wpeel2  = getp("122-quadratic-estimator-peeled-all-moderate-spherical.jld2")
-    ppeel3,  Σpeel3,  Wpeel3  = getp("122-quadratic-estimator-peeled-all-extreme-spherical.jld2")
+    #ppeel1,  Σpeel1,  Wpeel1  = getp("122-quadratic-estimator-peeled-all-mild-spherical.jld2")
+    #ppeel2,  Σpeel2,  Wpeel2  = getp("122-quadratic-estimator-peeled-all-moderate-spherical.jld2")
+    #ppeel3,  Σpeel3,  Wpeel3  = getp("122-quadratic-estimator-peeled-all-extreme-spherical.jld2")
     pcalib1, Σcalib1, Wcalib1 = getp("122-quadratic-estimator-calibrated-all-mild-spherical.jld2")
     pcalib2, Σcalib2, Wcalib2 = getp("122-quadratic-estimator-calibrated-all-moderate-spherical.jld2")
     pcalib3, Σcalib3, Wcalib3 = getp("122-quadratic-estimator-calibrated-all-extreme-spherical.jld2")
 
     figure(1, figsize=(6, 4)); clf()
-    plot_ps(pcalib1, Σcalib1, Wcalib1, color="orange",   do_errors=true)
-    plot_ps(pcalib2, Σcalib2, Wcalib2, color="white", do_errors=true)
-    plot_ps(pcalib3, Σcalib3, Wcalib3, color="yellow",  do_errors=true)
-    title(L"\textrm{without point source removal}", fontsize=14)
+    plot_ps(pcalib1, Σcalib1, Wcalib1, color="yellow", do_errors=true)
+    title(L"\textrm{mild foreground filtering}", fontsize=14)
     defaults()
     make_white()
     savefig(joinpath(@__DIR__, "spherical-power-spectrum-filter-strength-1.pdf"),
             bbox_inches="tight", pad_inches=0.1, transparent=true)
 
     figure(2, figsize=(6, 4)); clf()
-    plot_ps(ppeel1, Σpeel1, Wpeel1, color="orange",   do_errors=true)
-    plot_ps(ppeel2, Σpeel2, Wpeel2, color="white", do_errors=true)
-    plot_ps(ppeel3, Σpeel3, Wpeel3, color="yellow",  do_errors=true)
-    title(L"\textrm{with point source removal}", fontsize=14)
+    plot_ps(pcalib1, Σcalib1, Wcalib1, color="yellow", do_errors=true)
+    plot_ps(pcalib2, Σcalib2, Wcalib2, color="orange", do_errors=true)
+    title(L"\textrm{moderate foreground filtering}", fontsize=14)
     defaults()
     make_white()
     savefig(joinpath(@__DIR__, "spherical-power-spectrum-filter-strength-2.pdf"),
             bbox_inches="tight", pad_inches=0.1, transparent=true)
+
+    figure(3, figsize=(6, 4)); clf()
+    plot_ps(pcalib1, Σcalib1, Wcalib1, color="yellow", do_errors=true)
+    plot_ps(pcalib2, Σcalib2, Wcalib2, color="orange", do_errors=true)
+    plot_ps(pcalib3, Σcalib3, Wcalib3, color="red2", do_errors=true)
+    title(L"\textrm{extreme foreground filtering}", fontsize=14)
+    defaults()
+    make_white()
+    savefig(joinpath(@__DIR__, "spherical-power-spectrum-filter-strength-3.pdf"),
+            bbox_inches="tight", pad_inches=0.1, transparent=true)
+
+
+    #figure(2, figsize=(6, 4)); clf()
+    #plot_ps(ppeel1, Σpeel1, Wpeel1, color="orange",   do_errors=true)
+    #plot_ps(ppeel2, Σpeel2, Wpeel2, color="white", do_errors=true)
+    #plot_ps(ppeel3, Σpeel3, Wpeel3, color="yellow",  do_errors=true)
+    #title(L"\textrm{with point source removal}", fontsize=14)
+    #defaults()
+    #make_white()
+    #savefig(joinpath(@__DIR__, "spherical-power-spectrum-filter-strength-2.pdf"),
+    #        bbox_inches="tight", pad_inches=0.1, transparent=true)
 end
 
 function simulations()
@@ -143,22 +162,43 @@ function simulations()
     pbmediu, _, Wbmediu = getq("122-quadratic-estimator-peeled-medium-bandpass-errors-moderate-spherical.jld2")
     pblarge, _, Wblarge = getq("122-quadratic-estimator-peeled-large-bandpass-errors-moderate-spherical.jld2")
 
-    figure(3, figsize=(6, 4)); clf()
+    figure(4, figsize=(6, 4)); clf()
     plot_ps_no_errors(pgsmall, Wgsmall, color="yellow")
-    plot_ps_no_errors(pgmediu, Wgmediu, color="white")
-    plot_ps_no_errors(pglarge, Wglarge, color="orange")
-    title(L"\textrm{random gain errors}", fontsize=14)
+    title(L"\textrm{0.1\% gain errors}", fontsize=14)
     defaults()
     make_white()
     xlim(0.05, 0.25)
     ylim(1e4, 1e11)
-    savefig(joinpath(@__DIR__, "spherical-power-spectrum-gain-errors.pdf"),
+    savefig(joinpath(@__DIR__, "spherical-power-spectrum-gain-errors-1.pdf"),
             bbox_inches="tight", pad_inches=0.1, transparent=true)
 
-    figure(4, figsize=(6, 4)); clf()
+    figure(5, figsize=(6, 4)); clf()
+    plot_ps_no_errors(pgsmall, Wgsmall, color="yellow")
+    plot_ps_no_errors(pgmediu, Wgmediu, color="orange")
+    title(L"\textrm{1\% gain errors}", fontsize=14)
+    defaults()
+    make_white()
+    xlim(0.05, 0.25)
+    ylim(1e4, 1e11)
+    savefig(joinpath(@__DIR__, "spherical-power-spectrum-gain-errors-2.pdf"),
+            bbox_inches="tight", pad_inches=0.1, transparent=true)
+
+    figure(6, figsize=(6, 4)); clf()
+    plot_ps_no_errors(pgsmall, Wgsmall, color="yellow")
+    plot_ps_no_errors(pgmediu, Wgmediu, color="orange")
+    plot_ps_no_errors(pglarge, Wglarge, color="red2")
+    title(L"\textrm{10\% gain errors}", fontsize=14)
+    defaults()
+    make_white()
+    xlim(0.05, 0.25)
+    ylim(1e4, 1e11)
+    savefig(joinpath(@__DIR__, "spherical-power-spectrum-gain-errors-3.pdf"),
+            bbox_inches="tight", pad_inches=0.1, transparent=true)
+
+    figure(7, figsize=(6, 4)); clf()
     plot_ps_no_errors(pbsmall, Wbsmall, color="yellow")
-    plot_ps_no_errors(pbmediu, Wbmediu, color="white")
-    plot_ps_no_errors(pblarge, Wblarge, color="orange")
+    plot_ps_no_errors(pbmediu, Wbmediu, color="orange")
+    plot_ps_no_errors(pblarge, Wblarge, color="red2")
     title(L"\textrm{random bandpass errors}", fontsize=14)
     defaults()
     make_white()
@@ -169,7 +209,7 @@ function simulations()
 end
 
 function go()
-    filter_strength()
+    #filter_strength()
     simulations()
 end
 
