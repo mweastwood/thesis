@@ -208,9 +208,45 @@ function simulations()
             bbox_inches="tight", pad_inches=0.1, transparent=true)
 end
 
+function day_night()
+    pcalib1, Σcalib1, Wcalib1 = getq("122-quadratic-estimator-calibrated-day-moderate-spherical.jld2")
+    pcalib2, Σcalib2, Wcalib2 = getq("122-quadratic-estimator-calibrated-night-moderate-spherical.jld2")
+
+    figure(8, figsize=(6, 4)); clf()
+    plot_ps(pcalib1, Σcalib1, Wcalib1, color="red2", error_color="white", do_errors=true)
+    plot_ps(pcalib2, Σcalib2, Wcalib2, color="yellow")
+    title(L"\textrm{day--night}", fontsize=14)
+    defaults()
+    make_white()
+    xlim(0.05, 0.25)
+    ylim(1e4, 1e11)
+    savefig(joinpath(@__DIR__, "spherical-power-spectrum-day-night.pdf"),
+            bbox_inches="tight", pad_inches=0.1, transparent=true)
+end
+
+function even_odd()
+    pcalib1, Σcalib1, Wcalib1 = getq("122-quadratic-estimator-calibrated-odd-moderate-spherical.jld2")
+    pcalib2, Σcalib2, Wcalib2 = getq("122-quadratic-estimator-calibrated-even-moderate-spherical.jld2")
+    pcalibd, Σcalibd, Wcalibd = getq("124-difference-quadratic-estimator-calibrated-even-odd-moderate-spherical.jld2")
+
+    figure(9, figsize=(6, 4)); clf()
+    plot_ps(pcalib1, Σcalib1, Wcalib1, color="red2")
+    plot_ps(pcalib2, Σcalib2, Wcalib2, color="yellow")
+    plot_ps(pcalibd, Σcalibd, Wcalibd, color="white", do_errors=true)
+    title(L"\textrm{even--odd}", fontsize=14)
+    defaults()
+    xlim(0.05, 0.25)
+    ylim(1e4, 1e11)
+    make_white()
+    savefig(joinpath(@__DIR__, "spherical-power-spectrum-even-odd.pdf"),
+            bbox_inches="tight", pad_inches=0.1, transparent=true)
+end
+
 function go()
-    #filter_strength()
+    filter_strength()
     simulations()
+    day_night()
+    even_odd()
 end
 
 end

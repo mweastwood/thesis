@@ -900,9 +900,13 @@
     \begin{overprint}
         \onslide<1>
         \begin{center}
-            \Wider[3em]{\includegraphics[width=\textwidth]{figures/sky-maps/filtered-sky-map-colorbar}}
+            \Wider[3em]{\includegraphics[width=\textwidth]{figures/sky-maps/peeled-sky-map-colorbar}}
         \end{center}
         \onslide<2>
+        \begin{center}
+            \Wider[3em]{\includegraphics[width=\textwidth]{figures/sky-maps/filtered-sky-map-colorbar}}
+        \end{center}
+        \onslide<3>
         \begin{center}
             \Wider[3em]{\includegraphics[width=\textwidth]{figures/sky-maps/filtered-sky-map-colorbar-2}}
         \end{center}
@@ -1040,12 +1044,22 @@
 \end{frame}
 
 \begin{frame}{Even--Odd Jackknife}
-    \begin{center}
-        \Wider[3em]{\includegraphics[width=\textwidth]{figures/sky-maps/even-odd-sky-map-colorbar}}
-    \end{center}
+    \only<1>{
+        \begin{center}
+            \Wider[3em]{\includegraphics[width=\textwidth]{figures/sky-maps/even-odd-sky-map-colorbar}}
+        \end{center}
+    }
+    \only<2>{
+        \begin{center}
+            \includegraphics[height=0.75\textheight]{figures/spherical-power-spectra/spherical-power-spectrum-even-odd.pdf}
+        \end{center}
+    }
 \end{frame}
 
 \begin{frame}{Day--Night Jackknife}
+    \begin{center}
+        \includegraphics[height=0.75\textheight]{figures/spherical-power-spectra/spherical-power-spectrum-day-night.pdf}
+    \end{center}
 \end{frame}
 
 \begin{frame}{Filtering Illustration}

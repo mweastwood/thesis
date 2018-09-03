@@ -135,6 +135,15 @@ draw_graticule()
 savefig(joinpath(@__DIR__, "channel-difference-sky-map-colorbar.pdf"),
         bbox_inches="tight", pad_inches=0, transparent=true)
 
+figure(5, figsize=(6, 2.5)); clf()
+plot_map("031-dirty-map-interpolated-peeled-all.fits")
+savefig(joinpath(@__DIR__, "peeled-sky-map.pdf"),
+        bbox_inches="tight", pad_inches=0, transparent=true)
+show_colorbar()
+draw_graticule()
+savefig(joinpath(@__DIR__, "peeled-sky-map-colorbar.pdf"),
+        bbox_inches="tight", pad_inches=0, transparent=true)
+
 #figure(6, figsize=(12, 5)); clf()
 #plot_map_difference("031-dirty-map-interpolated-peeled-xx.fits",
 #                    "031-dirty-map-interpolated-peeled-yy.fits",
