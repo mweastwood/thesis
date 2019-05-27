@@ -211,8 +211,8 @@ set of cosmological parameters measured by \citet{2016A&A...594A..13P}.
     \caption{
         A flow chart describing the data analysis steps performed in this paper. Radio waves are
         received by antennas (depicted in the upper-left corner), which are correlated to produce
-        raw visibilities. These visibilities are then flagged, calibrated, and bright point sources
-        are removed. After a full sidereal day's worth of data has been collected, these
+        raw visibilities. These visibilities are then flagged and calibrated, and bright point
+        sources are removed. After a full sidereal day's worth of data has been collected, these
         visibilities can be Fourier transformed to compute the measured $m$-modes. Separately, an
         empirical beam model is used to calculate the transfer matrix elements that describe the
         interferometer's sensitivity to the sky. Full covariance matrices are computed for the
@@ -703,7 +703,7 @@ in two dimensions), such that
         \label{eq:palpha} \\
     C^{21}_l(\nu, \nu^\prime) &\approx
         \frac{1}{\pi r_z r_{z^\prime}}
-        \sum_\alpha p_\alpha H_\alpha(\Delta r_z)
+        \sum_\alpha p_\alpha H_\alpha(\Delta r_z)\,,
 \end{align}
 where $H_\alpha(\Delta r_z) = \int {\rm hat}_\alpha(k_\perp, k_\parallel) \, \cos\left(k_\parallel
 \Delta r_z\right) \, \d k_\parallel$.
@@ -766,7 +766,7 @@ the results as if the foreground filter was weaker than expected.
     \caption{
         Mollweide projected illustration of the sky where shaded regions are down-weighted by the
         foreground filter. From darkest to lightest, these regions of the sky are filtered by the
-        mild, moderate, and extreme foreground filters respectively.
+        mild, moderate, and extreme foreground filters, respectively.
     }
     \label{fig:foreground-filtering-schematic}
 \end{figure}
@@ -1176,8 +1176,8 @@ separate foreground emission from the cosmological 21\,cm signal \citep{2016MNRA
 2017MNRAS.470.1849E}. In this section we will compute the impact of calibration errors on the double
 KL transform foreground filter.
 
-In this calculation will simulate a realistic set of visibilities for the foreground emission, and
-introduce errors into the calibration before applying the double KL transform filter. Finally we
+In this calculation we will simulate a realistic set of visibilities for the foreground emission,
+and introduce errors into the calibration before applying the double KL transform filter. Finally we
 will estimate the power spectrum amplitude as a way to characterize the amount of contamination
 associated with the calibration errors.
 
@@ -1318,7 +1318,7 @@ Fourier transform.
     T^{21}_\nu(\vec r) &=
         \int T^{21}_\nu(\vec k) \, e^{i\vec k\cdot\vec r} \, \frac{\d^3k}{(2\pi)^3} \\
     \left\langle T_\nu(\vec k) T_{\nu^\prime}(\vec k^\prime) \right\rangle &=
-        (2\pi)^3 \, \delta^3(\vec k - \vec k^\prime) \, P^{21}_z(\vec k)
+        (2\pi)^3 \, \delta^3(\vec k - \vec k^\prime) \, P^{21}_z(\vec k)\,.
 \end{align}
 
 Finally, we will need the ``plane wave expansion'' that describes a plane wave in terms of spherical
@@ -1381,7 +1381,7 @@ Putting this all together we can find
         j_l(k r_{z^\prime}) \,
         Y_{lm}^*(\hat k) \,
         Y_{lm}(\hat k) \,
-        \frac{\d^3k}{(2\pi)^3} \\
+        \frac{\d^3k}{(2\pi)^3}\,. \\
 \end{align*}
 }}
 
@@ -1404,7 +1404,7 @@ definition of the spatial power spectrum.
 
 At this point if we assume that the power spectrum is isotropic and has no dependence on the
 orientation of the wave vector $\hat k$, then the angular component of the remaining integral can be
-performed to find:
+performed to find
 \begin{equation}\label{eq:csignal-basic}
     C^{21}_l(\nu, \nu^\prime) =
         \frac{2}{\pi}

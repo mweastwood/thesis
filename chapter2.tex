@@ -159,7 +159,7 @@ A typical calibration strategy using, for example, the Very Large Array (VLA) in
 pointing at a known compact point source. For a compact point source at the phase center, the phase
 of each visibility is zero, and the amplitude is given by the known flux of the source.
 Periodically revisiting this source allows for the observer to establish the time variation of the
-calibration parameters. Each time the observer solves for the gains that minimize
+calibration parameters by solving for the gains that minimize
 \begin{equation}
     \chi^2 \propto \sum_{i, j}
         \Big\|V_{ij}^\text{measured}(\nu) - g_i(\nu)\,g_j^*(\nu)\,F\Big\|^2\,,
@@ -202,7 +202,7 @@ when extrapolated below 50~MHz.
 
 Detailed sky and beam models are therefore generally an important calibration requirement for
 low-frequency interferometers.  In Chapter~\ref{chapter3}, I will derive an empirical beam model for
-the OVRO-LWA and developed a new imaging formalism that captures the entire visible sky in a single
+the OVRO-LWA and develop a new imaging formalism that captures the entire visible sky in a single
 synthesis imaging step that can be used as part of a self-calibration loop
 \citep{1978ApJ...223...25R}.
 
@@ -264,7 +264,7 @@ plasma frequency is typically $\sim 2\pi \times 10\,\text{MHz}$.  The index of r
       \approx 1 - \frac{1}{2}\frac{\omega_\text{plasma}^2}{\omega^2}\,,
 \end{equation}
 where the approximation holds if $\omega^2 \gg \omega_\text{plasma}^2$. In this regime, the arrival
-time of a burst of radio emission is $\propto \nu^{-2}$ as is commonly seen in pulsar astronomy.
+time of a burst of radio emission is $\propto \nu^{-2}$, as is commonly seen in pulsar astronomy.
 The additional phase imparted is, however, $\propto \nu^{-1}$ such that along a given line of sight
 the phase can be parameterized as
 \begin{equation}
@@ -283,7 +283,7 @@ $\sim 300\,\text{km}$). In the weak scattering regime ($r_\text{diff} \gg r_\tex
 ionosphere can contribute amplitude and phase scintillation, which may be folded into the antenna
 gain calibration.  However, in the strong scattering regime ($r_\text{diff} \lesssim r_\text{f}$),
 point sources may become multiply imaged, which cannot be described as a perturbation to the antenna
-response \citep{2015MNRAS.453..925V}. Typically the OVRO-LWA operates in the weak scattering regime
+response \citep{2015MNRAS.453..925V}. Typically the OVRO-LWA operates in the weak scattering regime,
 with baselines shorter than the diffractive scale of the ionosphere.
 
 A compact interferometer is composed of antennas that are staring through the same patch of the
@@ -291,7 +291,7 @@ ionosphere. The ionosphere therefore imparts a phase gradient across the array t
 from their true position.  In contrast, on longer baselines, the additional phase between the two
 antennas may not be correlated \citep{2005ASPC..345..399L}.
 
-However, The antenna response is also generally expected to be inhomogeneous.  Within the core of
+However, the antenna response is also generally expected to be inhomogeneous.  Within the core of
 the OVRO-LWA, antennas are separated by as little as 5\,m.  \citet{2011ITAP...59.1855E} studied the
 impact of mutual coupling on the antenna primary beam within the first Long Wavelength Array station
 in New Mexico (LWA1), which uses the same antennas and same 5\,m minimum spacing as the OVRO-LWA,
@@ -302,7 +302,7 @@ OVRO-LWA). The authors found that, between 20--74\,MHz, when pointing more than
 primary beam pattern between antennas. We expect comparable effects for the OVRO-LWA.
 
 Direction-dependent calibration therefore attempts to account for ionospheric scintillation and
-refraction, and inhomogeneous antenna beams by allowing the antenna response in
+refraction, as well as inhomogeneous antenna beams, by allowing the antenna response in
 Equation~\ref{eq:antenna-response-point-sources} to be a free parameter.  \texttt{TTCal} implements
 direction-dependent calibration during source subtraction in an algorithm known as peeling
 \citep{2008ISTSP...2..707M}. Figure~\ref{fig:peeling-illustration} illustrates the improvement
@@ -342,7 +342,7 @@ error had been made in the calculation of the antenna positions.
 While many astronomers are familiar with a wide range of celestial coordinate systems, Earth
 coordinate systems are somewhat more esoteric. In particular, there are differences between geodetic
 systems that seek to describe positions across the entire Earth and those that only seek to describe
-positions on a single continental plate. The former geodetic systems are useful as they specify an
+positions on a single continental plate. The former geodetic systems are useful, as they specify an
 absolute position on the surface of the Earth, while the latter geodetic systems are insensitive to
 continental drift and therefore do not naturally change with time. The OVRO-LWA antenna positions
 were surveyed in the geodetic system specified by the North American Datum of 1983 (NAD\,83), and
@@ -508,7 +508,7 @@ The amplitude of each antenna's auto-correlation is smoothed on a 45\,minute tim
 contribution of the sawtooth pattern to each auto-correlation. The ratio of the smoothed
 auto-correlations to the original auto-correlation defines a per-antenna correction that is then
 applied to the cross-correlations, removing the amplitude fluctuations with respect to time. This
-procedure, does not account for any fluctuations in the phase with respect to time.
+procedure does not account for any fluctuations in the phase with respect to time.
 
 In principle, one could account for gain fluctuations (amplitude and phase) by recalibrating more
 frequently than once per day. Ideally, one might even like to critically sample the sawtooth
@@ -539,8 +539,8 @@ essentially constrains the degree to which a correlation is washed out by time a
 correlation that does not appear to drop in amplitude after averaging is assumed to carry a large
 component due to common-mode RFI.  Antenna pairs with adjacent signal paths within the receiver tend
 to register as outliers, which is suggestive of some amount of cross-coupling between the signal
-paths. However, this is not a complete explanation and physical proximity of the signal paths is not
-a requirement for a correlation to be dominated by common-mode RFI.
+paths. However, this is not a complete explanation, and physical proximity of the signal paths is
+not a requirement for a correlation to be dominated by common-mode RFI.
 
 In addition to flagging these baselines, the dominant components of the time-averaged visibilities
 are taken as models for the RFI contribution to the visibilities. The model of each RFI component is

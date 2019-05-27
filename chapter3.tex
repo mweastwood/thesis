@@ -49,7 +49,7 @@ the minimum halo mass that can support star formation \citep{2015MNRAS.449.4246G
 
 Current 21~cm cosmology experiments can be broadly separated into two classes: global signal
 experiments that aim to detect the spectral signature of the cosmologically redshifted 21~cm
-transition after averaging over the entire sky (otherwise known as the monopole) and power spectrum
+transition after averaging over the entire sky (otherwise known as the monopole), and power spectrum
 experiments that incorporate angular information to attempt to measure the 3D spatial power spectrum
 of cosmological 21~cm perturbations.  Ongoing global signal experiments include EDGES
 \citep{2017ApJ...847...64M}, LEDA \citep{2018MNRAS.478.4193P}, BIGHORNS \citep{2015PASA...32....4S},
@@ -100,8 +100,8 @@ absorption and modifications to the synchrotron spectral index at low frequencie
 
 Wide-field interferometric synthesis imaging is a challenging computational problem, and it has been
 particularly difficult to capture large angular scales $\gg 10^\circ$ and small angular scales $\ll
-1^\circ$ in a single synthesis image. We will derive a new imaging technique -- Tikhonov-regularized
-$m$-mode analysis imaging -- that allows a drift-scanning interferometer to image the entire visible
+1^\circ$ in a single synthesis image. We will derive a new imaging technique---Tikhonov-regularized
+$m$-mode analysis imaging---that allows a drift-scanning interferometer to image the entire visible
 sky in a single coherent synthesis imaging step with no gridding and no mosaicking.
 
 As a demonstration of this technique, we apply Tikhonov-regularized $m$-mode analysis imaging to the
@@ -199,7 +199,7 @@ time.\footnote{
 Therefore, it is a natural operation to compute the Fourier transform of the visibilities with
 respect to sidereal time $\phi\in[0,2\pi)$.
 \begin{equation}
-    V^{ij}_{m,\nu} = \int_0^{2\pi} V^{ij}_\nu(\phi)\exp\bigg(-im\phi\bigg)\,\d\phi
+    V^{ij}_{m,\nu} = \int_0^{2\pi} V^{ij}_\nu(\phi)\exp\bigg(-im\phi\bigg)\,\d\phi\,.
 \end{equation}
 The output of this Fourier transform is the set of $m$-modes $V^{ij}_{m,\nu}$ where
 $m=0,\,\pm1,\,\pm2,\,\ldots$ is the Fourier conjugate variable to the sidereal time. The $m$-mode
@@ -1059,7 +1059,7 @@ the PB17 spectra cannot be extrapolated below 50 MHz.
 \end{figure}
 
 We constructed eight sky maps using Tikhonov-regularized $m$-mode analysis imaging and CLEANing with
-observations from the OVRO-LWA. Each map is individually shown in Figure~\ref{fig:channel-maps},
+observations from the OVRO-LWA. Each map is individually shown in Figure~\ref{fig:channel-maps};
 Figure~\ref{fig:three-color} is a three-color image constructed from the maps at 36.528,
 52.224, and 73.152~MHz, and Figure~\ref{fig:galactic-plane-cutout} is a cutout of the galactic
 plane. The maps cover the sky north of $\delta=-30^\circ$ with $\sim 15\arcmin$ angular resolution.
@@ -1325,7 +1325,7 @@ operates on a full sidereal day of data, images are constructed after watching e
 move through a large slice of the beam (excepting the celestial poles). The beam model therefore
 serves two purposes:
 \begin{enumerate}
-    \item setting the flux scale as a function of declination and
+    \item setting the flux scale as a function of declination, and
     \item reconciling observations from two separate sidereal times.
 \end{enumerate}
 
